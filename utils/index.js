@@ -85,6 +85,18 @@ function filterProductBySize(product, size) {
     return true
 }
 
+
+
+
+const langs = [
+    { name: "English", locale: "en", dir: "ltr" },
+    { name: "العربية", locale: "ar", dir: "rtl" },
+    { name: "swedish", locale: "sv", dir: "ltr" },
+];
+
+
+
+
 export {
     getFlashProducts,
     getFeaturedProducts,
@@ -97,5 +109,6 @@ export {
     isEquals,
     minValueOne,
     getCompareList,
-    searchFilter
+    searchFilter,
+    langs
 };
