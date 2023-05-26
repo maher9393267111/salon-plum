@@ -8,6 +8,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { useRouter } from 'next/router'
 import Link from "next/link";
+import { LoginUser } from '../../utils/firebase/apiCalls/users';
 
 
 const LoginPage = (props) => {
@@ -16,8 +17,8 @@ const LoginPage = (props) => {
 
 
     const [value, setValue] = useState({
-        email: 'user@gmail.com',
-        password: '123456',
+        email: '',
+        password: '',
         remember: false,
     });
 
@@ -36,8 +37,12 @@ const LoginPage = (props) => {
 
 
 
-    const submitForm = (e) => {
+    const submitForm = async(e) => {
         e.preventDefault();
+
+        const response = await LoginUser(value);
+console.log('RESPONSe' ,response)
+        if (response.success) {
         if (validator.allValid()) {
             setValue({
                 email: '',
@@ -46,13 +51,27 @@ const LoginPage = (props) => {
             });
             validator.hideMessages();
 
-            const userRegex = /^user+.*/gm;
-            const email = value.email;
+           localStorage.setItem(
+                "user",
+                JSON.stringify({
+                  ...response.data,
+                  password: "",
+                })
+              );
 
-            if (email.match(userRegex)) {
-                toast.success('You successfully Login on Plumco !');
-                router.push('/')
-            }
+              toast.success('You successfully Login on Site');
+              router.push('/')
+
+
+
+            // const userRegex = /^user+.*/gm;
+            // const email = value.email;
+
+           // if (email.match(userRegex)) {
+              
+           // }
+
+        }
         } else {
             validator.showMessages();
             toast.error('Empty field is not allowed!');
@@ -62,7 +81,7 @@ const LoginPage = (props) => {
         <Grid className="loginWrapper">
             <Grid className="loginForm">
                 <h2>Sign In</h2>
-                <p>Sign in to your account</p>
+                <p>Sign in to your account  {value.email} {value.password}</p>
                 <form onSubmit={submitForm}>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
