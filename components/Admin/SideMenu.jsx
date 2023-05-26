@@ -118,6 +118,7 @@ function SideMenu() {
                         </Link>
 
                         <Link
+                             style={{ background: pathname == '/admin/appointments' ? "rgb(153, 246, 228)" : '' }}
                             href={'/admin/appointments'}
                             className="rounded-lg px-4 py-2 text-gray-500 hover:bg-teal-100 hover:text-gray-700"
                         >

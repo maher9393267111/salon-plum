@@ -14,13 +14,15 @@ import BlogSection from '../../components/BlogSection/BlogSection';
 import BlogSection2 from '../../components/BlogSection/blogSection2';
 
 
-const HomePage2 = (props) => {
+import getDocument from '@/utils/firebase/getData';
+
+const HomePage2 = ({data}) => {
 
     return (
         <div>
             <Navbar topbarBlock={'wpo-header-style-2'} Logo={'/images/logo.png'} />
             <Hero2 />
-            <BlogSection2 />
+            <BlogSection2  data={data}/>
             {/* <Features fClass={'wpo-features-section-s2'}/> */}
             {/* <ServiceSection2 />
             <FunFact2 />
@@ -35,3 +37,20 @@ const HomePage2 = (props) => {
     )
 };
 export default HomePage2;
+
+
+
+
+HomePage2.getInitialProps = async (context  ) => {
+  
+    //console.log('Query', context?.query?.country)
+    const data = await getDocument("blog");
+    
+  
+  
+  
+    return {
+      data:data,
+    };
+  };
+  

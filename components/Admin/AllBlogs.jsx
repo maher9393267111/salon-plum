@@ -107,7 +107,13 @@ function AllBlogs() {
         <div>
             {loading && <Loader />}
             <SideMenu />
-            <h1 className='text-4xl font-cutiveMono font-medium capitalize p-10'>All Blogs.</h1>
+            <h1 className='text-4xl font-cutiveMono text-center flex   '>
+               
+                <p className='bg-blue-600  text-white rounded-xl m-auto capitalize p-3 font-semibold'>
+                All Blogs
+                </p>
+                
+                </h1>
             <BlogList posts={data} />
         </div>
     )

@@ -76,8 +76,8 @@ function AdminHome() {
     return (
         <div>
             {loading && <Loader />}
-            <SideMenu />
-            <h1 className='text-4xl font-cutiveMono font-medium capitalize p-10'>Welcome to admin page.</h1>
+            {/* <SideMenu /> */}
+            {/* <h1 className='text-4xl font-cutiveMono font-medium capitalize p-10'>Welcome to admin page.</h1> */}
             <AllBlogs />
             {/* <BlogList posts={data} /> */}
         </div>
