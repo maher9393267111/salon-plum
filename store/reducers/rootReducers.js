@@ -7,7 +7,7 @@ import  LoadingReducer  from './loading';
 
 
 const rootReducer = combineReducers({
-    loader:  LoadingReducer,
+    loaderReducer:  LoadingReducer,
     data: productReducer,
     cartList: cartReducer,
     wishList: wishListReducer,

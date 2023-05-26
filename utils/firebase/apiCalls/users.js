@@ -4,6 +4,7 @@ import CryptoJS from "crypto-js";
 
 export const CreateUser = async (payload) => {
   try {
+    console.log('PAULOAD' ,payload)
     // check if user already exists using email
     const qry = query(
       collection(firestoreDatabase, "users"),

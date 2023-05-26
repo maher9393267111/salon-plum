@@ -14,12 +14,21 @@ import { Provider } from "react-redux";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { connect } from "react-redux";
+import { LoadingAction } from "../store/actions/action";
+
 // translate
 import { appWithTranslation } from "next-i18next";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps ,props }) {
+
+
+
   return (
     <Provider store={store}>
+
+
+
       <PersistGate loading={null} persistor={persistor}>
         <Component {...pageProps} />
         <ToastContainer />
@@ -31,3 +40,4 @@ function MyApp({ Component, pageProps }) {
 
 
 export default appWithTranslation(MyApp);
+

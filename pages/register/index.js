@@ -6,6 +6,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useRouter } from 'next/router'
 import Link from "next/link";
+import { CreateUser } from '../../utils/firebase/apiCalls/users';
 
 const SignUpPage = (props) => {
 
@@ -28,18 +29,35 @@ const SignUpPage = (props) => {
     }));
 
 
-    const submitForm = (e) => {
+    const submitForm = async(e) => {
         e.preventDefault();
-        if (validator.allValid()) {
-            setValue({
-                email: '',
-                full_name: '',
-                password: '',
-                confirm_password: '',
-            });
-            validator.hideMessages();
-            toast.success('Registration Complete successfully!');
-            router.push('/login')
+
+
+        const response = await CreateUser({
+           ...value,
+            role: "user",
+          });
+
+          if (response.success) {
+            toast.success(response.message);
+            
+            if (validator.allValid()) {
+                setValue({
+                    email: '',
+                    full_name: '',
+                    password: '',
+                    confirm_password: '',
+                });
+                validator.hideMessages();
+                toast.success('Registration Complete successfully!');
+                router.push('/login')
+          }
+
+
+
+    
+          
+
         } else {
             validator.showMessages();
             toast.error('Empty field is not allowed!');

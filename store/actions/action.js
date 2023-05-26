@@ -80,7 +80,7 @@ export const removeFromCompareList = (product) => (dispatch) => {
 };
 
 
-export const LoadingAction = (product) => (loading) => {
+export const LoadingAction = (loading) => (dispatch) => {
   dispatch({
     type: LOADING,
     loading,
