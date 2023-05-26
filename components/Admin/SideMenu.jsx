@@ -118,7 +118,7 @@ function SideMenu() {
                         </Link>
 
                         <Link
-                            href={'/admin'}
+                            href={'/admin/appointments'}
                             className="rounded-lg px-4 py-2 text-gray-500 hover:bg-teal-100 hover:text-gray-700"
                         >
                             <span className="flex items-center gap-2 text-sm font-medium">
@@ -137,8 +137,12 @@ function SideMenu() {
                                     />
                                 </svg>
 
-                                Analysis </span>
+                                Appointments </span>
                         </Link>
+
+
+
+
                     </nav>
                 </div>
                 <button className="shrink-0 transition duration-300 rotate-90 absolute top-[50%] right-0 cursor-pointer hover:fill-teal-200" onClick={() => setIsOpen(false)}>

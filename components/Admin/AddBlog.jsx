@@ -13,7 +13,9 @@ import SideMenu from "./SideMenu";
 function AddBlog() {
   const { setAlert, user, pageLoading = true } = useContext(StateContext)
   const [value, setValue] = useState("");
+  const [valueAr, setValueAr] = useState("");
   const [title, setTitle] = useState("");
+  const [titleAr, setTitleAr] =useState('')
   const [image, setImage] = useState("")
   const [loading, setLoading] = useState(false)
   const [visibleHome, setVisibleHome] = useState(false)
@@ -24,7 +26,9 @@ function AddBlog() {
       // if (visibleHome) const count = 
       const data = visibleHome ? {
         title,
+        titleAr,
         description: value,
+        descriptionAr:valueAr,
         image: image,
         date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
         index: await getBlogCount() + 1
@@ -76,7 +80,7 @@ function AddBlog() {
     <div>
       <SideMenu />
       {loading && <Loader />}
-      <BlogForm {...{ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome }} />
+      <BlogForm {...{ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr }} />
     </div>
   )
 }

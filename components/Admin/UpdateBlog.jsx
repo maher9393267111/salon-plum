@@ -16,6 +16,9 @@ function UpdateBlog() {
     const [value, setValue] = useState("");
     const [title, setTitle] = useState("");
     const [image, setImage] = useState("");
+    const [valueAr, setValueAr] = useState("");
+    
+    const [titleAr, setTitleAr] =useState('')
     const [loading, setLoading] = useState(true);
     const { replace, query } = useRouter();
     const [index, setIndex] = useState()
@@ -30,7 +33,9 @@ function UpdateBlog() {
                     ...docSnap.data(),
                 };
                 setTitle(data.title);
+                setTitleAr(data?.titleAr)
                 setValue(data.description);
+                setValueAr(data.descriptionAr)
                 setImage(data.image);
                 if (data.index) {
                     setIndex(data.index)
@@ -57,29 +62,39 @@ function UpdateBlog() {
             if (visibleHome && index) {
                 data = {
                     title,
+                    titleAr,
                     description: value,
+                    descriptionAr:valueAr,
+
                     image,
                     index
                 }
             } else if (!visibleHome && index) {
                 data = {
                     title,
+                    titleAr,
                     description: value,
+                    descriptionAr:valueAr,
                     image,
                     index: deleteField()
                 }
             } else if (visibleHome && !index) {
                 data = {
                     title,
+                    titleAr,
                     description: value,
+                    descriptionAr:valueAr,
                     image,
                     index: await getBlogCount() + 1
                 }
             } else {
                 data = {
                     title,
-                    description: value,
+                    
                     image: image,
+                    titleAr,
+                    description: value,
+                    descriptionAr:valueAr,
                 }
             }
             await updateDoc(doc(db, "blog", id), data);
@@ -152,7 +167,9 @@ function UpdateBlog() {
                     setLoading,
                     image,
                     visibleHome,
-                    setVisibleHome
+                    setVisibleHome,
+                    valueAr, setValueAr,
+                    titleAr, setTitleAr
                 }}
             />
         </div>

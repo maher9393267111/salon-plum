@@ -9,7 +9,7 @@ const QuillNoSSRWrapper = dynamic(import('react-quill'), {
     loading: () => <Loader />,
 })
 
-export default function BlogForm({ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome }) {
+export default function BlogForm({ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr  }) {
 
     const [file, setFile] = useState(null)
     const uploadImage = async () => {
@@ -39,9 +39,35 @@ export default function BlogForm({ setTitle, title, value, setValue, handleClick
                     onChange={(e) => setTitle(e.target.value)}
                 />
             </div>
+
+{/* ----Arabic Title---- */}
+
+<div className="w-full">
+                <input
+                    className='w-full border-2 text-black font-medium rounded-md border-teal-400 py-3 px-6'
+                    type="text"
+                    placeholder="Arabic Title"
+                    value={titleAr}
+                    onChange={(e) => setTitleAr(e.target.value)}
+                />
+            </div>
+
+
+
             <div className="w-full h-64">
                 <QuillNoSSRWrapper theme="snow" className='h-full pb-[2.5rem] border-[2.5px] text-black font-medium rounded-md border-teal-400 hover:border-blue-600' value={value} onChange={setValue} />
             </div>
+
+
+{/* --------Arabic Desc-------- */}
+
+
+<div className="w-full h-64">
+    <p className=''>Arabic Description</p>
+                <QuillNoSSRWrapper theme="snow" className='h-full pb-[2.5rem] border-[2.5px] text-black font-medium rounded-md border-teal-400 hover:border-blue-600' value={valueAr} onChange={setValueAr} />
+            </div>
+
+
             <div className='w-full'>
                 <div className="w-full flex">
                     <input
