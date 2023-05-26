@@ -17,6 +17,7 @@ function UpdateBlog() {
     const [title, setTitle] = useState("");
     const [image, setImage] = useState("");
     const [valueAr, setValueAr] = useState("");
+    const [category, setCategory] = useState('')
     
     const [titleAr, setTitleAr] =useState('')
     const [loading, setLoading] = useState(true);
@@ -36,6 +37,7 @@ function UpdateBlog() {
                 setTitleAr(data?.titleAr)
                 setValue(data.description);
                 setValueAr(data.descriptionAr)
+                setCategory(data?.category)
                 setImage(data.image);
                 if (data.index) {
                     setIndex(data.index)
@@ -67,7 +69,8 @@ function UpdateBlog() {
                     descriptionAr:valueAr,
 
                     image,
-                    index
+                    index,
+                    category
                 }
             } else if (!visibleHome && index) {
                 data = {
@@ -76,7 +79,8 @@ function UpdateBlog() {
                     description: value,
                     descriptionAr:valueAr,
                     image,
-                    index: deleteField()
+                    index: deleteField(),
+                    category
                 }
             } else if (visibleHome && !index) {
                 data = {
@@ -85,6 +89,7 @@ function UpdateBlog() {
                     description: value,
                     descriptionAr:valueAr,
                     image,
+                    category,
                     index: await getBlogCount() + 1
                 }
             } else {
@@ -95,6 +100,7 @@ function UpdateBlog() {
                     titleAr,
                     description: value,
                     descriptionAr:valueAr,
+                    category
                 }
             }
             await updateDoc(doc(db, "blog", id), data);
@@ -169,7 +175,8 @@ function UpdateBlog() {
                     visibleHome,
                     setVisibleHome,
                     valueAr, setValueAr,
-                    titleAr, setTitleAr
+                    titleAr, setTitleAr,
+                    category, setCategory,
                 }}
             />
         </div>

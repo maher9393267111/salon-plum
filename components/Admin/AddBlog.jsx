@@ -19,6 +19,7 @@ function AddBlog() {
   const [image, setImage] = useState("")
   const [loading, setLoading] = useState(false)
   const [visibleHome, setVisibleHome] = useState(false)
+  const [category, setCategory] = useState('')
   const { replace } = useRouter()
   const handleClick = async () => {
     setLoading(true)
@@ -30,6 +31,7 @@ function AddBlog() {
         description: value,
         descriptionAr:valueAr,
         image: image,
+        category: category,
         date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
         index: await getBlogCount() + 1
       } : {
@@ -80,7 +82,7 @@ function AddBlog() {
     <div>
       <SideMenu />
       {loading && <Loader />}
-      <BlogForm {...{ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr }} />
+      <BlogForm {...{ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr , category, setCategory }} />
     </div>
   )
 }

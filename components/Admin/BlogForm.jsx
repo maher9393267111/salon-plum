@@ -9,7 +9,7 @@ const QuillNoSSRWrapper = dynamic(import('react-quill'), {
     loading: () => <Loader />,
 })
 
-export default function BlogForm({ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr  }) {
+export default function BlogForm({ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr , category, setCategory  }) {
 
     const [file, setFile] = useState(null)
     const uploadImage = async () => {
@@ -29,7 +29,7 @@ export default function BlogForm({ setTitle, title, value, setValue, handleClick
     }
     console.log(visibleHome)
     return (
-        <div className="flex flex-col justify-center items-center gap-6 w-full md:px-24 sm:px-12 px-6 h-screen ">
+        <div className="flex flex-col justify-center items-center gap-6 w-full md:px-24 sm:px-12 px-6 h-auto mb-12 ">
             <div className="w-full">
                 <input
                     className='w-full border-2 text-black font-medium rounded-md border-teal-400 py-3 px-6'
@@ -68,7 +68,7 @@ export default function BlogForm({ setTitle, title, value, setValue, handleClick
             </div>
 
 
-            <div className='w-full'>
+            <div className='w-full my-4'>
                 <div className="w-full flex">
                     <input
                         type="file"
@@ -77,10 +77,14 @@ export default function BlogForm({ setTitle, title, value, setValue, handleClick
                         className='text-black font-medium rounded-md border-teal-400 py-3 px-6 border-2 border-r-0 rounded-r-none'
                         onChange={(e) => setFile(e.target.files[0])}
                     />
-                    <button type='button' className="rounded-l-none inline-block shrink-0 rounded-md border border-teal-600 bg-teal-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-teal-600 focus:outline-none focus:ring active:text-teal-500 dark:hover:bg-teal-700 dark:hover:text-white" onClick={uploadImage}>
+                    <button type='button' className="rounded-l-none  inline-block shrink-0 rounded-md border border-teal-600 bg-teal-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-teal-600 focus:outline-none focus:ring active:text-teal-500 dark:hover:bg-teal-700 dark:hover:text-white" onClick={uploadImage}>
                         Upload Image
                     </button>
                 </div>
+
+
+
+
                 <div className='text-xl font-cutiveMono text-center py-2'>or</div>
                 <div className='w-full'>
                     <input className='w-full border-2 text-black font-medium rounded-md border-teal-400 py-3 px-6'
@@ -88,6 +92,41 @@ export default function BlogForm({ setTitle, title, value, setValue, handleClick
                         placeholder="Image url" onChange={e => setImage(e.target.value)} value={image} />
                 </div>
             </div>
+
+
+
+{/* ------category select------ */}
+
+
+<div className="col col-lg-6 col-12 w-full">
+                      <div className="form-group">
+                        <label>Select Category</label>
+                        <select
+                          className="form-control  border-2 text-black font-medium rounded-md border-teal-400 py-3 px-6"
+                          
+                          onChange={(e) => setCategory(e.target.value)}
+                          value={category}
+                          type="text"
+                          name="category"
+                        >
+                          <option value="cat_1">category 1</option>
+                          <option value="cat_2">category 2</option>
+                          <option value="cat_3">category 3</option>
+                          <option value="cat_4">category 4</option>
+                          {/* <option value='5-6'>Bathroom Plumbing</option>
+                                                    <option value='6:15-6:33'>Basement Plumbing</option> */}
+                        </select>
+                      
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+
             <div className="w-full flex gap-4 sm:text-xl text-lg font-semibold items-center">
                 Show document at home page
                 <label htmlFor="AcceptConditions" className="relative sm:h-8 sm:w-14 h-6 w-12 cursor-pointer">
