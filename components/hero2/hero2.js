@@ -21,7 +21,11 @@ const Hero2 = () => {
                 <div className="hero-wrapper">
                     <Slider {...settings}>
                         <div className="hero-slide">
-                            <div className="slide-inner slide-bg-image" style={{ backgroundImage: `url(${'/images/slider/slide-2.jpg'})` }}>
+                            <div className="slide-inner slide-bg-image" style={{ backgroundImage: `url(${
+                                // '/images/slider/slide-2.jpg'
+                            'https://images.pexels.com/photos/260405/pexels-photo-260405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                            })
+                                ` }}>
                                 <div className="gradient-overlay"></div>
                                 <div className="container">
                                     <div className="slide-content">
@@ -41,7 +45,37 @@ const Hero2 = () => {
                         </div>
 
                         <div className="hero-slide">
-                            <div className="slide-inner slide-bg-image" style={{ backgroundImage: `url(${'/images/slider/slide-3.jpg'})` }}>
+                            <div className="slide-inner slide-bg-image" style={{ backgroundImage: `url(${
+                                // '/images/slider/slide-3.jpg'
+                            'https://images.pexels.com/photos/3985331/pexels-photo-3985331.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                            })` 
+                                
+                                }}>
+                                <div className="gradient-overlay"></div>
+                                <div className="container">
+                                    <div className="slide-content">
+                                        <div className="slide-title">
+                                            <h2>Expert Plumbing Service You Can Trust.</h2>
+                                        </div>
+                                        <div className="slide-text">
+                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                                        </div>
+                                        <div className="clearfix"></div>
+                                        <div className="slide-btns">
+                                            <Link href="/appointment" className="theme-btn">Book Online</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div className="hero-slide">
+                            <div className="slide-inner slide-bg-image" style={{ backgroundImage: `url(${
+                                // '/images/slider/slide-2.jpg'
+                            'https://images.pexels.com/photos/234220/pexels-photo-234220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                            })
+                                ` }}>
                                 <div className="gradient-overlay"></div>
                                 <div className="container">
                                     <div className="slide-content">
