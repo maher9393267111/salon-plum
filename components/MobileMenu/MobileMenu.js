@@ -205,12 +205,38 @@ const MobileMenu = () => {
 
     return (
         <div>
-            <div className={`mobileMenu ${menuActive ? "show" : ""}`}>
+            <div className={`mobileMenu bg-white ${menuActive ? "show" : ""}`}>
                 <div className="menu-close">
                     <div className="clox" onClick={() => setMenuState(!menuActive)}><i className="ti-close"></i></div>
                 </div>
 
-                <ul className="responsivemenu">
+
+                <ListItem className='  !text-black flex !justify-center'
+                                                           
+                                                             >
+                                                                <Link className=' block text-xl  cursor-pointer font-bold text-center ' onClick={ClickHandler}
+                                                                    href='/home2'>
+                                                                    
+                                                                    
+                                                                    Home</Link>
+                                                            </ListItem>
+
+
+
+
+                                                            <ListItem className='  !text-black flex !justify-center'
+                                                           
+                                                           >
+                                                              <Link className=' text-xl block  cursor-pointer font-bold text-center ' onClick={ClickHandler}
+                                                                  href='/contact'>
+                                                                  
+                                                                  
+                                                                  Contact</Link>
+                                                          </ListItem>
+
+
+
+                {/* <ul className="responsivemenu">
                     {menus.map((item, mn) => {
                         return (
                             <ListItem className={item.id === openId ? 'active' : '!text-black'}  key={mn}>
@@ -241,7 +267,7 @@ const MobileMenu = () => {
                             </ListItem>
                         )
                     })}
-                </ul>
+                </ul> */}
 
             </div>
 

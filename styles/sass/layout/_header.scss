@@ -593,7 +593,7 @@
 
 	.header-search-form {
 		position: absolute;
-		width: 350px;
+		width: 300px;
 		right: 0;
 		top: 75px;
 		transform: scale(0);
@@ -660,7 +660,7 @@
 .wpo-site-header .header-right .header-search-content-toggle {
 	opacity: 1;
 	visibility: visible;
-	right: 0;
+	right: 12px;
 	transform: scale(1);
 }
 
@@ -1105,6 +1105,15 @@
 
 			>ul .menu-item-has-children>a {
 				position: relative;
+
+&.isIcon {
+
+	&:hover,
+	&.active {
+		color: none;
+	}
+}
+
 
 				&:hover,
 				&.active {
