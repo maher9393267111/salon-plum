@@ -1,4 +1,4 @@
-import { StateContext } from "@/context/stateContext";
+
 
 
 import { StateContext } from '@/utils/context/index'
@@ -7,7 +7,7 @@ import getBlogCount from "@/utils/firebase/getBlogCount";
 import { deleteField, doc, getDoc, updateDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
-import Loader from "../Loader";
+import Loader from "../shared/loader";
 import BlogForm from "./BlogForm";
 import SideMenu from "./SideMenu";
 

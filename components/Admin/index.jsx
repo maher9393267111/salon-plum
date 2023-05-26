@@ -4,6 +4,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Loader from '../shared/loader'
 import Link from 'next/link'
 import { StateContext } from '@/utils/context/index';
+import {db} from '@/utils/firebase'
 import SideMenu from './SideMenu';
 import { useRouter } from 'next/router';
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
@@ -172,6 +173,7 @@ function AdminHome() {
                     });
                 })
                 setData(data)
+                console.log('BLOGS-->' , blogs)
             } catch (error) {
                 console.log(error)
                 //setAlert({ isShow: true, duration: 3000, message: error.response?.data?.message || error.message, type: "error" })

@@ -1,5 +1,5 @@
-import { StateContext } from '../../context'
-import { db } from '../../utils/firebase'
+import { StateContext } from '@/utils/context/index.js';
+import { db } from '@/utils/firebase'
 import { collection, getDocs } from 'firebase/firestore'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
