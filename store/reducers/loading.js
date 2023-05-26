@@ -1,10 +1,15 @@
 import {
-    LOADING
+    LOADING,
+    ALERT
 } from "../actions/type";
 
 
 const initialState = {
-    loading: false
+    loading: false,
+    alert:{
+
+        message:'', type:'', duration:'', isShow:''
+    }
 };
 
 const LoadingReducer = (state = initialState, action) => {
@@ -14,6 +19,15 @@ const LoadingReducer = (state = initialState, action) => {
                 ...state,
                loading: action.loading
             };
+
+
+            case ALERT:
+return {
+            ...state,
+            alert: action.alert
+}
+
+
         default:
             return state;
     }

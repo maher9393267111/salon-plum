@@ -14,11 +14,12 @@ import { Provider } from "react-redux";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { connect } from "react-redux";
-import { LoadingAction } from "../store/actions/action";
+//import { connect } from "react-redux";
+//import { LoadingAction } from "../store/actions/action";
 
 // translate
 import { appWithTranslation } from "next-i18next";
+import { StateContextProvider } from '@/utils/context'
 
 function MyApp({ Component, pageProps ,props }) {
 
@@ -30,8 +31,10 @@ function MyApp({ Component, pageProps ,props }) {
 
 
       <PersistGate loading={null} persistor={persistor}>
+        <StateContextProvider>
         <Component {...pageProps} />
         <ToastContainer />
+        </StateContextProvider>
       </PersistGate>
     </Provider>
 

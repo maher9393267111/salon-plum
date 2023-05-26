@@ -213,7 +213,7 @@ const MobileMenu = () => {
                 <ul className="responsivemenu">
                     {menus.map((item, mn) => {
                         return (
-                            <ListItem className={item.id === openId ? 'active' : null}  key={mn}>
+                            <ListItem className={item.id === openId ? 'active' : '!text-black'}  key={mn}>
                                 {item.submenu ?
                                     <Fragment>
                                         <p onClick={() => setOpenId(item.id === openId ? 0 : item.id)}>{item.title}
@@ -224,7 +224,8 @@ const MobileMenu = () => {
                                                 <Fragment>
                                                     {item.submenu.map((submenu, i) => {
                                                         return (
-                                                            <ListItem key={i}>
+                                                            <ListItem className='  !text-black'
+                                                             key={i}>
                                                                 <Link onClick={ClickHandler}
                                                                     href={submenu.link}>{submenu.title}</Link>
                                                             </ListItem>

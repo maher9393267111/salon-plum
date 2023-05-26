@@ -11,7 +11,7 @@ import Appointment from '../../components/Appointment/Appointment';
 import Footer from '../../components/footer/Footer';
 import Testimonial from '../../components/Testimonial/Testimonial';
 import BlogSection from '../../components/BlogSection/BlogSection';
-
+import BlogSection2 from '../../components/BlogSection/blogSection2';
 
 
 const HomePage2 = (props) => {
@@ -20,14 +20,15 @@ const HomePage2 = (props) => {
         <div>
             <Navbar topbarBlock={'wpo-header-style-2'} Logo={'/images/logo.png'} />
             <Hero2 />
-            <Features fClass={'wpo-features-section-s2'}/>
-            <ServiceSection2 />
+            <BlogSection2 />
+            {/* <Features fClass={'wpo-features-section-s2'}/> */}
+            {/* <ServiceSection2 />
             <FunFact2 />
             <ProjectSection />
             <TeamSection />
             <Appointment />
-            <Testimonial />
-            <BlogSection />
+            <Testimonial /> */}
+            {/* <BlogSection /> */}
             <Footer />
             <Scrollbar/>
         </div>

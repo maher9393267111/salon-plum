@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import {
   LOADING,
+  ALERT,
   ADD_TO_WISHLIST,
   REMOVE_FROM_WISHLIST,
   REMOVE_FROM_COMPARE_LIST,
@@ -84,5 +85,15 @@ export const LoadingAction = (loading) => (dispatch) => {
   dispatch({
     type: LOADING,
     loading,
+  });
+};
+
+
+
+export const AlertAction = (alert) => (dispatch) => {
+  console.log('alerttt,' ,alert)
+  dispatch({
+    type: ALERT,
+    alert,
   });
 };
