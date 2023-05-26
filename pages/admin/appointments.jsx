@@ -1,5 +1,6 @@
 import React from 'react'
 import getDocument from "@/utils/firebase/getData";
+import AppointmentsMain from '@/components/Admin/appointmentsMain';
 
 
 export default function Appointments({data}) {
@@ -9,7 +10,11 @@ export default function Appointments({data}) {
 
 
   return (
-    <div>Appintments {data?.length}</div>
+    <div>
+
+<AppointmentsMain data={data}/>
+
+    </div>
   )
 }
 
