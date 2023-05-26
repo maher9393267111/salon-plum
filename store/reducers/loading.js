@@ -1,15 +1,21 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {
+    LOADING
+} from "../actions/type";
 
-export const loaderSlice = createSlice({
-  name: "loader",
-  initialState: {
-    loading: false,
-  },
-  reducers: {
-    ShowLoader: (state, action) => {
-      state.loading = action.payload;
-    },
-  },
-});
 
-export const { ShowLoader } = loaderSlice.actions;
+const initialState = {
+    loading: false
+};
+
+const LoadingReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case LOADING:
+            return {
+                ...state,
+               loading: action.loading
+            };
+        default:
+            return state;
+    }
+};
+export default  LoadingReducer ;

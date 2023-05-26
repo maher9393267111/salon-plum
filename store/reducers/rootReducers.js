@@ -3,11 +3,11 @@ import productReducer from "./products";
 import {cartReducer} from "./cart";
 import {wishListReducer} from "./wishList";
 import compareListReducer from "./compare";
-import { loaderSlice } from './loading';
+import  LoadingReducer  from './loading';
 
 
 const rootReducer = combineReducers({
-    loader: loaderSlice.reducer,
+    loader:  LoadingReducer,
     data: productReducer,
     cartList: cartReducer,
     wishList: wishListReducer,

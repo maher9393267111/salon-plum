@@ -2,6 +2,7 @@ import * as types from "./type";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import {
+  LOADING,
   ADD_TO_WISHLIST,
   REMOVE_FROM_WISHLIST,
   REMOVE_FROM_COMPARE_LIST,
@@ -75,5 +76,13 @@ export const removeFromCompareList = (product) => (dispatch) => {
   dispatch({
     type: REMOVE_FROM_COMPARE_LIST,
     product,
+  });
+};
+
+
+export const LoadingAction = (product) => (loading) => {
+  dispatch({
+    type: LOADING,
+    loading,
   });
 };
