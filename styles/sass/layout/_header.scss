@@ -1304,12 +1304,30 @@
 	@include media-query(767px) {
 		.navbar-header .navbar-brand {
 			font-size: 24px;
+			
 		}
 
 		#navbar .navbar-nav {
 			margin: 0;
 		}
 	}
+
+
+	@include media-query(960px) {
+		.navbar-header .navbar-brand {
+			font-size: 24px;
+			display: flex;
+			justify-content: center;
+		}
+
+		#navbar .navbar-nav {
+			margin: 0;
+		}
+	}
+
+
+
+
 
 
 	/*navbar collaps less then 992px*/

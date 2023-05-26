@@ -10,4 +10,25 @@ export default async function getDocument(doc, criterions) {
         ...doc.data(),
     }));
     return data;
+    
+}
+
+
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+
+
+
+export  async function getDocBySlug(collection, id) {
+    let result = null;
+    let error = null;
+
+    try {
+        const docRef = doc(db, collection, id);
+        const data = await getDoc(docRef);
+        return { ...data.data(), id: id };
+    } catch (e) {
+        error = e;
+    }
+
+    return { result, error };
 }

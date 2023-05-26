@@ -21,6 +21,7 @@
     "eslint-config-next": "^13.0.7",
     "firebase": "^9.22.0",
     "formik": "^2.2.9",
+    "html-react-parser": "^3.0.16",
     "i18next": "^22.5.0",
     "i18next-browser-languagedetector": "^7.0.1",
     "moment": "^2.29.4",

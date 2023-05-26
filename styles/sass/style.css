@@ -599,8 +599,12 @@ a:hover {
   background-color: #0052da;
 }
 
+/* ../images/page-title.jpg */ */
 .wpo-page-title {
-  background: url(../images/page-title.jpg) no-repeat center top/cover;
+  background: url(
+    'https://raneemskin.nl/wp-content/uploads/2021/10/cosmetics-page-title.jpg'
+   
+    ) no-repeat center top/cover;
   min-height: 400px;
   position: relative;
   display: flex;

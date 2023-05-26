@@ -27,7 +27,9 @@ const { locale, locales, asPath } = useRouter();
                 <div className="wpo-blog-items">
                     <div className="row">
                         {data && data?.length > 0 &&   data?.map((blog, bl) => (
+                            
                             <div className="col col-lg-4 col-md-6 col-12" key={bl}>
+                                <Link href={`blog-single-fullwidth/${blog?.id}`}>
                                 <div className="wpo-blog-item !h-[310px]">
                                     <div className="wpo-blog-img !h-[80%] object-cover ">
                                         <img
@@ -37,7 +39,8 @@ const { locale, locales, asPath } = useRouter();
 
 {/* ---Category btn---- */}
 <div className="relative">
-    <p className=" absolute bg-[rgb(251,186,55)] hover:bg-[rgb(251,166,55)] transition-all font-semibold  duration-300 text-white rounded-xl p-2 top-[-5rem] left-5  cursor-pointer">category : {blog?.category}</p>
+
+    <p className=" absolute bg-[rgb(251,186,55)] hover:bg-[rgb(251,166,55)] transition-all font-semibold  duration-300 text-white rounded-xl p-2 top-[-5rem] left-3  cursor-pointer"> {blog?.category}</p>
 </div>
 
 
@@ -51,7 +54,9 @@ const { locale, locales, asPath } = useRouter();
 
                                    
                                 </div>
+                                </Link>
                             </div>
+                            
                         ))}
                     </div>
                 </div>

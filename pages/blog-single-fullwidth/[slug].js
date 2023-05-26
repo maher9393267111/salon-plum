@@ -6,13 +6,17 @@ import PageTitle from '../../components/pagetitle/PageTitle';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/footer/Footer';
 import Scrollbar from '../../components/scrollbar/scrollbar';
+import { getDocBySlug} from '@/utils/firebase/getData';
+import getDocument from '@/utils/firebase/getData';
+import parse from 'html-react-parser';
+import RelatdBlogs from '../../components/BlogSection/relatedBlogs'
 
 const submitHandler = (e) => {
     e.preventDefault()
 }
 
 
-const BlogSingle = (props) => {
+const BlogSingle = ({data , related}) => {
     const router = useRouter()
 
     const BlogDetails = blogs.find(item => item.slug === router.query.slug)
@@ -21,7 +25,9 @@ const BlogSingle = (props) => {
     return (
         <Fragment>
             <Navbar />
-            <PageTitle pageTitle={BlogDetails?.title} pagesub="blog" />
+            <PageTitle pageTitle={data?.title}
+            // {BlogDetails?.title} 
+            pagesub="blog" />
             <section className="wpo-blog-single-section section-padding">
                 <div className="container">
                     <div className="row">
@@ -29,17 +35,31 @@ const BlogSingle = (props) => {
                             <div className="wpo-blog-content">
                                 <div className="post format-standard-image">
                                     <div className="entry-media">
-                                        <img src={BlogDetails?.blogSingleImg} alt="" />
+                                        <img src={data?.image}
+                                        //  "https://raneemskin.nl/wp-content/uploads/2021/10/cosmetics-page-title.jpg"
+                                        //    {BlogDetails?.blogSingleImg}
+                                         alt="" />
                                     </div>
-                                    <div className="entry-meta">
+                                    {/* <div className="entry-meta">
                                         <ul>
                                             <li><i className="fi ti-user"></i> By <Link href="/">{BlogDetails?.author}</Link> </li>
                                             <li><i className="fi ti-comment-alt"></i> Comments {BlogDetails?.comment}</li>
                                             <li><i className="fi flaticon-calendar"></i> {BlogDetails?.create_at}</li>
                                         </ul>
-                                    </div>
-                                    <h2>{BlogDetails?.title}</h2>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful.</p>
+                                    </div> */}
+                                    <h2 className=' text-center my-4'>
+                                        {data?.title}
+                                        {/* {BlogDetails?.title} */}
+                                    </h2>
+
+<p dir='rtl'>
+{parse(data?.description)}
+</p>
+
+
+
+                                    {/* ------------------------- */}
+                                    {/* <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful.</p>
                                     <blockquote>
                                         Combined with a handful of model sentence structures, generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
                                     </blockquote>
@@ -52,10 +72,10 @@ const BlogSingle = (props) => {
                                         <div>
                                             <img src='/images/blog/3.jpg' alt="" />
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
 
-                                <div className="tag-share clearfix">
+                                {/* <div className="tag-share clearfix">
                                     <div className="tag">
                                         <span>Share: </span>
                                         <ul>
@@ -232,15 +252,50 @@ const BlogSingle = (props) => {
                                             </div>
                                         </form>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+{/* -------related Blogs with Same Category ----- */}
+
+<RelatdBlogs related={related} />
+
+
+
             <Footer />
             <Scrollbar />
         </Fragment>
     )
 };
 export default BlogSingle;
+
+
+
+BlogSingle.getInitialProps = async (context  ) => {
+  
+
+    //console.log('PARAMS ---->>11111', context?.query.slug);
+    const data = await  getDocBySlug("blog" ,context.query.slug);
+    
+
+    // ----related Blogs---
+
+    const blogs = await  getDocument("blog");
+    //console.log("BLLLOGSS" , blogs)
+    //blog?.id !== context?.query.slug
+    const filterByCat = blogs && blogs.filter((blog)=>{
+        
+      return  blog?.category === data.category && blog?.id !== context?.query.slug  })
+    
+  console.log('',filterByCat);
+  //console.log(data)
+  
+    return {
+       data:data,
+       related:filterByCat,
+    };
+  };
+  
