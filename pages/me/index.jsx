@@ -8,6 +8,8 @@ import HeaderTopbar from '../../components/HeaderTopbar/HeaderTopbar';
 export default
  function Home() {
   const { t } = useTranslation("common");
+
+ 
   return (
     <div>
 
@@ -16,6 +18,7 @@ export default
             </Head>
            <h1 className="text-3xl font-bold bg-green-200 underline">
             <HeaderTopbar />
+          
       Hello world! {t("home")}
     </h1>
     </div>
