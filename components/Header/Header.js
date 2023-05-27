@@ -122,7 +122,7 @@ const Header = (props) => {
                       <div>
                         <Link
                           onClick={ClickHandler}
-                          href={user ? `/profile/${user?.email}` : `/login`}
+                          href={user ? `/profile` : `/login`}
                         >
                           <img
                             className="w-[34px] h-[34px]"
@@ -139,7 +139,7 @@ const Header = (props) => {
                       {user ? (
                         <ul className="sub-menu">
                           <li>
-                            <Link onClick={ClickHandler} href="/project">
+                            <Link onClick={ClickHandler} href="/profile">
                               Profile
                             </Link>
                           </li>

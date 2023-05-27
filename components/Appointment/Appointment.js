@@ -34,7 +34,8 @@ const Appointment = () => {
                 email: '',
                 subject: '',
                 phone: '',
-                message: ''
+                message: '',
+                day:''
             })
         } else {
             validator.showMessages();

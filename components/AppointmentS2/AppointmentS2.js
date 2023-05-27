@@ -43,6 +43,7 @@ const AppointmentS2 = () => {
 
       userName: JSON.parse(localStorage.getItem("user"))?.full_name,
       bookedOn: moment().format("DD-MM-YYYY hh:mm A"),
+      day:forms.day,
       // problem,
       status: "pending",
     };
@@ -59,6 +60,7 @@ const AppointmentS2 = () => {
         phone: "",
         message: "",
         time: "",
+        day:"",
       });
 
 
@@ -186,6 +188,35 @@ const AppointmentS2 = () => {
                           <option value="12-1">12-1</option>
                           <option value="2-3">2-3</option>
                           <option value="3:15-4">3:15-4</option>
+                          {/* <option value='5-6'>Bathroom Plumbing</option>
+                                                    <option value='6:15-6:33'>Basement Plumbing</option> */}
+                        </select>
+                        {validator.message(
+                          "time",
+                          forms.subject,
+                          "required|alpha_space"
+                        )}
+                      </div>
+                    </div>
+
+
+{/* ------DAY---- */}
+
+<div className="col col-lg-6 col-12">
+                      <div className="form-group">
+                        <label>Select Day</label>
+                        <select
+                          className="form-control"
+                          onBlur={(e) => changeHandler(e)}
+                          onChange={(e) => changeHandler(e)}
+                          value={forms.day}
+                          type="text"
+                          name="day"
+                        >
+                          <option value="friday">friday</option>
+                          <option value="satarday">satarday</option>
+                          <option value="sunday">sunday</option>
+                          <option value="monday">monday</option>
                           {/* <option value='5-6'>Bathroom Plumbing</option>
                                                     <option value='6:15-6:33'>Basement Plumbing</option> */}
                         </select>

@@ -33,15 +33,22 @@ const SignUpPage = (props) => {
         e.preventDefault();
 
 
+        if (validator.allValid()) {
+
         const response = await CreateUser({
            ...value,
             role: "user",
           });
 
+        
+
+
+
+
           if (response.success) {
             toast.success(response.message);
             
-            if (validator.allValid()) {
+            // if (validator.allValid()) {
                 setValue({
                     email: '',
                     full_name: '',
@@ -51,14 +58,22 @@ const SignUpPage = (props) => {
                 validator.hideMessages();
                 toast.success('Registration Complete successfully!');
                 router.push('/login')
-          }
+
+
+
+        //   }
 
 
 
     
           
 
-        } else {
+        } 
+        
+    }
+        
+        
+        else {
             validator.showMessages();
             toast.error('Empty field is not allowed!');
         }
