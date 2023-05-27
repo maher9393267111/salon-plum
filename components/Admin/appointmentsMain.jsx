@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { useState } from 'react';
 import Loader from '../shared/loader';
 
-export default function AppointmentsMain({data}) {
+export default function AppointmentsMain({data ,isProfile=false}) {
 
 
 const [loading,setLoading] =useState(false)
@@ -61,13 +61,19 @@ const [loading,setLoading] =useState(false)
           title: "Status",
           dataIndex: "status",
         },
+
+      
         {
+
+
           title: "Action",
           dataIndex: "action",
+          
+        
           render: (text, record) => {
             //const user = JSON.parse(localStorage.getItem("user"));
     //&& user.role === "doctor"
-            if (record.status === "pending" ) {
+            if (record.status === "pending" && !isProfile ) {
               return (
                 <div className="flex gap-1">
                   <span className="underline cursor-pointer"
@@ -78,9 +84,22 @@ const [loading,setLoading] =useState(false)
                   >Approve</span>
                 </div>
               );
+
+
+
+
+
             }
           },
+ 
+
+
         },
+      
+
+
+
+
       ];
 
 
@@ -88,17 +107,46 @@ const [loading,setLoading] =useState(false)
 
 
 
+
+
+
+
+
   return (
-    <AdminLayout>
+    
+
+<div>
+
+{isProfile === true  ?
+ <div>
+ <div>
+
+
+<Table columns={columns} dataSource={data || []} />
+
+</div>
+</div> : 
+
+<div>
+
+<AdminLayout>
 
    
-    <div>
+<Table columns={columns} dataSource={data || []} />
 
+</AdminLayout>
+  
+  </div>
+  
+  }
 
-    <Table columns={columns} dataSource={data || []} />
+   
+
 
     </div>
 
-    </AdminLayout>
   )
+
+  
+  
 }
