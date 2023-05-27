@@ -58,6 +58,9 @@ const ContactForm = () => {
     return (
         <form onSubmit={(e) => submitHandler(e)} className="contact-validation-active" >
             <div className="row">
+
+
+     
                 <div className="col col-lg-6 col-12">
                     <div className="form-field">
                         <input

@@ -1169,7 +1169,7 @@
 		}
 
 		.mobail-menu button {
-			background-color: $theme-primary-color;
+			background-color:  black;//$theme-primary-color;
 			width: 40px;
 			height: 35px;
 			border: 0;
@@ -1267,7 +1267,7 @@
 			z-index: 99;
 			background: none;
 			text-align: center;
-			color: $white;
+			color: black; // $white;
 			border: 0;
 			text-align: center;
 			margin-left: auto;
@@ -1277,7 +1277,8 @@
 			width: 40px;
 			height: 40px;
 			line-height: 40px;
-			border: 1px solid $white;
+			border: 1px solid black; //$white;
+			cursor: pointer;
 		}
 
 		/* class for show hide navigation */

@@ -13,6 +13,7 @@ import { store, persistor } from "../store/index";
 import { Provider } from "react-redux";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import WhatsappIcon from '../components/scrollbar/whatsapp'
 
 //import { connect } from "react-redux";
 //import { LoadingAction } from "../store/actions/action";
@@ -34,6 +35,7 @@ function MyApp({ Component, pageProps ,props }) {
         <StateContextProvider>
         <Component {...pageProps} />
         <ToastContainer />
+        <WhatsappIcon/>
         </StateContextProvider>
       </PersistGate>
     </Provider>
