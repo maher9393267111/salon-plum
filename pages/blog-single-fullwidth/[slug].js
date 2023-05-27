@@ -19,6 +19,8 @@ const submitHandler = (e) => {
 const BlogSingle = ({data , related}) => {
     const router = useRouter()
 
+    const { locale, locales, asPath } = useRouter();
+
     const BlogDetails = blogs.find(item => item.slug === router.query.slug)
 
 
@@ -52,7 +54,7 @@ const BlogSingle = ({data , related}) => {
                                         {/* {BlogDetails?.title} */}
                                     </h2>
 
-<p dir='rtl'>
+<p dir={locale === 'sv' ? 'lft' : 'rtl'}>
 {parse(data?.description)}
 </p>
 

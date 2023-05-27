@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import SimpleReactValidator from 'simple-react-validator';
-
+import {toast} from 'react-toastify'
+import axios from 'axios';
 
 const ContactForm = () => {
 
@@ -23,20 +24,35 @@ const ContactForm = () => {
         }
     };
 
-    const submitHandler = e => {
+    const submitHandler = async(e) => {
         e.preventDefault();
-        if (validator.allValid()) {
-            validator.hideMessages();
-            setForms({
-                name: '',
-                email: '',
-                subject: '',
-                phone: '',
-                message: ''
-            })
-        } else {
-            validator.showMessages();
+
+
+
+        const res = await axios.post('/api/sendEmail', forms)
+
+        console.log('response' , res?.data);
+        
+        if(res.data?.message){
+        toast.success(res.data?.message);
+        
+        
         }
+        
+        else{
+          toast.error(res.data?.message);
+          validator.showMessages();
+        }
+
+
+
+
+      
+
+        // } 
+        // else {
+        //     validator.showMessages();
+        // }
     };
 
     return (
@@ -108,7 +124,7 @@ const ContactForm = () => {
                 </div>
             </div>
             <div className="submit-area">
-                <button type="submit" className="theme-btn">Submit Now</button>
+                <button type="submit" className=" bg-blue-700 font-bold text-white p-4 rounded-2xl">Submit Now</button>
             </div>
         </form >
     )

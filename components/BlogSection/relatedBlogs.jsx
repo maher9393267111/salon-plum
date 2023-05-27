@@ -22,6 +22,18 @@ const marks = {
 
 
 const Related = ({related}) => (
+
+
+<div className=' mt-6 mb-4'>
+
+
+  {/* -------title---- */}
+
+<div>
+  <h2 className=' text-3xl font-bold text-center !mb-[40px]  !m-auto'>Related Posts </h2>
+</div>
+
+
   <Carousel autoplay
   dots={true}
   dotPosition='left'
@@ -41,7 +53,7 @@ const Related = ({related}) => (
                     <div className='content my-4  w-full'>
 
 <h2 className=' font-bold text-3xl'>{item?.title}</h2>
-<p className='cat mt-2 text-xl  bg-blue-500 m-auto text-white font-bold rounded-3xl mt-2 w-[55px] '>{item?.category}</p>
+<p className='cat text-xl  bg-blue-500 m-auto text-white font-bold rounded-3xl mt-2 w-[55px] '>{item?.category}</p>
 
 
                     </div>
@@ -52,5 +64,7 @@ const Related = ({related}) => (
         })
     }
   </Carousel>
+
+  </div>
 );
 export default Related;

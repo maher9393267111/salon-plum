@@ -1258,7 +1258,8 @@ a:hover {
 --------------------------------------------------------------*/
 /*-- 2.1 topbar --*/
 .topbar {
-  background: #253041;
+  background: black;
+  /* background: #253041; */
 }
 
 @media (max-width: 991px) {

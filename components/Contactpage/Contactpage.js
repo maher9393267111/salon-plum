@@ -5,7 +5,7 @@ import ContactForm from '../ContactFrom/ContactForm'
 const Contactpage = () => {
 
     return(
-        <section className="wpo-contact-pg-section section-padding">
+        <section className="wpo-contact-pg-section section-padding !bg-[rgb(249,234,230)]">
             <div className="container">
                 <div className="row">
                     <div className="col col-lg-10 offset-lg-1">
