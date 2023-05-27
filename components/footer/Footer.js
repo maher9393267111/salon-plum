@@ -27,10 +27,10 @@ const Footer = (props) => {
                     alt="blog"
                   />
                 </div>
-                <p>
+                {/* <p>
                   Management Plumbing includes a broad range of activities, and
                   the many firms and their members often define these practices.
-                </p>
+                </p> */}
                 <ul>
                   <li>
                     <Link onClick={ClickHandler} href="/">
@@ -63,15 +63,16 @@ const Footer = (props) => {
                 <div className="contact-ft">
                   <ul>
                     <li>
-                      <i className="fi flaticon-location"></i>7 Green Lake
-                      Street Crawfordsville, IN 47933
+                      <i className="fi flaticon-location"></i>
+                      7 Green Lake
+                      Street Crawfordsville, IN 47933 ,Swedeen
                     </li>
                     <li>
-                      <i className="fi flaticon-phone-call"></i>+1 800 123 456
-                      789
+                      <i className="fi flaticon-phone-call"></i>
+                      0700773332 
                     </li>
                     <li>
-                      <i className="fi flaticon-send"></i>NuraClinic@gmail.com
+                      <i className="fi flaticon-send"></i>NouraBeautyCenter@gmail.com
                     </li>
                   </ul>
                 </div>
@@ -84,14 +85,14 @@ const Footer = (props) => {
                 </div>
                 <ul>
                   {Services.slice(0, 5).map((service, srv) => (
-                    <li key={srv}>
-                      <Link
+                    <li className=" cursor-pointer" key={srv}>
+                      {/* <Link
                         onClick={ClickHandler}
                         href="/service/[slug]"
                         as={`/service/${service.slug}`}
-                      >
+                      > */}
                         {service.sTitle}
-                      </Link>
+                      {/* </Link> */}
                     </li>
                   ))}
                 </ul>
@@ -101,18 +102,18 @@ const Footer = (props) => {
             <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
               <div className="widget instagram">
                 <div className="widget-title">
-                  <h3>Projects</h3>
+                  <h3>images</h3>
                 </div>
                 <ul className="d-flex">
                   {Projects.slice(0, 6).map((project, srv) => (
                     <li key={srv}>
-                      <Link
+                      {/* <Link
                         onClick={ClickHandler}
                         href="/project/[slug]"
                         as={`/project/${project.slug}`}
-                      >
+                      > */}
                         <img src={project.pImg} alt="" />
-                      </Link>
+                      {/* </Link> */}
                     </li>
                   ))}
                 </ul>
@@ -127,7 +128,7 @@ const Footer = (props) => {
             <div className="col col-xs-12">
               <p className="copyright">
                 {" "}
-                Copyright &copy; 2023 NuraClinic {" "}
+                Copyright &copy; 2023 NouraBeautyCenter {" "}
                 <Link onClick={ClickHandler} href="/">
                   {/* wpOceans */}
                 </Link>

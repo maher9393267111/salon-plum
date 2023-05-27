@@ -27,7 +27,7 @@ async function sendEmail({ name, email ,status }) {
   const emailOptions = {
     form: `${name}`,
     to: email,
-    subject: `notification message from nuraClinic to ${name}`,
+    subject: `notification message from NouraBeautyCenter to ${name}`,
     html: `<h2>Dear  ${name}
     
     </br>
