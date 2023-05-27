@@ -20,7 +20,7 @@ const user = JSON.parse(localStorage.getItem("user"));
           const response = await GetUserAppointments(user.id);
           setLoader(false)
           if (response.success) {
-            console.log(response.data);
+          //  console.log(response.data);
             setBookedSlots(response.data);
           } else {
             toast.error(response.message);

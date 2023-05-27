@@ -14,7 +14,7 @@ const { locale, locales, asPath } = useRouter();
   };
 
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log(user);
+  //console.log(user);
 
   const ClickHandler = () => {
     window.scrollTo(10, 0);
@@ -49,8 +49,8 @@ const { locale, locales, asPath } = useRouter();
                     className="navbar-brand "
                   >
                     <img
-                      className=" !h-[80px] !w-[80px] relative top-[5px] !rounded-[50%] "
-                      src="/images/my/log-dark.jpg"
+                      className=" !h-[85px] !w-[85px] relative top-[9px] !rounded-[20%] object-cover "
+                      src="/images/my/3.jpg"
                       // '/images/logo.png'
                       alt=""
                     />

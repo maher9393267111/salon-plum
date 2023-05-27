@@ -35,7 +35,7 @@ const data ={
 
 const res = await axios.post('/api/sendNotification', data)
 
-console.log('response' , res?.data);
+//console.log('response' , res?.data);
 
 // if(res.data?.message){
 // toast.success(res.data?.message);

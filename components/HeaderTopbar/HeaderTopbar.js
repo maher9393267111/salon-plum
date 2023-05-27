@@ -21,15 +21,15 @@ const HeaderTopbar = () => {
     
     const { i18n ,t } = useTranslation("home");
     const { locale, locales, asPath } = useRouter();
-console.log('locale' ,locale)
+//console.log('locale' ,locale)
     const currentLocale = i18n.language;
-    console.log('cureenttt' ,currentLocale);
+    //console.log('cureenttt' ,currentLocale);
 
     const handleChange = (event) => {
-        console.log('language' , event.target.value)
+       // console.log('language' , event.target.value)
         setLanguage(event.target.value);
         i18n.language === language 
-        console.log(i18n.language, '???')
+        //console.log(i18n.language, '???')
       };
 
       

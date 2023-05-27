@@ -22,7 +22,7 @@ export default function Appointments({data}) {
 
 Appointments.getInitialProps = async (context  ) => {
   
-  console.log('Query', context?.query?.country)
+ // console.log('Query', context?.query?.country)
   const data = await getDocument("appointments");
   
 

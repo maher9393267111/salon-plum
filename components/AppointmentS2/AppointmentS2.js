@@ -9,7 +9,7 @@ const AppointmentS2 = () => {
   const { locale, locales, asPath } = useRouter();
   const user = JSON.parse(localStorage.getItem("user"));
   const router = useRouter();
-  console.log(locale);
+  //console.log(locale);
 
   const [forms, setForms] = useState({
     name: "",

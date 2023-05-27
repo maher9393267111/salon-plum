@@ -20,8 +20,8 @@ const Footer = (props) => {
               <div className="widget about-widget">
                 <div className="logo widget-title">
                   <img
-                  className=" w-[80px] h-[80px] rounded-[50%] "
-                    src="/images/my/log-dark.jpg"
+                  className=" w-[85px] h-[85px] rounded-[20%] "
+                    src="/images/my/3.jpg"
                     // '/images/logo2.png'
 
                     alt="blog"

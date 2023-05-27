@@ -18,6 +18,7 @@ specifiers:
   eslint-config-next: ^13.0.7
   firebase: ^9.22.0
   formik: ^2.2.9
+  framer-motion: ^10.12.16
   html-react-parser: ^3.0.16
   i18next: ^22.5.0
   i18next-browser-languagedetector: ^7.0.1
@@ -36,6 +37,7 @@ specifiers:
   react-dom: ^18.2.0
   react-fontawesome: ^1.7.1
   react-i18next: ^12.3.1
+  react-intersection-observer: ^9.4.3
   react-medium-image-zoom: ^4.3.4
   react-owl-carousel: ^2.3.1
   react-photoswipe-gallery: ^2.2.2
@@ -79,6 +81,7 @@ dependencies:
   eslint-config-next: 13.4.3
   firebase: 9.22.0
   formik: 2.2.9_react@18.2.0
+  framer-motion: 10.12.16_biqbaboplfbrettd7655fr4n2y
   html-react-parser: 3.0.16_react@18.2.0
   i18next: 22.5.0
   i18next-browser-languagedetector: 7.0.1
@@ -96,6 +99,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-fontawesome: 1.7.1_react@18.2.0
   react-i18next: 12.3.1_dje3x67x7taogjmwoynufb4r2i
+  react-intersection-observer: 9.4.3_react@18.2.0
   react-medium-image-zoom: 4.4.3_biqbaboplfbrettd7655fr4n2y
   react-owl-carousel: 2.3.3_react@18.2.0
   react-photoswipe-gallery: 2.2.7_react@18.2.0
@@ -355,11 +359,24 @@ packages:
     resolution: {integrity: sha512-gJB6HLm5rYwSLI6PQa+X1t5CFGrv1J1TWG+sOyMCeKz2ojaj6Fnl/rZEspogG+cvqbt4AE/2eIyD2QfLKTBNlQ==}
     dev: false
 
+  /@emotion/is-prop-valid/0.8.8:
+    resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
+    requiresBuild: true
+    dependencies:
+      '@emotion/memoize': 0.7.4
+    dev: false
+    optional: true
+
   /@emotion/is-prop-valid/1.2.1:
     resolution: {integrity: sha512-61Mf7Ufx4aDxx1xlDeOm8aFFigGHE4z+0sKCa+IHCeZKiyP9RLD0Mmx7m8b9/Cf37f7NAvQOOJAbQQGVr5uERw==}
     dependencies:
       '@emotion/memoize': 0.8.1
     dev: false
+
+  /@emotion/memoize/0.7.4:
+    resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    dev: false
+    optional: true
 
   /@emotion/memoize/0.8.1:
     resolution: {integrity: sha512-W2P2c/VRW1/1tLox0mVUalvnWXxavmv/Oum2aPsRcoDJuob75FC3Y8FbpfLwUegRcxINtGUMPq0tFCvYNTBXNA==}
@@ -2946,6 +2963,24 @@ packages:
   /fraction.js/4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
+
+  /framer-motion/10.12.16_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-w/SfWEIWJkYSgRHYBmln7EhcNo31ao8Xexol8lGXf1pR/tlnBtf1HcxoUmEiEh6pacB4/geku5ami53AAQWHMQ==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      tslib: 2.5.2
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+    dev: false
 
   /fs-constants/1.0.0:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}

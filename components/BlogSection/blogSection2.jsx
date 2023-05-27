@@ -3,7 +3,9 @@ import blogs from '../../api/blogs'
 import Link from "next/link";
 import SectionTitle from "../SectionTitle";
 import { useRouter } from "next/router";
-
+import { useInViewAnimation } from "@/utils/animation/useInViewAnimation";
+import { motion } from "framer-motion";
+import { parent, slideFromTop ,slideFromLeft , slideFromRight} from "@/utils/animation/animations";
 
 const ClickHandler = () => {
     window.scrollTo(10, 0);
@@ -15,6 +17,7 @@ const ClickHandler = () => {
 const BlogSection2 = ({data}) => {
 
     const { locale, locales, asPath } = useRouter();
+    const { ref, controls, inView } = useInViewAnimation({delay: 100});
 // ----split category &&---
 
 const splitCat =(cat)=>{
@@ -38,8 +41,22 @@ const splitCat =(cat)=>{
     
 
     return (
-        <section className="wpo-blog-section section-padding  bg-[rgb(249,234,230)]">
-            <div className="container">
+        <section
+        
+        ref={ref}
+        
+        className="wpo-blog-section section-padding  bg-[rgb(249,234,230)]">
+
+{inView && (
+            <motion.div
+            
+            as={motion.div}
+            initial="hidden"
+            variants={slideFromRight}
+            animate={controls}
+            custom={false}
+
+            className="container">
                 <div className="row align-items-center justify-content-center">
                     <div className="col-lg-6 rounded-s-xl">
                          <SectionTitle 
@@ -92,7 +109,11 @@ const splitCat =(cat)=>{
                         ))}
                     </div>
                 </div>
-            </div>
+            </motion.div>
+
+ )}
+
+
         </section>
     );
 }

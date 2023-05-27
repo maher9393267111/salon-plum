@@ -12,7 +12,9 @@ import Footer from '../components/footer/Footer';
 import Testimonial from '../components/Testimonial/Testimonial';
 import BlogSection from '../components/BlogSection/BlogSection';
 import BlogSection2 from '../components/BlogSection/blogSection2';
-
+import { useInViewAnimation } from "@/utils/animation/useInViewAnimation";
+import { motion } from "framer-motion";
+import { parent, slideFromTop } from "@/utils/animation/animations";
 
 
 
@@ -20,16 +22,30 @@ import getDocument from '@/utils/firebase/getData';
 
 const HomePage2 = ({data}) => {
 
-  
+    // const { ref, controls, inView } = useInViewAnimation();
 
 
     return (
-        <div>
+        <div
+        // ref={ref}
+        >
        
             <Navbar topbarBlock={'wpo-header-style-2'} Logo={'/images/logo.png'} />
             <Hero2 />
             
-            <BlogSection2  data={data}/>
+
+
+          
+            <BlogSection2
+             
+                
+                data={data}/>
+
+
+
+
+
+
             {/* <Features fClass={'wpo-features-section-s2'}/> */}
             {/* <ServiceSection2 />
             <FunFact2 />

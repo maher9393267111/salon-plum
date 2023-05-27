@@ -10,20 +10,25 @@ import { getDocBySlug} from '@/utils/firebase/getData';
 import getDocument from '@/utils/firebase/getData';
 import parse from 'html-react-parser';
 import RelatdBlogs from '../../components/BlogSection/relatedBlogs'
-
+import { useInViewAnimation } from "@/utils/animation/useInViewAnimation";
+import { motion } from "framer-motion";
+import { parent, slideFromTop } from "@/utils/animation/animations";
 const submitHandler = (e) => {
     e.preventDefault()
 }
 
 
+
+
 const BlogSingle = ({data , related}) => {
     const router = useRouter()
+    const { ref, controls, inView } = useInViewAnimation();
 
     const { locale, locales, asPath } = useRouter();
 
     const BlogDetails = blogs.find(item => item.slug === router.query.slug)
 
-console.log('related' ,related)
+//console.log('related' ,related)
 
 
 
@@ -33,8 +38,20 @@ console.log('related' ,related)
             <PageTitle pageTitle={data?.title}
             // {BlogDetails?.title} 
             pagesub="blog" />
-            <section className="wpo-blog-single-section section-padding">
-                <div className="container">
+            <section
+              ref={ref}
+            
+            className="wpo-blog-single-section section-padding">
+
+
+{/* {inView && ( <> */}
+
+                <div
+                     animate={controls}
+                     initial="hidden"
+                     variants={parent}  
+                    
+                    className="container">
                     <div className="row">
                         <div className="col col-lg-10 offset-lg-1">
                             <div className="wpo-blog-content">
@@ -59,7 +76,7 @@ console.log('related' ,related)
                                     </h2>
 
 <p dir={locale === 'sv' ? 'lft' : 'rtl'}>
-{parse(data?.description)}
+{parse(locale === 'sv' ?  data?.description :data?.descriptionAr)}
 </p>
 
 
@@ -263,6 +280,10 @@ console.log('related' ,related)
                         </div>
                     </div>
                 </div>
+
+
+                {/* </> )} */}
+
             </section>
 
 {/* -------related Blogs with Same Category ----- */}

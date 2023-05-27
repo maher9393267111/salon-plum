@@ -12,7 +12,7 @@ import {
   export const BookAppointment = async (payload) => {
     try {
 
-        console.log(payload)
+       // console.log(payload)
       await addDoc(collection(firestoreDatabase, "appointments"), payload);
       return { success: true, message: "Appointment booked successfully" };
     } catch (error) {
