@@ -23,6 +23,9 @@ const BlogSingle = ({data , related}) => {
 
     const BlogDetails = blogs.find(item => item.slug === router.query.slug)
 
+console.log('related' ,related)
+
+
 
     return (
         <Fragment>
@@ -35,10 +38,11 @@ const BlogSingle = ({data , related}) => {
                     <div className="row">
                         <div className="col col-lg-10 offset-lg-1">
                             <div className="wpo-blog-content">
-                                <div className="post format-standard-image">
-                                    <div className="entry-media">
+                                <div className="post format-standard-image container ">
+                                    <div className="entry-media flex   !justify-center ">
                                         <img src={data?.image}
-                                        //  "https://raneemskin.nl/wp-content/uploads/2021/10/cosmetics-page-title.jpg"
+                                        className=' !w-[50%] !h-[50%] object-cover'
+                                    
                                         //    {BlogDetails?.blogSingleImg}
                                          alt="" />
                                     </div>
@@ -262,7 +266,7 @@ const BlogSingle = ({data , related}) => {
             </section>
 
 {/* -------related Blogs with Same Category ----- */}
-
+hereeee
 <RelatdBlogs related={related} />
 
 
@@ -292,7 +296,7 @@ BlogSingle.getInitialProps = async (context  ) => {
         
       return  blog?.category === data.category && blog?.id !== context?.query.slug  })
     
-  console.log('',filterByCat);
+  console.log('RELATEDDDD',filterByCat);
   //console.log(data)
   
     return {

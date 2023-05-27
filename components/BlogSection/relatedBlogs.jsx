@@ -1,28 +1,63 @@
 import { Carousel } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-const contentStyle = {
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
+import Slider from "react-slick";
 
 
-const marks = {
-    10: {
-      style: { color: 'red' },
-      label: (
-        <div>
-          10
-        </div>
-      )
-    }
-  }
 
 
 const Related = ({related}) => { 
+
+
+  const settings = {
+    dots: true,
+    arrows: false,
+    speed: 1000,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    responsive: [
+        {
+            breakpoint: 1500,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 991,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
+};
+
+
+
+
 
 
   const { locale, locales, asPath } = useRouter();
@@ -47,57 +82,43 @@ const Related = ({related}) => {
 
 
 
+return (
+
+<div className=' my-[40px]'>
+
+<Slider {...settings}>
+                                {related.map((tesmnl, tsm) => (
+                                    <div className="testimonials-item ml-2" key={tsm}>
+                                       
+                                        <div className="testimonials-item-bottom">
+                                            <div className="testimonials-item-bottom-author">
+                                                <img src={tesmnl?.image} alt="" />
+                                            </div>
+                                            <div className="testimonials-item-bottom-author-text relative">
+                                                <h3 className='  font-semibold my-2 ml-6 '>{tesmnl.title}</h3>
+                                                <span className=' font-semibold my-2 ml-6 bg-[rgb(251,186,55)] min-w-[75px] hover:bg-[rgb(251,166,55)] transition-all absolute text-center text-xl  duration-300 text-white rounded-xl p-2 top-[-5rem] left-3  cursor-pointer  '>{splitCat(tesmnl.category)}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </Slider>
 
 
 
-<div className=' mt-6 mb-4'>
 
 
-  {/* -------title---- */}
-
-<div>
-  <h2 className=' text-3xl font-bold text-center !mb-[40px]  !m-auto'>Related Posts </h2>
 </div>
 
 
-  <Carousel autoplay
-  dots={true}
-  dotPosition='left'
-
-  max={100} defaultValue={30} marks={marks}
-  
-  >
-    {
-        related?.map((item)=>{
-            return (
-                <div className=' !w-full text-center'>
-                    <Link
-                    className=' w-full'
-                    href={`/blog-single-fullwidth/${item?.id}`}>
-                    <img className=' max-h-[300px] text-cemter w-full  object-cover ' src={item?.image} alt="" />
-
-                    <div className='content my-4  w-full'>
-
-<h2 className=' font-bold text-3xl'>{item?.title}</h2>
-<p className='cat text-xl  bg-blue-500 m-auto text-white font-bold rounded-3xl mt-2 w-[55px] '>
-  {/* {item?.category} */}
-  
-  {splitCat(item?.category)}
-  
-  </p>
 
 
-                    </div>
-                    </Link>
-                </div>
-
-            )
-        })
-    }
-  </Carousel>
-
-  </div>
+)
 }
-// )
+
 ;
 export default Related;
+
+
+
+
+{/*  */}
