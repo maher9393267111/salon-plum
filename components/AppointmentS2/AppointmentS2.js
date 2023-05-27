@@ -196,12 +196,15 @@ const AppointmentS2 = () => {
                           type="text"
                           name="time"
                         >
+                          <option value="11-12">10-11</option>
                           <option value="11-12">11-12</option>
                           <option value="12-1">12-1</option>
+                          <option value="1-2">1-2</option>
                           <option value="2-3">2-3</option>
-                          <option value="3:15-4">3:15-4</option>
-                          {/* <option value='5-6'>Bathroom Plumbing</option>
-                                                    <option value='6:15-6:33'>Basement Plumbing</option> */}
+                          <option value="3-4">3-4</option>
+                          <option value="4-5">4-5</option>
+                          <option value="5-6">5-6</option>
+                       
                         </select>
                         {validator.message(
                           "time",
@@ -224,12 +227,13 @@ const AppointmentS2 = () => {
                           type="text"
                           name="day"
                         >
-                          <option value="friday">friday</option>
-                          <option value="satarday">satarday</option>
-                          <option value="sunday">sunday</option>
-                          <option value="monday">monday</option>
-                          {/* <option value='5-6'>Bathroom Plumbing</option>
-                                                    <option value='6:15-6:33'>Basement Plumbing</option> */}
+                          <option value={locale === 'sv' ? 'måndag' : 'الاثنين'}>{locale === 'sv' ? 'måndag' : 'الاثنين'}</option>
+                          <option  value={locale === 'sv' ? 'tisdag' : 'الثلاثاء '}>{locale === 'sv' ? 'tisdag' : 'الثلاثاء '}</option>
+                          <option  value={locale === 'sv' ? 'onsdag' : 'الأربعاء'}>{locale === 'sv' ? 'onsdag' : 'الأربعاء'}</option>
+                          <option  value={locale === 'sv' ? 'torsdag' : 'الخميس '}>{locale === 'sv' ? 'torsdag' : 'الخميس '}</option>
+                          <option  value={locale === 'sv' ? 'fredag' : 'الجمعة'  }>{locale === 'sv' ? 'fredag' : 'الجمعة'  }</option>
+                          <option  value={locale === 'sv' ? 'ördag' : 'السبت'    }>{locale === 'sv' ? 'ördag' : 'السبت'    }</option>
+                          
                         </select>
                         {validator.message(
                           "time",
