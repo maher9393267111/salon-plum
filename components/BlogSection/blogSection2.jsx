@@ -14,8 +14,29 @@ const ClickHandler = () => {
 
 const BlogSection2 = ({data}) => {
 
+    const { locale, locales, asPath } = useRouter();
+// ----split category &&---
+
+const splitCat =(cat)=>{
+
+    const parts = cat.split("&&");
+    const swedishText = parts[0]; // "cat_one"
+    const arabicText = parts[1]; // "arabicCat_one"
+
+    if (locale === "sv") {
+        return swedishText;
+      } else {
+       return arabicText;
+      }
+
+
+}
+
+
+
+
     
-const { locale, locales, asPath } = useRouter();
+
     return (
         <section className="wpo-blog-section section-padding  bg-[rgb(249,234,230)]">
             <div className="container">
@@ -44,7 +65,14 @@ const { locale, locales, asPath } = useRouter();
 {/* ---Category btn---- */}
 <div className="relative">
 
-    <p className=" absolute bg-[rgb(251,186,55)] hover:bg-[rgb(251,166,55)] transition-all font-semibold  duration-300 text-white rounded-xl p-2 top-[-5rem] left-3  cursor-pointer"> {blog?.category}</p>
+    <p className=" absolute bg-[rgb(251,186,55)] min-w-[75px] hover:bg-[rgb(251,166,55)] transition-all font-semibold  duration-300 text-white rounded-xl p-2 top-[-5rem] left-3  cursor-pointer"> 
+
+
+
+    {/* {blog?.category} */}
+   { splitCat(blog?.category)} 
+    
+    </p>
 </div>
 
 

@@ -10,6 +10,7 @@ import { useContext, useEffect, useState } from "react";
 import Loader from "../shared/loader";
 import BlogForm from "./BlogForm";
 import SideMenu from "./SideMenu";
+import { toast } from 'react-toastify';
 
 function UpdateBlog() {
     const { setAlert, user, pageLoading = true } = useContext(StateContext);
@@ -104,6 +105,7 @@ function UpdateBlog() {
                 }
             }
             await updateDoc(doc(db, "blog", id), data);
+            toast.success('Blog updated successfully')
             setAlert({
                 isShow: true,
                 duration: 3000,
