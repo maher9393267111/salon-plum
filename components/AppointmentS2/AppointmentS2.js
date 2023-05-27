@@ -3,11 +3,12 @@ import SimpleReactValidator from "simple-react-validator";
 import { useRouter } from "next/router";
 import { BookAppointment } from "../../utils/firebase/apiCalls/appointments";
 import moment from "moment";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 
 const AppointmentS2 = () => {
   const { locale, locales, asPath } = useRouter();
-
+  const user = JSON.parse(localStorage.getItem("user"));
+  const router = useRouter();
   console.log(locale);
 
   const [forms, setForms] = useState({
@@ -35,40 +36,48 @@ const AppointmentS2 = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    const payload = {
-      //doctorId: doctor.id,
-      userId: JSON.parse(localStorage.getItem("user")).id,
-      time: forms.time,
-      service: forms.subject,
+    if (user?.id) {
+      const payload = {
+        //doctorId: doctor.id,
+        userId: JSON.parse(localStorage.getItem("user")).id,
+        time: forms.time,
+        service: forms.subject,
 
-      userName: JSON.parse(localStorage.getItem("user"))?.full_name,
-      bookedOn: moment().format("DD-MM-YYYY hh:mm A"),
-      day:forms.day,
-      // problem,
-      status: "pending",
-    };
-    const response = await BookAppointment(payload);
+        userName: JSON.parse(localStorage.getItem("user"))?.full_name,
+        bookedOn: moment().format("DD-MM-YYYY hh:mm A"),
+        day: forms.day,
+        // problem,
+        status: "pending",
+      };
+      const response = await BookAppointment(payload);
 
-    if (response.success) {
-    if (validator.allValid()) {
-      validator.hideMessages();
-      toast.success(response.message);
-      setForms({
-        name: "",
-        email: "",
-        subject: "",
-        phone: "",
-        message: "",
-        time: "",
-        day:"",
-      });
-
-
-    } 
-}
-    else {
-      validator.showMessages();
+      if (response.success) {
+        if (validator.allValid()) {
+          validator.hideMessages();
+          toast.success(response.message);
+          setForms({
+            name: "",
+            email: "",
+            subject: "",
+            phone: "",
+            message: "",
+            time: "",
+            day: "",
+          });
+        }
+      } else {
+        validator.showMessages();
+      }
     }
+
+    // }
+    else {
+      goLogin();
+    }
+  };
+
+  const goLogin = () => {
+    router.push("/login");
   };
 
   return (
@@ -79,14 +88,17 @@ const AppointmentS2 = () => {
             <div className="col-lg-8 col-md-12 col-12">
               <div className="wpo-contact-form-area">
                 <div className="wpo-section-title-s2">
-                  <span>ONLINE BOOKING</span>
+                  {/* <span>ONLINE BOOKING</span> */}
                   <h2>
-                    {locale === "ar" ? "ar" : locale === "en" ? "en" : "sv"}
-                    Online Booking For Appointments.
+                    {/* {locale === "ar" ? "ar" : locale === "en" ? "en" : "sv"} */}
+                    {/* Online Booking For Appointments. */}
+                    {locale === "sv" ? "Boka din tid nu" : "احجز موعدك الآن"}
                   </h2>
                 </div>
                 <form
-                  onSubmit={(e) => submitHandler(e)}
+                  onSubmit={(e) => {
+                    submitHandler(e);
+                  }}
                   className="contact-validation-active"
                 >
                   <div className="row">
@@ -199,10 +211,9 @@ const AppointmentS2 = () => {
                       </div>
                     </div>
 
+                    {/* ------DAY---- */}
 
-{/* ------DAY---- */}
-
-<div className="col col-lg-6 col-12">
+                    <div className="col col-lg-6 col-12">
                       <div className="form-group">
                         <label>Select Day</label>
                         <select
@@ -251,8 +262,13 @@ const AppointmentS2 = () => {
                     </div>
                   </div>
                   <div className="submit-area">
-                    <button type="submit" className="theme-btn">
-                      GET AN APPOINMENT
+                    <button
+                      type="submit"
+                      className=" text-white   hover:bg-blue-400  transition-all   duration-500  bg-blue-600 text-xl p-3  min-w-[200px] rounded-lg"
+                    >
+                      {/* GET AN APPOINMENT */}
+
+                      {locale === 'sv' ? 'bokning' : 'الحجز'}
                     </button>
                   </div>
                 </form>

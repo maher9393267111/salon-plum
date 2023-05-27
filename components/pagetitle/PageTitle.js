@@ -1,7 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const PageTitle = (props) => {
+    const { locale, locales, asPath } = useRouter();
+
     return(
         <section className="wpo-page-title">
             <div className="container">
@@ -10,7 +13,10 @@ const PageTitle = (props) => {
                         <div className="wpo-breadcumb-wrap">
                             <h2>{props.pageTitle}</h2>
                             <ol className="wpo-breadcumb-wrap">
-                                <li><Link href="/home">Home</Link></li>
+                                <li><Link href="/home">
+                                {locale === 'sv' ? 'Main' : 'الرئيسية'}
+                                    {/* Home */}
+                                </Link></li>
                                 <li><span>{props.pagesub}</span></li>
                             </ol>
                         </div>

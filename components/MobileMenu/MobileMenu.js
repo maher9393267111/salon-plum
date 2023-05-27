@@ -3,6 +3,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Collapse from "@mui/material/Collapse";
 import Link from "next/link";
+import { useRouter } from 'next/router';
 
 const menus = [
     {
@@ -198,7 +199,7 @@ const MobileMenu = () => {
 
     const [openId, setOpenId] = useState(0);
     const [menuActive, setMenuState] = useState(false);
-
+    const { locale, locales, asPath } = useRouter();
     const ClickHandler = () => {
         window.scrollTo(10, 0);
     }
@@ -218,7 +219,10 @@ const MobileMenu = () => {
                                                                     href='/home2'>
                                                                     
                                                                     
-                                                                    Home</Link>
+                                                                    {/* Home */}
+                                                                    {locale === 'sv' ? 'personlig sida' : 'الصفحة الشخصية'}
+                                                                    
+                                                                    </Link>
                                                             </ListItem>
 
 
@@ -230,10 +234,22 @@ const MobileMenu = () => {
                                                               <Link className=' text-xl block  cursor-pointer font-bold text-center ' onClick={ClickHandler}
                                                                   href='/contact'>
                                                                   
-                                                                  
-                                                                  Contact</Link>
+                                                                  {locale === 'sv' ? 'kommunikation' : 'تواصل '}
+                                                                  {/* Contact */}
+                                                                  </Link>
                                                           </ListItem>
 
+
+                                                          <ListItem className='  !text-black flex !justify-center'
+                                                           
+                                                           >
+                                                              <Link className=' text-xl block  cursor-pointer font-bold text-center ' onClick={ClickHandler}
+                                                                  href='/Appointment'>
+                                                                  
+                                                                  {locale === 'sv' ? 'Tidsbokning' : 'حجز موعد'}
+                                                                  {/* Apointment */}
+                                                                  </Link>
+                                                          </ListItem>
 
 
                 {/* <ul className="responsivemenu">

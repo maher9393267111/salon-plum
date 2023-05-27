@@ -45,7 +45,7 @@ const [language, setLanguage] = useState(currentLocale);
                         <div className="contact-intro">
                             <ul>
                                 <li><i><img src='/images/icon/1.png' alt=""/></i>Sun - Fri   ||   8:00 - 7:00</li>
-                             {locale}
+                             {/* {locale} */}
 
 
                             </ul>

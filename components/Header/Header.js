@@ -7,6 +7,8 @@ import { useRouter } from "next/router";
 const Header = (props) => {
   const [menuActive, setMenuState] = useState(false);
   const router = useRouter();
+  
+const { locale, locales, asPath } = useRouter();
   const SubmitHandler = (e) => {
     e.preventDefault();
   };
@@ -65,8 +67,8 @@ const Header = (props) => {
                   </button>
                   <ul className="nav navbar-nav mb-2 mb-lg-0">
                     <li className="menu-item-has-children">
-                      <Link onClick={ClickHandler} href="/home2">
-                        Home
+                      <Link onClick={ClickHandler} href="/">
+                      {locale === 'sv' ? 'Main' : 'الرئيسية'}
                       </Link>
                       {/* <ul className="sub-menu">
                                                 <li><Link onClick={ClickHandler} href="/home">Home style 1</Link></li>
@@ -113,10 +115,18 @@ const Header = (props) => {
 
                     <li>
                       <Link onClick={ClickHandler} href="/contact">
-                        Contact
+                        {/* Contact */}
+                        {locale === 'sv' ? 'kommunikation' : 'تواصل '}
                       </Link>
                     </li>
 
+
+                    <li>
+                      <Link className=" font-serif" onClick={ClickHandler} href="/appointment">
+                        {/* Appintment */}
+                        {locale === 'sv' ? 'Tidsbokning' : 'حجز موعد'}
+                      </Link>
+                    </li>
 
                     <li className="menu-item-has-children ml-4 hidden  sm:flex  md:hidden xl:flex items-center">
                       <div>
@@ -140,12 +150,14 @@ const Header = (props) => {
                         <ul className="sub-menu">
                           <li>
                             <Link onClick={ClickHandler} href="/profile">
-                              Profile
+                              {/* Profile */}
+                              {locale === 'sv' ? 'personlig sida' : 'الصفحة الشخصية'}
                             </Link>
                           </li>
 
                           <li className="  font-semibold ml-4 cursor-pointer" onClick={handleLogout}>
-                            Logout
+                            {/* Logout */}
+                            {locale === 'sv' ? 'Logga ut' : 'تسجيل خروج'}
                             {/* <Link onClick={ClickHandler} href="/">Logout</Link
                                                 > */}
                           </li>

@@ -21,7 +21,11 @@ const { locale, locales, asPath } = useRouter();
             <div className="container">
                 <div className="row align-items-center justify-content-center">
                     <div className="col-lg-6 rounded-s-xl">
-                        <SectionTitle MainTitle={'Latest News & Blog'} />
+                         <SectionTitle 
+                        //  MainTitle={'Latest News & Blog'}  
+                       MainTitle= {locale === 'sv' ? 'Tjänster som tillhandahålls' : 'الخدمات المقدمة'}
+                        
+                        />
                     </div>
                 </div>
                 <div className="wpo-blog-items">

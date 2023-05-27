@@ -14,14 +14,21 @@ import BlogSection from '../components/BlogSection/BlogSection';
 import BlogSection2 from '../components/BlogSection/blogSection2';
 
 
+
+
 import getDocument from '@/utils/firebase/getData';
 
 const HomePage2 = ({data}) => {
 
+  
+
+
     return (
         <div>
+       
             <Navbar topbarBlock={'wpo-header-style-2'} Logo={'/images/logo.png'} />
             <Hero2 />
+            
             <BlogSection2  data={data}/>
             {/* <Features fClass={'wpo-features-section-s2'}/> */}
             {/* <ServiceSection2 />
@@ -39,9 +46,22 @@ const HomePage2 = ({data}) => {
 export default HomePage2;
 
 
+// export async function getStaticProps({ locale }) {
+
+//     return {
+//         props: {
+//             ...(await serverSideTranslations(locale, ["common","home"])),
+            
+//         },
+//     };
+// }
 
 
-HomePage2.getInitialProps = async (context  ) => {
+
+
+
+
+HomePage2.getInitialProps = async (context ,locale  ) => {
   
     //console.log('Query', context?.query?.country)
     const data = await getDocument("blog");
@@ -51,6 +71,7 @@ HomePage2.getInitialProps = async (context  ) => {
   
     return {
       data:data,
+    
     };
   };
   
