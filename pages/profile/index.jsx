@@ -50,10 +50,10 @@ const user = JSON.parse(localStorage.getItem("user"));
 
 
         
-        <Tabs.TabPane tab="Notifications" key="2">
-          {/* <AppointmentsMain data={data}  isProfile={true} /> */}
+        {/* <Tabs.TabPane tab="Notifications" key="2">
+
           notifications
-        </Tabs.TabPane>
+        </Tabs.TabPane> */}
 
         <Tabs.TabPane tab="Profile" key="3">
           {/* {user.role === "doctor" && <DoctorForm />} */}

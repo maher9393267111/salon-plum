@@ -1,5 +1,6 @@
 import { Carousel } from 'antd';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 const contentStyle = {
   height: '160px',
   color: '#fff',
@@ -21,7 +22,32 @@ const marks = {
   }
 
 
-const Related = ({related}) => (
+const Related = ({related}) => { 
+
+
+  const { locale, locales, asPath } = useRouter();
+  // ----split category &&---
+  
+  const splitCat =(cat)=>{
+  
+      const parts = cat.split("&&");
+      const swedishText = parts[0]; // "cat_one"
+      const arabicText = parts[1]; // "arabicCat_one"
+  
+      if (locale === "sv") {
+          return swedishText;
+        } else {
+         return arabicText;
+        }
+  
+  
+  }
+  
+  
+
+
+
+
 
 
 <div className=' mt-6 mb-4'>
@@ -53,7 +79,12 @@ const Related = ({related}) => (
                     <div className='content my-4  w-full'>
 
 <h2 className=' font-bold text-3xl'>{item?.title}</h2>
-<p className='cat text-xl  bg-blue-500 m-auto text-white font-bold rounded-3xl mt-2 w-[55px] '>{item?.category}</p>
+<p className='cat text-xl  bg-blue-500 m-auto text-white font-bold rounded-3xl mt-2 w-[55px] '>
+  {/* {item?.category} */}
+  
+  {splitCat(item?.category)}
+  
+  </p>
 
 
                     </div>
@@ -66,5 +97,7 @@ const Related = ({related}) => (
   </Carousel>
 
   </div>
-);
+}
+// )
+;
 export default Related;

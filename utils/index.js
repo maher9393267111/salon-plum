@@ -89,7 +89,7 @@ function filterProductBySize(product, size) {
 
 
 const langs = [
-    { name: "English", locale: "en", dir: "ltr" },
+    // { name: "English", locale: "en", dir: "ltr" },
     { name: "العربية", locale: "ar", dir: "rtl" },
     { name: "swedish", locale: "sv", dir: "ltr" },
 ];
