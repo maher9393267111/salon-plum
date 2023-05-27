@@ -92,10 +92,12 @@ return (
                                        
                                         <div className="testimonials-item-bottom">
                                             <div className="testimonials-item-bottom-author">
-                                                <img src={tesmnl?.image} alt="" />
+                                                <img
+                                                className=' !w-[100%] object-cover  !h-[100%]'
+                                                src={tesmnl?.image} alt="" />
                                             </div>
                                             <div className="testimonials-item-bottom-author-text relative">
-                                                <h3 className='  font-semibold my-2 ml-6 '>{tesmnl.title}</h3>
+                                                <h3 className='  text-xl font-semibold my-2 ml-6 '>{tesmnl.title}</h3>
                                                 <span className=' font-semibold my-2 ml-6 bg-[rgb(251,186,55)] min-w-[75px] hover:bg-[rgb(251,166,55)] transition-all absolute text-center text-xl  duration-300 text-white rounded-xl p-2 top-[-5rem] left-3  cursor-pointer  '>{splitCat(tesmnl.category)}</span>
                                             </div>
                                         </div>

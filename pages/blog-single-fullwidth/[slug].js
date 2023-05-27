@@ -266,7 +266,7 @@ console.log('related' ,related)
             </section>
 
 {/* -------related Blogs with Same Category ----- */}
-hereeee
+
 <RelatdBlogs related={related} />
 
 
