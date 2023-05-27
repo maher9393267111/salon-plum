@@ -1,7 +1,9 @@
 import React from "react";
 import Slider from "react-slick";
 import Link from 'next/link'
-
+import { useInViewAnimation } from "@/utils/animation/useInViewAnimation";
+import { motion } from "framer-motion";
+import { parent, slideFromTop ,slideFromLeft , slideFromRight} from "@/utils/animation/animations";
 
 const settings = {
     dots: false,
@@ -15,6 +17,10 @@ const settings = {
 };
 
 const Hero2 = () => {
+
+    const { ref, controls, inView } = useInViewAnimation({delay: 100});
+
+
     return (
         <section className="wpo-hero-slider">
             <div className="hero-container">
@@ -77,7 +83,11 @@ const Hero2 = () => {
                             })
                                 ` }}>
                                 <div className="gradient-overlay"></div>
-                                <div className="container">
+                                <div 
+                                
+                                ref={ref}
+                                
+                                className="container">
                                     <div className="slide-content">
                                         <div className="slide-title">
                                             <h2>Expert Plumbing Service You Can Trust.</h2>
@@ -86,9 +96,37 @@ const Hero2 = () => {
                                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
                                         </div>
                                         <div className="clearfix"></div>
-                                        <div className="slide-btns">
+                                        {/* <div
+                                         className="slide-btns">
                                             <Link href="/appointment" className="theme-btn">Book Online</Link>
+
+
+
+                                        </div> */}
+
+
+{inView && (
+
+    <motion.div
+       as={motion.div}
+            initial="hidden"
+            variants={slideFromRight}
+            animate={controls}
+            custom={true}
+    
+    >
+      <div
+                                         className="slide-btns">
+                                            <Link href="/appointment" className="theme-btn">Book Onli11111ne</Link>
+
+
+
                                         </div>
+    </motion.div>
+         
+)}
+
+
                                     </div>
                                 </div>
                             </div>

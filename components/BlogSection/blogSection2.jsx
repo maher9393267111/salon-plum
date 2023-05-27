@@ -47,14 +47,10 @@ const splitCat =(cat)=>{
         
         className="wpo-blog-section section-padding  bg-[rgb(249,234,230)]">
 
-{inView && (
-            <motion.div
+
+            <div
             
-            as={motion.div}
-            initial="hidden"
-            variants={slideFromRight}
-            animate={controls}
-            custom={false}
+ 
 
             className="container">
                 <div className="row align-items-center justify-content-center">
@@ -66,7 +62,17 @@ const splitCat =(cat)=>{
                         />
                     </div>
                 </div>
-                <div className="wpo-blog-items">
+                {inView && (
+            <motion.div
+            
+            as={motion.div}
+            initial="hidden"
+            variants={slideFromRight}
+            animate={controls}
+            custom={false}
+                
+                
+                className="wpo-blog-items">
                     <div className="row">
                         {data && data?.length > 0 &&   data?.slice(0,9).map((blog, bl) => (
                             
@@ -108,10 +114,12 @@ const splitCat =(cat)=>{
                             
                         ))}
                     </div>
-                </div>
-            </motion.div>
+                </motion.div>
+                )}
 
- )}
+            </div>
+
+
 
 
         </section>
