@@ -43,7 +43,7 @@ const Contactpage = () => {
                         {locale === "sv" ? "E-post" : "البريد الالكتروني"}
                         {/* Email Us */}
                       </h2>
-                      <p>NuraClinic@gmail.com</p>
+                      <p>NuraBeautyCenter@gmail.com</p>
                       {/* <p>helloyou@gmail.com</p> */}
                     </div>
                   </div>

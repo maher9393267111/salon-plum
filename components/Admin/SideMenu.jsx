@@ -47,7 +47,7 @@ function SideMenu() {
                     <nav aria-label="Main Nav" className="mt-6 flex flex-col space-y-1">
                         <Link
                             style={{ background: pathname == '/admin' ? "rgb(153, 246, 228)" : '' }}
-                            href={"/admin"}
+                            href={"/"}
                             passHref
                             className="rounded-lg px-4 py-2 hover:bg-teal-100 hover:text-gray-700"
                         >
