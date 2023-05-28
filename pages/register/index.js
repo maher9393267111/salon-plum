@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState ,useEffect} from 'react';
 import Grid from "@mui/material/Grid";
 import SimpleReactValidator from "simple-react-validator";
 import {toast} from "react-toastify";
@@ -7,17 +7,32 @@ import Button from "@mui/material/Button";
 import { useRouter } from 'next/router'
 import Link from "next/link";
 import { CreateUser } from '../../utils/firebase/apiCalls/users';
+import Header from '@/components/Header/Header';
 
 const SignUpPage = (props) => {
 
     const router = useRouter()
-
+    const { locale, locales, asPath } = useRouter();
+   
     const [value, setValue] = useState({
         email: '',
         full_name: '',
         password: '',
         confirm_password: '',
     });
+
+
+// ----redirect user if already registered----
+const user = JSON.parse(localStorage.getItem("user"));
+useEffect(() => {
+    if (user) {
+        router.push("/");
+    }
+}, [user, router]);
+
+
+
+
 
     const changeHandler = (e) => {
         setValue({...value, [e.target.name]: e.target.value});
@@ -79,11 +94,20 @@ const SignUpPage = (props) => {
         }
     };
     return (
+        <>
+        <Header/>
         <Grid className="loginWrapper">
 
             <Grid className="loginForm">
-                <h2>Signup</h2>
-                <p>Signup your account</p>
+                <h2>
+                {locale === 'sv' ? 'Skapa ett konto' : 'انشاء حساب'}
+                    {/* Signup */}
+
+                </h2>
+                <p>
+                    {/* Signup your account */}
+                    {locale === 'sv' ? '' : ''}
+                </p>
                 <form onSubmit={submitForm}>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
@@ -93,8 +117,8 @@ const SignUpPage = (props) => {
                                 placeholder="Full Name"
                                 value={value.full_name}
                                 variant="outlined"
-                                name="full_name"
-                                label="Name"
+                                name= "full_name"
+                                label=  {locale === 'sv' ? 'namnet' : 'الاسم'}  //"Name"
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
@@ -111,7 +135,7 @@ const SignUpPage = (props) => {
                                 value={value.email}
                                 variant="outlined"
                                 name="email"
-                                label="E-mail"
+                                label= {locale === 'sv' ? 'E-post' : 'البريد'} //"E-mail"
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
@@ -128,7 +152,7 @@ const SignUpPage = (props) => {
                                 value={value.password}
                                 variant="outlined"
                                 name="password"
-                                label="Password"
+                                label=  {locale === 'sv' ? 'Lösenord' : 'كلمة السر'} //"Password"
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
@@ -145,7 +169,7 @@ const SignUpPage = (props) => {
                                 value={value.password}
                                 variant="outlined"
                                 name="confirm_password"
-                                label="Confirm Password"
+                                label= {locale === 'sv' ? 'lösenordsbekräftelse' : ' تأكيد كلمة السر'}  //"Confirm Password"
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
@@ -156,20 +180,35 @@ const SignUpPage = (props) => {
                         </Grid>
                         <Grid item xs={12}>
                             <Grid className="formFooter">
-                                <Button fullWidth className="cBtn cBtnLarge cBtnTheme" type="submit">Sign Up</Button>
+                                <Button fullWidth className="cBtn cBtnLarge cBtnTheme" type="submit">
+                                    {/* Sign Up */}
+                                    {locale === 'sv' ? 'Skapa ett konto' : 'انشاء حساب'}
+                                    </Button>
                             </Grid>
                             {/* <Grid className="loginWithSocial">
                                 <Button className="facebook"><i className="fa fa-facebook"></i></Button>
                                 <Button className="twitter"><i className="fa fa-twitter"></i></Button>
                                 <Button className="linkedin"><i className="fa fa-linkedin"></i></Button>
                             </Grid> */}
-                            <p className="noteHelp">Already have an account? <Link href="/login">Return to Sign In</Link>
+                            <p className="noteHelp">
+
+                                {/* Already have an account?  */}
+                                {locale === 'sv' ? 'Har du redan skapat ett konto?' : 'هل انشأت حساب مسبقاً'}
+                                
+
+                                <Link href="/login">
+                                {locale === 'sv' ? 'Logga in' : 'تسجيل دخول'}
+                                    {/* Return to Sign In */}
+
+                                    
+                                    </Link>
                             </p>
                         </Grid>
                     </Grid>
                 </form>
             </Grid>
         </Grid>
+        </>
     )
 };
 

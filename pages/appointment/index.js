@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 
 
 const Appointment =() => {
-    const { locale, locales, asPath } = useRouter();
+    const { locale } = useRouter();
     return(
         <Fragment>
             <Navbar/>

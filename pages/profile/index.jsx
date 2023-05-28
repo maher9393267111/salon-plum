@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import { Tabs } from "antd";
 import AppointmentsMain from "@/components/Admin/appointmentsMain";
 import { GetUserAppointments } from "@/utils/firebase/apiCalls/appointments";
@@ -12,7 +13,17 @@ function Profile({}) {
 
     const [bookedSlots = [], setBookedSlots] = React.useState([]);
 const [loader,setLoader] = useState(false)
+const router =useRouter();
+
 const user = JSON.parse(localStorage.getItem("user"));
+useEffect(() => {
+    if (!user) {
+        router.push("/");
+    }
+}, [user, router]);
+
+
+
 
     const getBookedSlots = async () => {
         try {
@@ -58,16 +69,16 @@ const user = JSON.parse(localStorage.getItem("user"));
         <Tabs.TabPane tab="Profile" key="3">
           {/* {user.role === "doctor" && <DoctorForm />} */}
 
-          {user.role !== "doctor" && (
+          {user?.role !== "doctor" && (
             <div className="my-1 bg-white p-1 flex flex-col gap-1">
               <div className="flex gap-2">
                 <h4>
-                  <b>Name : {user.full_name}</b>
+                  <b>Name : {user?.full_name}</b>
                 </h4>
               </div>
               <div className="flex gap-2">
                 <h4>
-                  <b>Email : {user.email}</b>
+                  <b>Email : {user?.email}</b>
                 </h4>
               </div>
               <div className="flex gap-2">
