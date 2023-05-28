@@ -42,12 +42,15 @@ const AppointmentS2 = () => {
         userId: JSON.parse(localStorage.getItem("user")).id,
         time: forms.time,
         service: forms.subject,
+        fullName:forms.name,
+        message:forms.message,
 
         userName: JSON.parse(localStorage.getItem("user"))?.full_name,
         bookedOn: moment().format("DD-MM-YYYY hh:mm A"),
         day: forms.day,
         // problem,
         status: "pending",
+        phone:forms.phone,
       };
       const response = await BookAppointment(payload);
 
@@ -104,7 +107,10 @@ const AppointmentS2 = () => {
                   <div className="row">
                     <div className="col col-lg-6 col-12">
                       <div className="form-group">
-                        <label>Full name here*</label>
+                        <label>
+                          {/* Full name here* */}
+                          {locale === 'sv' ? 'fullständiga namn' : 'الاسم الكامل'}
+                        </label>
                         <input
                           className="form-control"
                           value={forms.name}
@@ -123,7 +129,10 @@ const AppointmentS2 = () => {
                     </div>
                     <div className="col col-lg-6 col-12">
                       <div className="form-group">
-                        <label>Email here*</label>
+                        <label>
+                          {/* Email here* */}
+                          {locale === 'sv' ? 'E-post' : 'البريد الالكتروني'}
+                        </label>
                         <input
                           className="form-control"
                           value={forms.email}
@@ -142,7 +151,10 @@ const AppointmentS2 = () => {
                     </div>
                     <div className="col col-lg-6 col-12">
                       <div className="form-group">
-                        <label>Contact number*</label>
+                        <label>
+                          {/* Contact number* */}
+                          {locale === 'sv' ? 'kontaktnummer' : 'رقم التواصل'}
+                        </label>
                         <input
                           className="form-control"
                           value={forms.phone}
@@ -161,7 +173,10 @@ const AppointmentS2 = () => {
                     </div>
                     <div className="col col-lg-6 col-12">
                       <div className="form-group">
-                        <label>Select service*</label>
+                        <label>
+                          {/* Select service* */}
+                          {locale === 'sv' ? 'Serviceval' : 'اختيار الخدمة'}
+                        </label>
                         <select
                           className="form-control"
                           onBlur={(e) => changeHandler(e)}
@@ -170,12 +185,37 @@ const AppointmentS2 = () => {
                           type="text"
                           name="subject"
                         >
-                          <option>Choose a Service</option>
-                          <option>Kitchen plumbning</option>
-                          <option>Gas Line Services</option>
-                          <option>Water Line Repair</option>
-                          <option>Bathroom Plumbing</option>
-                          <option>Basement Plumbing</option>
+                          <option>
+                            {/* Choose a Service */}
+                            {locale === 'sv' ? 'Serviceval' : 'اختيار الخدمة'}
+                          </option>
+                          <option value="Hydrafacial">
+                            {locale === "sv"
+                              ? "Hydrafacial"
+                              : "هايدروفيشال تنظيف بشرة عميق"}
+                          </option>
+                          <option value='Bb glow'>
+                            {locale === "sv" ? "Bb glow" : "توحيد لون البشره"}
+                          </option>
+                          <option value='Vitamen boost'>
+                            {locale === "sv"
+                              ? "Vitamen boost"
+                              : "تنظيف بشره مع ابر فيتامين للبشره"}
+                          </option>
+                       
+                          <option value='Laser carbon peeling'>
+                          {locale === 'sv' ? 'Laser carbon peeling' : 'تقشير ليزري بالكربون '}
+
+                          </option>
+
+
+<option value="Tandblekning" >{locale === 'sv' ? 'Tandblekning' : 'تبييض الاسنان بالليزر ' }</option>
+
+
+<option value="Microneedling" >{locale === 'sv' ? 'Microneedling' : 'مايكرونيدلينغ '}</option>
+<option value="Fettbränning" > {locale === 'sv' ? 'Fettbränning' : 'تكسيير الدهون'}</option>
+
+
                         </select>
                         {validator.message(
                           "subject",
@@ -187,7 +227,10 @@ const AppointmentS2 = () => {
 
                     <div className="col col-lg-6 col-12">
                       <div className="form-group">
-                        <label>Select Time</label>
+                        <label>
+                          {/* Select Time */}
+                          {locale === 'sv' ? 'Välj tid' : 'اختيار الوقت'}
+                        </label>
                         <select
                           className="form-control"
                           onBlur={(e) => changeHandler(e)}
@@ -204,7 +247,6 @@ const AppointmentS2 = () => {
                           <option value="3-4">3-4</option>
                           <option value="4-5">4-5</option>
                           <option value="5-6">5-6</option>
-                       
                         </select>
                         {validator.message(
                           "time",
@@ -218,7 +260,10 @@ const AppointmentS2 = () => {
 
                     <div className="col col-lg-6 col-12">
                       <div className="form-group">
-                        <label>Select Day</label>
+                        <label>
+                          {/* Select Day */}
+                          {locale === 'sv' ? 'Valde idag' : 'اختار اليوم'}
+                        </label>
                         <select
                           className="form-control"
                           onBlur={(e) => changeHandler(e)}
@@ -227,13 +272,32 @@ const AppointmentS2 = () => {
                           type="text"
                           name="day"
                         >
-                          <option value={locale === 'sv' ? 'måndag' : 'الاثنين'}>{locale === 'sv' ? 'måndag' : 'الاثنين'}</option>
-                          <option  value={locale === 'sv' ? 'tisdag' : 'الثلاثاء '}>{locale === 'sv' ? 'tisdag' : 'الثلاثاء '}</option>
-                          <option  value={locale === 'sv' ? 'onsdag' : 'الأربعاء'}>{locale === 'sv' ? 'onsdag' : 'الأربعاء'}</option>
-                          <option  value={locale === 'sv' ? 'torsdag' : 'الخميس '}>{locale === 'sv' ? 'torsdag' : 'الخميس '}</option>
-                          <option  value={locale === 'sv' ? 'fredag' : 'الجمعة'  }>{locale === 'sv' ? 'fredag' : 'الجمعة'  }</option>
-                          <option  value={locale === 'sv' ? 'ördag' : 'السبت'    }>{locale === 'sv' ? 'ördag' : 'السبت'    }</option>
-                          
+                          <option
+                            value={locale === "sv" ? "måndag" : "الاثنين"}
+                          >
+                            {locale === "sv" ? "måndag" : "الاثنين"}
+                          </option>
+                          <option
+                            value={locale === "sv" ? "tisdag" : "الثلاثاء "}
+                          >
+                            {locale === "sv" ? "tisdag" : "الثلاثاء "}
+                          </option>
+                          <option
+                            value={locale === "sv" ? "onsdag" : "الأربعاء"}
+                          >
+                            {locale === "sv" ? "onsdag" : "الأربعاء"}
+                          </option>
+                          <option
+                            value={locale === "sv" ? "torsdag" : "الخميس "}
+                          >
+                            {locale === "sv" ? "torsdag" : "الخميس "}
+                          </option>
+                          <option value={locale === "sv" ? "fredag" : "الجمعة"}>
+                            {locale === "sv" ? "fredag" : "الجمعة"}
+                          </option>
+                          <option value={locale === "sv" ? "ördag" : "السبت"}>
+                            {locale === "sv" ? "ördag" : "السبت"}
+                          </option>
                         </select>
                         {validator.message(
                           "time",
@@ -272,7 +336,7 @@ const AppointmentS2 = () => {
                     >
                       {/* GET AN APPOINMENT */}
 
-                      {locale === 'sv' ? 'bokning' : 'الحجز'}
+                      {locale === "sv" ? "bokning" : "الحجز"}
                     </button>
                   </div>
                 </form>

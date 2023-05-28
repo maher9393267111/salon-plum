@@ -49,9 +49,10 @@ const { locale, locales, asPath } = useRouter();
                     className="navbar-brand "
                   >
                     <img
-                      className=" !h-[85px] !w-[85px] relative top-[9px] !rounded-[20%] object-cover "
-                      src="/images/my/3.jpg"
-                      // '/images/logo.png'
+                      className=" !h-[88px] !w-[126px] relative top-[5px] !rounded-[50%] object-cover "
+                      src=
+                      // "/images/my/3.jpg"
+                       '/images/my/log-white.jpg'
                       alt=""
                     />
                   </Link>

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Services from "../../api/service";
 import Projects from "../../api/project";
-
+import { useRouter } from "next/router";
 const ClickHandler = () => {
   window.scrollTo(10, 0);
 };
@@ -11,6 +11,10 @@ const SubmitHandler = (e) => {
 };
 
 const Footer = (props) => {
+
+  const { locale, locales, asPath } = useRouter(); 
+
+
   return (
     <footer className="wpo-site-footer">
       <div className="wpo-upper-footer">
@@ -20,9 +24,10 @@ const Footer = (props) => {
               <div className="widget about-widget">
                 <div className="logo widget-title">
                   <img
-                  className=" w-[85px] h-[85px] rounded-[20%] "
-                    src="/images/my/3.jpg"
-                    // '/images/logo2.png'
+                  className=" w-[117px] h-[89px] object-cover rounded-[50%] "
+                    src=
+                    // "/images/my/3.jpg"
+                     '/images/my/log-white.jpg'
 
                     alt="blog"
                   />
@@ -57,8 +62,11 @@ const Footer = (props) => {
             </div>
             <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
               <div className="widget wpo-service-link-widget">
-                <div className="widget-title">
-                  <h3>Contact </h3>
+                <div className="widget-title text-center">
+                  <h3>
+                  {locale === 'sv' ? 'kommunikation' : 'التواصل'}
+                    {/* Contact */}
+                     </h3>
                 </div>
                 <div className="contact-ft">
                   <ul>
@@ -80,21 +88,64 @@ const Footer = (props) => {
             </div>
             <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
               <div className="widget link-widget">
-                <div className="widget-title">
-                  <h3>Services </h3>
+                <div className="widget-title text-center">
+                  <h3>
+                  {locale === 'sv' ? 'Tjänster' : 'الخدمات'}
+                    {/* Services */}
+                     </h3>
                 </div>
-                <ul>
-                  {Services.slice(0, 5).map((service, srv) => (
+                <ul dir="lft" className=" text-center ">
+                   {/* {Services.slice(0, 5).map((service, srv) => (
                     <li className=" cursor-pointer" key={srv}>
-                      {/* <Link
+                       <Link
                         onClick={ClickHandler}
                         href="/service/[slug]"
                         as={`/service/${service.slug}`}
-                      > */}
+                      > 
                         {service.sTitle}
-                      {/* </Link> */}
+                     </Link> 
                     </li>
-                  ))}
+                  ))}  */}
+
+<li className="cursor-pointer   text-[19px]" >
+{locale === 'sv' ? 'Hydrafacial'  : 'هايدروفيشال تنظيف بشرة عميق'}
+
+
+  </li>
+
+
+
+
+
+<li className="cursor-pointer   text-[19px]" >
+
+{locale === 'sv' ? 'Bb glow' : 'توحيد لون البشره'}
+</li>
+
+
+<li className="cursor-pointer   text-[19px]" >
+{locale === 'sv' ? 'Vitamen boost' : 'تنظيف بشره مع ابر فيتامين للبشره'}
+</li>
+
+
+
+<li className="cursor-pointer   text-[19px]" >
+
+{locale === 'sv' ? 'Laser carbon peeling' : 'تقشير ليزري بالكربون '}
+</li>
+
+
+<li className="cursor-pointer   text-[19px]" >
+
+{locale === 'sv' ? 'Tandblekning' : 'تبييض الاسنان بالليزر ' }
+</li>
+
+<li className="cursor-pointer   text-[19px]" >
+
+{locale === 'sv' ? 'Microneedling' : 'مايكرونيدلينغ '}
+</li>
+
+
                 </ul>
               </div>
             </div>

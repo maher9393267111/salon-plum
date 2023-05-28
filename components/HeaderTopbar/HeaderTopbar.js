@@ -55,7 +55,10 @@ const [language, setLanguage] = useState(currentLocale);
                         <div className="contact-info">
                             <ul>
                             
-                                <li><a legacyBehavior href="tel:+6494461709"><i><img src='/images/icon/2.png' alt=""/></i> +00 56 98 46</a></li>
+                                <li><a legacyBehavior href="tel:+6494461709"><i><img src='/images/icon/2.png' alt=""/></i> 
+                                0700773332
+                                
+                                </a></li>
                                 {/* <li className='lan-sec'>
                                     <select
                                     value={language}

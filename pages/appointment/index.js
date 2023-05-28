@@ -4,13 +4,15 @@ import PageTitle from '../../components/pagetitle/PageTitle'
 import Scrollbar from '../../components/scrollbar/scrollbar'
 import AppointmentS2 from '../../components/AppointmentS2/AppointmentS2';
 import Footer from '../../components/footer/Footer';
+import { useRouter } from 'next/router';
 
 
 const Appointment =() => {
+    const { locale, locales, asPath } = useRouter();
     return(
         <Fragment>
             <Navbar/>
-            <PageTitle pageTitle={'Appointment'} pagesub={'Appointment'}/> 
+            <PageTitle pageTitle={locale === 'sv' ? 'Tidsbokning' : 'الحجوزات'} pagesub={locale === 'sv' ? 'Tidsbokning' : 'الحجوزات'}/> 
             <AppointmentS2/>
             <Footer/>
             <Scrollbar/>
