@@ -90,7 +90,7 @@ const splitCat =(cat)=>{
                                     <div className="wpo-blog-img !h-[80%] object-cover ">
                                         <img
                                         className=" !h-full"
-                                        src={blog?.image} alt="" />
+                                        src={blog?.image?.url} alt="" />
                                     </div>
 
 {/* ---Category btn---- */}

@@ -94,7 +94,7 @@ return (
                                             <div className="testimonials-item-bottom-author">
                                                 <img
                                                 className=' !w-[100%] object-cover  !h-[100%]'
-                                                src={tesmnl?.image} alt="" />
+                                                src={tesmnl?.image?.url} alt="" />
                                             </div>
                                             <div className="testimonials-item-bottom-author-text relative">
                                                 <h3 className='  text-xl font-semibold my-2 ml-6 '>{tesmnl.title}</h3>
