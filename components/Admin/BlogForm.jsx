@@ -4,24 +4,41 @@ import dynamic from 'next/dynamic'
 import { useState } from 'react'
 import 'react-quill/dist/quill.snow.css'
 import Loader from '../shared/loader'
+import { handleDeleteImage } from '@/utils/firebase/getData'
+
+import { toast } from 'react-toastify'
 const QuillNoSSRWrapper = dynamic(import('react-quill'), {
     ssr: false,
     loading: () => <Loader />,
 })
 
 export default function BlogForm({ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr , category, setCategory  }) {
-
+ 
     const [file, setFile] = useState(null)
     const uploadImage = async () => {
         setLoading(true)
         if (!file) {
             return setAlert({ isShow: true, duration: 3000, message: "Select image file to upload.", type: "error" })
         }
-        const filePath = crypto.randomUUID() + "-" + file.name
+      //  const filePath = crypto.randomUUID() + "-" + file.name
+      // file folder/name
+      const filePath =`blog/${file?.name}`
         try {
+
+
+// ---if there image delete old image then update new one---
+
+if (image?.name){
+   await handleDeleteImage(image)
+   toast.success('old image deleted')
+
+}
+
+
+
             const url = await uploadFile(file, filePath)
             console.log('IMAGE->' , url)
-            setImage(url)
+            setImage({  url:url , name:file.name})
         } catch (error) {
             return setAlert({ isShow: true, duration: 3000, message: error.message, type: "error" })
         }
@@ -89,7 +106,7 @@ export default function BlogForm({ setTitle, title, value, setValue, handleClick
                 <div className='w-full'>
                     <input className='w-full border-2 text-black font-medium rounded-md border-teal-400 py-3 px-6'
                         type="text"
-                        placeholder="Image url" onChange={e => setImage(e.target.value)} value={image} />
+                        placeholder="Image url" onChange={e => setImage(e.target.value)} value={image?.url} />
                 </div>
             </div>
 

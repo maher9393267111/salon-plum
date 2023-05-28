@@ -16,7 +16,7 @@ function AddBlog() {
   const [valueAr, setValueAr] = useState("");
   const [title, setTitle] = useState("");
   const [titleAr, setTitleAr] =useState('')
-  const [image, setImage] = useState("")
+  const [image, setImage] = useState({url:'' ,name:''})
   const [loading, setLoading] = useState(false)
   const [visibleHome, setVisibleHome] = useState(false)
   const [category, setCategory] = useState('')

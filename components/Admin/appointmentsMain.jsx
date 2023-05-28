@@ -83,6 +83,10 @@ export default function AppointmentsMain({ data, isProfile = false }) {
       dataIndex: "userName",
     },
     {
+      title: "message",
+      dataIndex: "message",
+    },
+    {
       title: "Booked At",
       dataIndex: "bookedOn",
     },

@@ -18,7 +18,7 @@ const BlogList = ({ posts }) => {
                     <div className="relative h-40">
                         <img
                             className="absolute h-full w-full object-cover"
-                            src={post.image}
+                            src={post.image?.url}
                             alt={title(post.title)} />
                     </div>
                     <div className="p-4">

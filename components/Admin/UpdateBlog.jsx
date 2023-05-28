@@ -16,7 +16,7 @@ function UpdateBlog() {
     const { setAlert, user, pageLoading = true } = useContext(StateContext);
     const [value, setValue] = useState("");
     const [title, setTitle] = useState("");
-    const [image, setImage] = useState("");
+    const [image, setImage] = useState({url:'',name:''});
     const [valueAr, setValueAr] = useState("");
     const [category, setCategory] = useState('')
     
