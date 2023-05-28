@@ -45,7 +45,7 @@ const { locale, locales, asPath } = useRouter();
                 <div className="navbar-header">
                   <Link
                     onClick={ClickHandler}
-                    href="/home"
+                    href="/"
                     className="navbar-brand "
                   >
                     <img

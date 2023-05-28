@@ -109,10 +109,11 @@ export default function BlogForm({ setTitle, title, value, setValue, handleClick
                           type="text"
                           name="category"
                         >
-                          <option value="Lazer&&ليزر">category 1</option>
-                          <option value="makyaj&&مكياج">category 2</option>
-                          <option value="clean&&تنظيف بشرة">category 3</option>
-                          {/* <option value="cat_4">category 4</option> */}
+                        {/* <option value="">select Category</option> */}
+                          <option value="hud&&بشرة">بشرة</option>
+                          <option value="laser&&ليزر">ليزر</option>
+                          <option value="tänder&&أسنان">أسنان</option>
+                          <option value="kroppsvård&&عناية الجسم">عناية الجسم</option>
                           {/* <option value='5-6'>Bathroom Plumbing</option>
                                                     <option value='6:15-6:33'>Basement Plumbing</option> */}
                         </select>

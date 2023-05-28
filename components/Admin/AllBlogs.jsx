@@ -22,7 +22,10 @@ const BlogList = ({ posts }) => {
                             alt={title(post.title)} />
                     </div>
                     <div className="p-4">
-                        <Link href={`/blogs/${post.id}`} className="text-lg mb-2 text-gray-900 font-cutiveMono tracking-tighter font-semibold hover:text-teal-900 transition-colors cursor-pointer min-h-[3.5rem] block">
+                        <Link 
+                        // href={`/blogs/${post.id}`}
+                    href={`/blog-single-fullwidth/${post?.id}`}
+                        className="text-lg mb-2 text-gray-900 font-cutiveMono tracking-tighter font-semibold hover:text-teal-900 transition-colors cursor-pointer min-h-[3.5rem] block">
                             {title(post.title)}
                         </Link>
                         <div className="flex justify-between items-center text-gray">

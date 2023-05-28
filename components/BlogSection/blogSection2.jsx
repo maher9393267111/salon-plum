@@ -7,6 +7,9 @@ import { useInViewAnimation } from "@/utils/animation/useInViewAnimation";
 import { motion } from "framer-motion";
 import { parent, slideFromTop ,slideFromLeft , slideFromRight} from "@/utils/animation/animations";
 
+import { useState,useEffect } from "react";
+// import AOS from "aos";
+
 const ClickHandler = () => {
     window.scrollTo(10, 0);
 }
@@ -38,6 +41,9 @@ const splitCat =(cat)=>{
 
 
 
+
+
+
     
 
     return (
@@ -54,7 +60,9 @@ const splitCat =(cat)=>{
 
             className="container">
                 <div className="row align-items-center justify-content-center">
-                    <div className="col-lg-6 rounded-s-xl">
+                    <div
+                    data-aos="fade-up-right"
+                    className="col-lg-6 rounded-s-xl">
                          <SectionTitle 
                         //  MainTitle={'Latest News & Blog'}  
                        MainTitle= {locale === 'sv' ? 'Tjänster som tillhandahålls' : 'الخدمات المقدمة'}
@@ -74,7 +82,7 @@ const splitCat =(cat)=>{
                 
                 className="wpo-blog-items">
                     <div className="row">
-                        {data && data?.length > 0 &&   data?.slice(0,9).map((blog, bl) => (
+                        {data && data?.length > 0 &&   data?.slice(0,12).map((blog, bl) => (
                             
                             <div className="col col-lg-4 col-md-6 col-12 " key={bl}>
                                 <Link href={`blog-single-fullwidth/${blog?.id}`}>

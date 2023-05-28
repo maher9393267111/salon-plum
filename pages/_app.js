@@ -14,6 +14,9 @@ import { Provider } from "react-redux";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import WhatsappIcon from '../components/scrollbar/whatsapp'
+import { useState,useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 //import { connect } from "react-redux";
 //import { LoadingAction } from "../store/actions/action";
@@ -23,6 +26,14 @@ import { appWithTranslation } from "next-i18next";
 import { StateContextProvider } from '@/utils/context'
 
 function MyApp({ Component, pageProps ,props }) {
+
+  useEffect(() => {
+    AOS.init({
+        duration: 1000,
+        delay: 500,
+    });
+}, []);
+
 
 
 

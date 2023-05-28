@@ -35,7 +35,10 @@ const HomePage2 = ({data}) => {
             
 
 
-          
+
+      
+
+       
             <BlogSection2
              
                 
