@@ -1,6 +1,6 @@
-import { collection, getDocs, query } from "firebase/firestore";
-import { deleteObject ,ref } from "firebase/storage";
-import { db ,storage } from "./index";
+import { collection, getDocs, query ,doc, getDoc, getFirestore  } from "firebase/firestore";
+import { deleteObject ,ref  ,deleteDoc} from "firebase/storage";
+import { storage ,db } from "./index";
 
 
 export default async function getDocument(doc, criterions) {
@@ -14,8 +14,6 @@ export default async function getDocument(doc, criterions) {
     
 }
 
-
-import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 
 
@@ -36,18 +34,20 @@ export  async function getDocBySlug(collection, id) {
 
 
 
-export const handleDelete = async (blog) => {
+
+
+export const handleDelete = async(blog) => {
     try {
       //setLoading(true);
 
-      console.log("blog object CLICKEDDDDD", blog);
+      console.log("blog object CLICKEDDDDD", blog?.id);
 
       await deleteDoc(doc(db, "blog", blog.id));
 
     //   blog.image.forEach(async (img) => {
-        console.log("image is Name:🔷️🔶️🔷️🔶️ " + img);
+        console.log("image is Name:🔷️🔶️🔷️🔶️ " );
 
-        const desertRef = ref(storage, `images/${img?.name}`);
+        const desertRef = ref(storage, `blog/${blog?.image?.name}`);
         await deleteObject(desertRef);
         //toast.success("Blog image Deleted  successfully");
     //   });
@@ -56,12 +56,38 @@ export const handleDelete = async (blog) => {
    //   toast.success("Blog deleted successfully");
       window.location.reload();
     } catch (error) {
-      console.error("Error removing document: ", error);
+      console.error("Error removing document: ", error?.message);
     //  toast.error({ message: error });
 
     //  setLoading(false);
     }
   };
+
+
+
+  
+  export const deleteDocument = async(document, id)=> {
+      let result = null;
+      let error = null;
+      '8R0uXK4adS7UyruStjoH'
+  console.log(document ,id)
+      try {
+          //const docRef = doc(db, document, id);
+          //const response = await deleteDoc(docRef);
+        const response = await  deleteDoc(doc(db, document, id))
+          
+        const desertRef = ref(storage, `blog/${document.img?.name}`);
+        await deleteObject(desertRef);
+          result = response;
+      } catch (e) {
+          error = e;
+          console.log('error' ,error)
+      }
+  
+      return { result, error };
+  }
+  
+
 
 
 

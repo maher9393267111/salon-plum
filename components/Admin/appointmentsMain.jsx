@@ -13,11 +13,11 @@ export default function AppointmentsMain({ data, isProfile = false }) {
   const [loading, setLoading] = useState(false)
 
 
-  const user = JSON.parse(localStorage.getItem("user"));
+  //const user = JSON.parse(localStorage.getItem("user"));
 
 
 
-  const onUpdate = async (id, status) => {
+  const onUpdate = async (id, status ,data) => {
     try {
       setLoading(true)
       const response = await UpdateAppointmentStatus(id, status);
@@ -25,7 +25,7 @@ export default function AppointmentsMain({ data, isProfile = false }) {
       // the send msg to current user tell him if  appointment status with message
 
       const data = {
-        name: user?.full_name,
+        name: data?.fullName,
         email: 'gomemahero@gmail.com',
         status: status
       }
@@ -114,10 +114,10 @@ export default function AppointmentsMain({ data, isProfile = false }) {
           return (
             <div className="flex gap-1">
               <span className="underline cursor-pointer"
-                onClick={() => onUpdate(record.id, "cancelled")}
+                onClick={() => onUpdate(record.id, "cancelled" ,record)}
               >Cancel</span>
               <span className="underline cursor-pointer"
-                onClick={() => onUpdate(record.id, "approved")}
+                onClick={() => onUpdate(record.id, "approved" ,record)}
               >Approve</span>
             </div>
           );

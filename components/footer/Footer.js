@@ -38,9 +38,9 @@ const Footer = (props) => {
                 </p> */}
                 <ul>
                   <li>
-                    <Link onClick={ClickHandler} href="/">
+                    <a onClick={ClickHandler} href="https://www.facebook.com/Noura-beauty-center-%D9%85%D8%B1%D9%83%D8%B2-%D9%86%D9%88%D8%B1%D8%A7-%D9%84%D9%84%D8%AA%D8%AC%D9%85%D9%8A%D9%84-%D9%88%D8%A7%D9%84%D9%84%D9%8A%D8%B2%D8%B1-121459684279489/">
                       <i className="ti-facebook"></i>
-                    </Link>
+                    </a>
                   </li>
                   <li>
                     <Link onClick={ClickHandler} href="/">
@@ -48,9 +48,9 @@ const Footer = (props) => {
                     </Link>
                   </li>
                   <li>
-                    <Link onClick={ClickHandler} href="/">
+                    <a onClick={ClickHandler} href="https://www.instagram.com/noura_beauty_center">
                       <i className="ti-instagram"></i>
-                    </Link>
+                    </a>
                   </li>
                   <li>
                     <Link onClick={ClickHandler} href="/">
@@ -72,8 +72,9 @@ const Footer = (props) => {
                   <ul>
                     <li>
                       <i className="fi flaticon-location"></i>
-                      7 Green Lake
-                      Street Crawfordsville, IN 47933 ,Swedeen
+                      {/* 7 Green Lake
+                      Street Crawfordsville, IN 47933 ,Swedeen */}
+                      Drottninggatan, 212 11 Malmö, Sverige
                     </li>
                     <li>
                       <i className="fi flaticon-phone-call"></i>

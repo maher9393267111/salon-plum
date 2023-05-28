@@ -1,5 +1,5 @@
 import firestoreDatabase from "../index";
-import { collection, addDoc, getDocs, query, where, getDoc, doc } from "firebase/firestore";
+import { collection, addDoc, getDocs, query, where, getDoc, doc  } from "firebase/firestore";
 import CryptoJS from "crypto-js";
 
 export const CreateUser = async (payload) => {

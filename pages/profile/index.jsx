@@ -6,6 +6,7 @@ import { GetUserAppointments } from "@/utils/firebase/apiCalls/appointments";
 import Loader from "@/components/shared/loader";
 import {toast} from 'react-toastify'
 import {useState, useEffect} from 'react'
+import Header from "@/components/Header/Header";
 
 import moment from "moment";
 
@@ -15,6 +16,7 @@ function Profile({}) {
 const [loader,setLoader] = useState(false)
 const router =useRouter();
 
+const { locale, locales, asPath } = useRouter();
 const user = JSON.parse(localStorage.getItem("user"));
 useEffect(() => {
     if (!user) {
@@ -53,9 +55,17 @@ useEffect(() => {
     //console.log(data)
  
   return (
+    <>
+
+    <Header/>
+    
     <div className=" ml-12 mt-12">
+
+
+
+
       <Tabs>
-        <Tabs.TabPane tab="Appointments" key="1">
+        <Tabs.TabPane tab=  {locale === 'sv' ? 'Tidsbokning' : 'المواعيد المحجوزة'} key="1">
           <AppointmentsMain data={bookedSlots}  isProfile={true} />
         </Tabs.TabPane>
 
@@ -66,7 +76,11 @@ useEffect(() => {
           notifications
         </Tabs.TabPane> */}
 
-        <Tabs.TabPane tab="Profile" key="3">
+        <Tabs.TabPane
+        // tab="Profile"
+       tab = {locale === 'sv' ? 'Profil personligen' : 'الملف الشخصي'}
+
+         key="3">
           {/* {user.role === "doctor" && <DoctorForm />} */}
 
           {user?.role !== "doctor" && (
@@ -92,7 +106,9 @@ useEffect(() => {
           )}
         </Tabs.TabPane>
       </Tabs>
+      
     </div>
+    </>
   );
 }
 

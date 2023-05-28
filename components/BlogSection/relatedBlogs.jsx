@@ -84,12 +84,15 @@ const Related = ({related}) => {
 
 return (
 
-<div className=' my-[40px]'>
+<div
+data-aos="fade-up-right"
+className=' my-[40px]'>
 
 <Slider {...settings}>
                                 {related.map((tesmnl, tsm) => (
                                     <div className="testimonials-item ml-2" key={tsm}>
-                                       
+                                       <Link href={`/services/${tesmnl?.id}`} >
+                                      
                                         <div className="testimonials-item-bottom">
                                             <div className="testimonials-item-bottom-author">
                                                 <img
@@ -101,6 +104,7 @@ return (
                                                 <span className=' font-semibold my-2 ml-6 bg-[rgb(251,186,55)] min-w-[75px] hover:bg-[rgb(251,166,55)] transition-all absolute text-center text-xl  duration-300 text-white rounded-xl p-2 top-[-5rem] left-3  cursor-pointer  '>{splitCat(tesmnl.category)}</span>
                                             </div>
                                         </div>
+                                        </Link>
                                     </div>
                                 ))}
                             </Slider>

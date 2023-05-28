@@ -37,9 +37,12 @@ const BlogSingle = ({data , related}) => {
             <Navbar />
             <PageTitle pageTitle={data?.title}
             // {BlogDetails?.title} 
-            pagesub="blog" />
+            pagesub={locale === 'sv' ? 'tjänsten' : 'الخدمة'}
+            // "blog"
+            
+            />
             <section
-              ref={ref}
+            //   ref={ref}
             
             className="wpo-blog-single-section section-padding">
 
@@ -47,9 +50,7 @@ const BlogSingle = ({data , related}) => {
 {/* {inView && ( <> */}
 
                 <div
-                     animate={controls}
-                     initial="hidden"
-                     variants={parent}  
+                    data-aos='flip-left'
                     
                     className="container">
                     <div className="row">

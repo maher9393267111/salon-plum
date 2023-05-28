@@ -117,7 +117,7 @@ const Hero2 = () => {
     >
       <div
 
-// data-aos="fade-up-right"
+ data-aos="fade-up-right"
                                          className="slide-btns">
                                             <Link href="/appointment" className="theme-btn">Book Onli11111ne</Link>
 

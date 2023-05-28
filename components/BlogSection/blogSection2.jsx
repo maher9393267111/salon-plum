@@ -85,7 +85,7 @@ const splitCat =(cat)=>{
                         {data && data?.length > 0 &&   data?.slice(0,12).map((blog, bl) => (
                             
                             <div className="col col-lg-4 col-md-6 col-12 " key={bl}>
-                                <Link href={`blog-single-fullwidth/${blog?.id}`}>
+                                <Link href={`services/${blog?.id}`}>
                                 <div className="wpo-blog-item !h-[310px] hover:shadow-lg transition-all  duration-300">
                                     <div className="wpo-blog-img !h-[80%] object-cover ">
                                         <img

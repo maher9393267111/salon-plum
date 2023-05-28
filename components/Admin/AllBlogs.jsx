@@ -6,11 +6,22 @@ import { useRouter } from 'next/router'
 import React, { useContext, useEffect, useState } from 'react'
 import Loader from '../shared/loader'
 import SideMenu from './SideMenu'
+import {  deleteDocument} from '@/utils/firebase/getData';
 
 const BlogList = ({ posts }) => {
     const title = (data) => {
         return data.length >= 60 ? data.slice(0, 60) + "..." : data
     }
+
+
+    const deleteCard = async (e, id) => {
+        e.stopPropagation();
+        await deleteDocument('blog', id);
+      
+    };
+
+
+
     return (
         <div className="flex gap-8 flex-wrap p-10">
             {posts.map(post => (
@@ -24,7 +35,7 @@ const BlogList = ({ posts }) => {
                     <div className="p-4">
                         <Link 
                         // href={`/blogs/${post.id}`}
-                    href={`/blog-single-fullwidth/${post?.id}`}
+                    href={`/services/${post?.id}`}
                         className="text-lg mb-2 text-gray-900 font-cutiveMono tracking-tighter font-semibold hover:text-teal-900 transition-colors cursor-pointer min-h-[3.5rem] block">
                             {title(post.title)}
                         </Link>
@@ -43,7 +54,30 @@ const BlogList = ({ posts }) => {
                                     </svg>
                                     Edit
                                 </span>
+
+                               
                             </Link>
+                            {/* <span 
+                                
+                                onClick={(e) =>
+                                    deleteCard(
+                                        e,
+                                        post?.id
+                                    )
+                                }
+                                className="text-sm cursor-pointer ml-4 font-medium text-red-600 hover:text-red-700 inline-flex items-center">
+                                    <svg
+                                        className="w-4 h-4 mr-1"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M17 6.99999H6.99998V17H17V6.99999ZM16 16.012V9.98799H8V16.012H16ZM6.99998 6.99999V17C6.99998 17.552 7.44798 18 7.99998 18H17C17.552 18 18 17.552 18 17V6.99999C18 6.44799 17.552 5.99999 17 5.99999H7.99998C7.44798 5.99999 6.99998 6.44799 6.99998 6.99999Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    Delete
+                                </span> */}
                             <p className="text-sm text-gray-500">{post.date}</p>
                         </div>
                     </div>

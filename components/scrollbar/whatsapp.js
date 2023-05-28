@@ -26,7 +26,7 @@ const WhatsappIcon= () => {
     return(
         <div className="col-lg-12">
             {/* // 0700773332    ---- 46707351116 */}
-            <a className=' hover:text-white text-white' href="https://wa.me//46707351116">
+            <a className=' hover:text-white text-white' href="https://wa.me/46700773332">
             
             <div className="fixed left-[30px] bottom-[25px] !z-20">
                 <ul className="fixed left-[30px] bottom-[25px] !z-20">
