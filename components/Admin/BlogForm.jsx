@@ -106,7 +106,7 @@ if (image?.name){
                 <div className='w-full'>
                     <input className='w-full border-2 text-black font-medium rounded-md border-teal-400 py-3 px-6'
                         type="text"
-                        placeholder="Image url" onChange={e => setImage(e.target.value)} value={image?.url} />
+                        placeholder="Image url" onChange={e => setImage({...image,url:e.target.value})} value={image?.url} />
                 </div>
             </div>
 
