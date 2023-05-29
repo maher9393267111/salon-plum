@@ -24,16 +24,16 @@ export default function AppointmentsMain({ data, isProfile = false }) {
 
       // the send msg to current user tell him if  appointment status with message
 
-      const data = {
+      const dataform = {
         name: data?.fullName,
-        email: 'gomemahero@gmail.com',
+        email: 'nourabeautycenter96@gmail.com',
         status: status
       }
 
 
 
 
-      const res = await axios.post('/api/sendNotification', data)
+      const res = await axios.post('/api/sendNotification', dataform)
 
       //console.log('response' , res?.data);
 

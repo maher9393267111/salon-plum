@@ -11,13 +11,20 @@ const transporter = nodemailer.createTransport({
     
     
 
-        // user: 'majdgome@gmail.com',
-        // pass:'esnwtqaxvisapsaf'
+        //  user: 'majdgome@gmail.com',
+        //  pass:'esnwtqaxvisapsaf'
 
         
-		user:'cadacademywebsite@gmail.com',
+	// 	user:'cadacademywebsite@gmail.com',
 		
-    pass:'ufjfumzgyzfbtbkr'
+  //  pass:'ufjfumzgyzfbtbkr'
+
+user:'nourabeautycenter96@gmail.com',
+//pass:'eqgxolgllqkyzedf'
+
+
+
+   pass:'mbyyjudkpecytupc'
 
   },
 });
@@ -26,7 +33,10 @@ const transporter = nodemailer.createTransport({
 async function sendEmail({ name, email , subject , message ,phone }) {
   const emailOptions = {
     form: `${name}`,
-    to: `gomemahero@gmail.com`,
+    to:
+    'majdgome@gmail.com', 
+    //'nourabeautycenter96@gmail.com',
+    //`gomemahero@gmail.com`,
     subject: `Contact Message from ${email}`,
     html: `<h2>Email sent from a  ${name}
     

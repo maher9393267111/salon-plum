@@ -1,32 +1,31 @@
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
- 
   //process.env.MAIL_HOST,
   //port: 25,
   port: 465,
-  host: 'smtp.gmail.com',
+  host: "smtp.gmail.com",
   secure: true, // use SSL
   auth: {
-    
-    
+    // user: 'majdgome@gmail.com',
+    // pass:'esnwtqaxvisapsaf'
 
-        // user: 'majdgome@gmail.com',
-        // pass:'esnwtqaxvisapsaf'
+    // user:'cadacademywebsite@gmail.com',
 
-        
-		user:'cadacademywebsite@gmail.com',
-		
-    pass:'ufjfumzgyzfbtbkr'
+    // pass:'ufjfumzgyzfbtbkr'
 
+    user: "nourabeautycenter96@gmail.com",
+
+    pass: "mbyyjudkpecytupc",
   },
 });
 
-
-async function sendEmail({ name, email ,status }) {
+async function sendEmail({ name, email, status }) {
   const emailOptions = {
     form: `${name}`,
-    to: email,
+    to:
+     
+    email,
     subject: `notification message from NouraBeautyCenter to ${name}`,
     html: `<h2>Dear  ${name}
     
@@ -44,15 +43,17 @@ async function sendEmail({ name, email ,status }) {
 }
 
 export default async function handler(req, res) {
-  if (req.method === 'POST') {
-    console.log('DATA-,' , req.body)
+  if (req.method === "POST") {
+    console.log("DATA-,", req.body);
     const emailRes = await sendEmail(req.body);
     if (emailRes.messageId) {
       return res.status(200).json({ message: `Email sent successfuly` });
     }
 
-    return res.status(400).json({ message: 'Error sending email' });
+    return res.status(400).json({ message: "Error sending email" });
   }
 
-  return res.status(400).json({ message: `Incorrect method: ${req.method}. Did you mean POST?` });
+  return res
+    .status(400)
+    .json({ message: `Incorrect method: ${req.method}. Did you mean POST?` });
 }
