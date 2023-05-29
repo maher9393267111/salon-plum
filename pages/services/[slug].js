@@ -59,7 +59,7 @@ const BlogSingle = ({data , related}) => {
                                 <div className="post format-standard-image container ">
                                     <div className="entry-media flex   !justify-center ">
                                         <img src={data?.image?.url}
-                                        className=' !w-[50%] !h-[50%] object-cover'
+                                        className=' md:!w-[50%] !w-[75%] !h-[75%] md:!h-[50%] object-cover'
                                     
                                         //    {BlogDetails?.blogSingleImg}
                                          alt="" />
