@@ -49,6 +49,7 @@ function MyApp({ Component, pageProps ,props }) {
                     locale: 'sv',
                     url: 'nourabeautycenter.se',
                     siteName: 'nourabeautycenter',
+                    tags: ['clinic', 'bueauty', 'nourabeautycenter' ,'salon' , 'malmo' ],
                 }}
                 twitter={{
                     handle: '@handle',
