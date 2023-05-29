@@ -17,13 +17,26 @@ const firebaseConfig = {
 
 
 
-apiKey: "AIzaSyBeuDqtel2Vhwn0oGphyuFYbgvrE6FJQgQ",
-authDomain: "mern-projec.firebaseapp.com",
-databaseURL: "https://mern-projec-default-rtdb.firebaseio.com",
-projectId: "mern-projec",
-storageBucket: "mern-projec.appspot.com",
-messagingSenderId: "760297962433",
-appId: "1:760297962433:web:80adf7f5d905f76ace8d40"
+// apiKey: "AIzaSyBeuDqtel2Vhwn0oGphyuFYbgvrE6FJQgQ",
+// authDomain: "mern-projec.firebaseapp.com",
+// databaseURL: "https://mern-projec-default-rtdb.firebaseio.com",
+// projectId: "mern-projec",
+// storageBucket: "mern-projec.appspot.com",
+// messagingSenderId: "760297962433",
+// appId: "1:760297962433:web:80adf7f5d905f76ace8d40"
+
+
+
+apiKey: "AIzaSyBEIMqlSqnCYK_Oo5EL9s2DaTEB5JpJHrk",
+authDomain: "salon-9e73a.firebaseapp.com",
+projectId: "salon-9e73a",
+storageBucket: "salon-9e73a.appspot.com",
+messagingSenderId: "579974732291",
+appId: "1:579974732291:web:aa74428873c468b3c20c36",
+measurementId: "G-ZTGFN9EMQS"
+
+
+
 };
 
 // Initialize Firebase

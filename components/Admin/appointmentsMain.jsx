@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { useState } from 'react';
 import Loader from '../shared/loader';
 import axios from 'axios';
+import Router from 'next/router'
 
 export default function AppointmentsMain({ data, isProfile = false }) {
 
@@ -49,6 +50,9 @@ export default function AppointmentsMain({ data, isProfile = false }) {
 
       if (response.success && res.data?.message) {
         toast.success(response.message);
+        
+
+Router.reload(window.location.pathname);
 
 
       } else {
@@ -83,6 +87,10 @@ export default function AppointmentsMain({ data, isProfile = false }) {
     {
       title: "name",
       dataIndex: "userName",
+    },
+    {
+      title: "email",
+      dataIndex: "email",
     },
     {
       title: "message",
