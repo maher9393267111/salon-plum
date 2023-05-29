@@ -14,22 +14,34 @@ const transporter = nodemailer.createTransport({
 
     // pass:'ufjfumzgyzfbtbkr'
 
+
+
+
     user: "nourabeautycenter96@gmail.com",
 
-    pass: "mbyyjudkpecytupc",
+    pass: "nsbnnzbnawgcengf",
   },
 });
 
-async function sendEmail({ name, email, status }) {
+async function sendEmail({ name, email, status ,day ,time }) {
+
+    
   const emailOptions = {
-    form: `${name}`,
+    form: `${name ? name :'name'}`,
     to: email,
-    subject: `notification message from NouraBeautyCenter to ${name}`,
-    html: `<h2>Dear  ${name}
+    subject: `notification message from nourabeautycenter to : ${name ? name :'name'}`,
+    html: `<h2>Dear  ${name ? name :'name'}
     
     </br>
 
-    <h1> your date status is : ${status}</h1>
+    <h1> your date status is : ${status ? status :'status'}</h1>
+  
+    <h1>  date : ${day ? day :'day'}</h1>
+
+    
+    <h1> time : ${time ? time :'time'}</h1>
+
+    
 
     
 
@@ -42,7 +54,7 @@ async function sendEmail({ name, email, status }) {
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    console.log("DATA-,", req.body);
+    console.log("DATA-❌❎☑✅❌❎☑✅,", req.body);
     const emailRes = await sendEmail(req.body);
     if (emailRes.messageId) {
       return res.status(200).json({ message: `Email sent successfuly` });

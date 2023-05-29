@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
 		
   //  pass:'ufjfumzgyzfbtbkr'
 
-user:'nourabeautycenter96@gmail.com',
+user:'nourabeautycenter9696@gmail.com',
 
 
 
@@ -35,7 +35,7 @@ async function sendEmail({ name, email , subject , message ,phone }) {
     form: `${name}`,
     to:
     'majdgome@gmail.com', 
-    //'nourabeautycenter96@gmail.com',
+    //'nourabeautycenter9696@gmail.com',
     //`gomemahero@gmail.com`,
     subject: `Contact Message from ${email}`,
     html: `<h2>Email sent from a  ${name}

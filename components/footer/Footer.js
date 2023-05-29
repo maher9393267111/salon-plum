@@ -81,7 +81,7 @@ const Footer = (props) => {
                       0700773332 
                     </li>
                     <li>
-                      <i className="fi flaticon-send"></i>NouraBeautyCenter@gmail.com
+                      <i className="fi flaticon-send"></i>nourabeautycenter96@gmail.com
                     </li>
                   </ul>
                 </div>
@@ -180,7 +180,7 @@ const Footer = (props) => {
             <div className="col col-xs-12">
               <p className="copyright">
                 {" "}
-                Copyright &copy; 2023 NouraBeautyCenter {" "}
+                Copyright &copy; 2023 nourabeautycenter96 {" "}
                 <Link onClick={ClickHandler} href="/">
                   {/* wpOceans */}
                 </Link>

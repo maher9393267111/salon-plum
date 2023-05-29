@@ -27,7 +27,9 @@ export default function AppointmentsMain({ data, isProfile = false }) {
       const dataform = {
         name: data?.fullName,
         email: data?.email,
-        status: status
+        status: status,
+        day:data?.day,
+        time:data?.time
       }
 
 

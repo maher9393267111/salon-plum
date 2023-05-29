@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 const AppointmentS2 = () => {
   const { locale, locales, asPath } = useRouter();
   const user = JSON.parse(localStorage.getItem("user"));
+  console.log('user ???❌❎☑✅' ,user)
   const router = useRouter();
   //console.log(locale);
 
@@ -36,7 +37,7 @@ const AppointmentS2 = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    if (user?.id) {
+    if (user) {
       const payload = {
         //doctorId: doctor.id,
         userId: JSON.parse(localStorage.getItem("user")).id,
@@ -79,6 +80,9 @@ const AppointmentS2 = () => {
       goLogin();
     }
   };
+
+
+
 
   const goLogin = () => {
     router.push("/login");
