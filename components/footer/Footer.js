@@ -53,9 +53,9 @@ const Footer = (props) => {
                     </a>
                   </li>
                   <li>
-                    <Link onClick={ClickHandler} href="/">
+                    <a onClick={ClickHandler} href="mailto:nourabeuatycenter96r@gmail.com">
                       <i className="ti-google"></i>
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -164,7 +164,7 @@ const Footer = (props) => {
                         href="/project/[slug]"
                         as={`/project/${project.slug}`}
                       > */}
-                        <img src={project.pImg} alt="" />
+                        <img className=" w-[100px] h-[100px] object-cover lg:w-[77px] lg:h-[77px]" src={project.pImg} alt="" />
                       {/* </Link> */}
                     </li>
                   ))}
@@ -180,7 +180,7 @@ const Footer = (props) => {
             <div className="col col-xs-12">
               <p className="copyright">
                 {" "}
-                Copyright &copy; 2023 nourabeautycenter96 {" "}
+                Copyright &copy; 2023 nourabeautycenter {" "}
                 <Link onClick={ClickHandler} href="/">
                   {/* wpOceans */}
                 </Link>

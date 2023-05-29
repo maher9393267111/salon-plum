@@ -323,7 +323,7 @@ BlogSingle.getInitialProps = async (context  ) => {
 
         //&& blog?.id !== context?.query.slug 
         
-      return  blog?.category === data.category  })
+      return   blog?.category === data.category  })
     
   console.log('RELATEDDDD🛑🚧🛢🛑🚧🛢🛑🚧🛢',filterByCat);
   //console.log(data)
