@@ -52,7 +52,11 @@ module.exports = {
           red: "#EF4444",
       },
       fontFamily: {
-          sans: ["Poppins", "Graphik", "sans-serif"],
+        'inter': ['Inter', 'sans-serif'], 
+        'urbanist': ['Urbanist', 'sans-serif'], 
+        'arabic': ['Noto Sans Arabic', 'sans-serif'], 
+        SansArabic: ["IBM Plex Sans Arabic", "sans-serif"],
+     
       },
       fontSize: {
           xs: [

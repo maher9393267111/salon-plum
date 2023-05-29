@@ -221,6 +221,14 @@ const AppointmentS2 = () => {
 <option value="Fettbränning" > {locale === 'sv' ? 'Fettbränning' : 'تكسيير الدهون'}</option>
 
 
+ <option value="Lash lift" > {locale === 'sv' ? 'Lash lift' : 'قلب رموش'}</option>
+ <option value="Microblading" > {locale === 'sv' ? 'Microblading' : 'تاتو حواجب شعره'}</option>
+ <option value="Brow lift" > {locale === 'sv' ? 'Brow lift' : ' رفع حواجب'}</option>
+ <option value="Tatueringsborttagning" > {locale === 'sv' ? 'Tatueringsborttagning' : 'ازالة تاتو'}</option>
+ <option value="Naglar, Spa manikyr" > {locale === 'sv' ? 'Naglar, Spa manikyr' : 'اضافر واعتناء باليدين'}</option>
+
+
+
                         </select>
                         {validator.message(
                           "subject",

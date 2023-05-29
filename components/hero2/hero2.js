@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useInViewAnimation } from "@/utils/animation/useInViewAnimation";
 import { motion } from "framer-motion";
 import { parent, slideFromTop ,slideFromLeft , slideFromRight} from "@/utils/animation/animations";
-
+import { useRouter } from "next/router";
 const settings = {
     dots: false,
     arrows: true,
@@ -20,6 +20,8 @@ const Hero2 = () => {
 
     const { ref, controls, inView } = useInViewAnimation({delay: 100});
 
+    const { locale, locales, asPath } = useRouter();
+    
 
     return (
         <section className="wpo-hero-slider">
@@ -61,10 +63,27 @@ const Hero2 = () => {
                                 <div className="container">
                                     <div className="slide-content">
                                         <div className="slide-title">
-                                            <h2>Expert Plumbing Service You Can Trust.</h2>
+                                            <h2>
+                                            Välkommen till Noura beauty center
+                                                {/* Expert Plumbing Service You Can Trust. */}
+
+                                            </h2>
                                         </div>
                                         <div className="slide-text">
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                                            <p>
+
+
+                                            {locale === 'sv' ? 'Noura beauty center erbjuder skönhetsvård med hög kvalité där kvinnan står i fokus.Vår målsättning är att du som är intresserad av hudvård, ditt utseende och skönhet ska få alla dina behov tillgodosedda.' : 
+                                            'يقدم مركز نورا للتجميل رعاية تجميل عالية الجودة حيث تكون المرأة هي التركيز.هدفنا هو أن يكون لكل من يهتم بالعناية بالبشرة ومظهرك وجمالك كل احتياجاتك'}
+
+                   
+
+
+
+{/* arabic-- */}
+
+                                                {/* There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form. */}
+                                                </p>
                                         </div>
                                         <div className="clearfix"></div>
                                         <div className="slide-btns">
@@ -78,8 +97,9 @@ const Hero2 = () => {
 
                         <div className="hero-slide">
                             <div className="slide-inner slide-bg-image" style={{ backgroundImage: `url(${
+                                '/images/my/slider-1.jpg'
                                 // '/images/slider/slide-2.jpg'
-                            'https://images.pexels.com/photos/234220/pexels-photo-234220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                            // 'https://images.pexels.com/photos/234220/pexels-photo-234220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
                             })
                                 ` }}>
                                 <div className="gradient-overlay"></div>

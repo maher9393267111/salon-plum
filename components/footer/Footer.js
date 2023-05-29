@@ -17,7 +17,7 @@ const Footer = (props) => {
 
   return (
     <footer className="wpo-site-footer">
-      <div className="wpo-upper-footer">
+      <div className="wpo-upper-footer  ">
         <div className="container">
           <div className="row">
             <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
@@ -64,7 +64,7 @@ const Footer = (props) => {
               <div className="widget wpo-service-link-widget">
                 <div className="widget-title text-center">
                   <h3>
-                  {locale === 'sv' ? 'kommunikation' : 'التواصل'}
+                  {locale === 'sv' ? 'Info' : 'التواصل'}
                     {/* Contact */}
                      </h3>
                 </div>
@@ -147,6 +147,29 @@ const Footer = (props) => {
 </li>
 
 
+<li className="cursor-pointer   text-[19px]" >
+
+{locale === 'sv' ? 'Lash lift' : 'قلب رموش'}
+</li>
+
+<li className="cursor-pointer   text-[19px]" >
+{locale === 'sv' ? 'Brow lift' : ' رفع حواجب'}
+
+</li>
+
+<li className="cursor-pointer   text-[19px]" >
+
+{locale === 'sv' ? 'Microblading' : 'تاتو حواجب شعره '}
+</li>
+
+<li className="cursor-pointer   text-[19px]" >
+{locale === 'sv' ? 'Naglar, Spa manikyr' : 'اضافر واعتناء باليدين'}
+
+</li>
+
+
+
+
                 </ul>
               </div>
             </div>
@@ -154,7 +177,7 @@ const Footer = (props) => {
             <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
               <div className="widget instagram">
                 <div className="widget-title">
-                  <h3>images</h3>
+                  <h3>Bilder</h3>
                 </div>
                 <ul className="d-flex">
                   {Projects.slice(0, 6).map((project, srv) => (
