@@ -167,13 +167,15 @@ const { locale, locales, asPath } = useRouter();
                         <ul className="sub-menu">
                           <li>
                             <Link onClick={ClickHandler} href="/login">
-                              login
+                              {/* login */}
+                              {locale === 'sv' ? 'logga in' : 'تسجيل الدخول'}
                             </Link>
                           </li>
 
                           <li>
                             <Link onClick={ClickHandler} href="/register">
-                              register
+                              {/* register */}
+                              {locale === 'sv' ? 'Skapa ett konto' : 'انشاء حساب'}
                             </Link>
                           </li>
                         </ul>
@@ -224,7 +226,8 @@ const { locale, locales, asPath } = useRouter();
                                   className="font-semibold my-2   text-xl  hover:text-blue-700"
                                   href={`/profile/${user?.email}`}
                                 >
-                                  Profile
+                                  {/* Profile */}
+                                  {locale === 'sv' ? 'personlig sida' : 'الصفحة الشخصية'}
                                 </Link>
                               </li>
 
@@ -232,7 +235,8 @@ const { locale, locales, asPath } = useRouter();
                                 className="font-semibold my-2  text-xl   hover:text-blue-700"
                                 onClick={handleLogout}
                               >
-                                Logout
+                                {/* Logout */}
+                                {locale === 'sv' ? 'Logga ut' : 'تسجيل خروج'}
                               </li>
                             </ul>
                           </div>
@@ -240,11 +244,17 @@ const { locale, locales, asPath } = useRouter();
                           <div>
                             <ul className=" cursor-pointer">
                               <li className="font-semibold my-2 text-xl  hover:text-blue-700">
-                                <Link href={`/login`}>Login</Link>
+                                <Link href={`/login`}>
+                                  {/* Login */}
+                                  {locale === 'sv' ? 'logga in' : 'تسجيل الدخول'}
+                                </Link>
                               </li>
 
                               <li className="font-semibold my-2 text-xl  hover:text-blue-700">
-                                <Link href={`/register`}>Register</Link>
+                                <Link href={`/register`}>
+                                  {/* Register */}
+                                  {locale === 'sv' ? 'Skapa ett konto' : 'انشاء حساب'}
+                                </Link>
                               </li>
                             </ul>
                           </div>
