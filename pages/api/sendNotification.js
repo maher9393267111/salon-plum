@@ -23,9 +23,7 @@ const transporter = nodemailer.createTransport({
 async function sendEmail({ name, email, status }) {
   const emailOptions = {
     form: `${name}`,
-    to:
-     
-    email,
+    to: email,
     subject: `notification message from NouraBeautyCenter to ${name}`,
     html: `<h2>Dear  ${name}
     
@@ -48,9 +46,10 @@ export default async function handler(req, res) {
     const emailRes = await sendEmail(req.body);
     if (emailRes.messageId) {
       return res.status(200).json({ message: `Email sent successfuly` });
+    } else {
+      // console log error
+      return res.status(400).json({ message: "Error sending email" });
     }
-
-    return res.status(400).json({ message: "Error sending email" });
   }
 
   return res

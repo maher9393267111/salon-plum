@@ -75,10 +75,10 @@ const Contactpage = () => {
               {locale === 'sv' ? 'Har du några frågor' : 'هل لديك أي استفسار'}
                 {/* Have Any Question? */}
                 </h2>
-              <p>
+              {/* <p>
                 It is a long established fact that a reader will be distracted
                 content of a page when looking.
-              </p>
+              </p> */}
             </div>
             <div className="wpo-contact-form-area">
               <ContactForm />

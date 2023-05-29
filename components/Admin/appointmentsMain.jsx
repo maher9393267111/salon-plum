@@ -26,7 +26,7 @@ export default function AppointmentsMain({ data, isProfile = false }) {
 
       const dataform = {
         name: data?.fullName,
-        email: 'nourabeautycenter96@gmail.com',
+        email: data?.email,
         status: status
       }
 

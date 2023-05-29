@@ -51,6 +51,7 @@ const AppointmentS2 = () => {
         // problem,
         status: "pending",
         phone:forms.phone,
+        email:forms.email
       };
       const response = await BookAppointment(payload);
 
