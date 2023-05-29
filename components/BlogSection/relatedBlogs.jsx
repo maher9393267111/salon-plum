@@ -3,13 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Slider from "react-slick";
 
-
-
-
-const Related = ({related}) => { 
-
-
-  const settings = {
+const settings = {
     dots: true,
     arrows: false,
     speed: 1000,
@@ -56,6 +50,12 @@ const Related = ({related}) => {
 };
 
 
+const Related = ({related}) => { 
+
+
+
+
+
 
 
 
@@ -91,11 +91,16 @@ className=' my-[40px]'>
 
 {related?.length}
 
+
+
+{related?.length > 1 ?  
+
 <Slider {...settings}>
                                 {related.map((tesmnl, tsm) => (
                                     <div className="testimonials-item ml-2" key={tsm}>
                                        <Link href={`/services/${tesmnl?.id}`} >
                                       
+                                   
                                         <div className="testimonials-item-bottom">
                                             <div className="testimonials-item-bottom-author">
                                                 <img
@@ -110,10 +115,62 @@ className=' my-[40px]'>
                                         </div>
                                         </Link>
                                     </div>
-                                ))}
+
+
+
+
+
+
+                                 ))}
+
+
+
+                               
+
+
+
+
+
+
+
+
+
+
+
                             </Slider>
 
 
+
+
+
+
+
+
+:
+<div>
+    
+<div className="testimonials-item ml-2 text-center m-auto w-1/2" >
+                                       <Link href={`/services/${related[0]?.id}`} >
+                                      
+                                     
+                                        <div className="testimonials-item-bottom">
+                                            <div className="testimonials-item-bottom-author">
+                                                <img
+                                                className=' !w-[100%] object-cover  !h-[300px]'
+                                                src={related[0]?.image?.url} alt="" />
+                                            </div>
+                                            <div className="testimonials-item-bottom-author-text relative">
+                                                <h3 className='  text-xl font-semibold my-2 ml-6 '>{related[0]?.title} 
+                                                </h3>
+                                                <span className=' font-semibold my-2 ml-6 bg-[rgb(251,186,55)] min-w-[75px] hover:bg-[rgb(251,166,55)] transition-all absolute text-center text-xl  duration-300 text-white rounded-xl p-2 top-[-5rem] left-3  cursor-pointer  '>{splitCat(related[0]?.category)}</span>
+                                            </div>
+                                        </div>
+                                        </Link>
+                                    </div>
+
+</div>
+
+                                }
 
 
 

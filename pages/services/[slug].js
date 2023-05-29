@@ -10,9 +10,11 @@ import { getDocBySlug} from '@/utils/firebase/getData';
 import getDocument from '@/utils/firebase/getData';
 import parse from 'html-react-parser';
 import RelatdBlogs from '../../components/BlogSection/relatedBlogs'
+
 import { useInViewAnimation } from "@/utils/animation/useInViewAnimation";
 import { motion } from "framer-motion";
 import { parent, slideFromTop } from "@/utils/animation/animations";
+import Hero2 from '@/components/hero2/hero2';
 const submitHandler = (e) => {
     e.preventDefault()
 }
@@ -289,6 +291,9 @@ const BlogSingle = ({data , related}) => {
 
 {/* -------related Blogs with Same Category ----- */}
 
+
+
+
 <RelatdBlogs related={related} />
 
 
@@ -315,8 +320,10 @@ BlogSingle.getInitialProps = async (context  ) => {
     //console.log("BLLLOGSS" , blogs)
     //blog?.id !== context?.query.slug
     const filterByCat = blogs && blogs.filter((blog)=>{
+
+        //&& blog?.id !== context?.query.slug 
         
-      return  blog?.category === data.category && blog?.id !== context?.query.slug  })
+      return  blog?.category === data.category  })
     
   console.log('RELATEDDDD🛑🚧🛢🛑🚧🛢🛑🚧🛢',filterByCat);
   //console.log(data)
