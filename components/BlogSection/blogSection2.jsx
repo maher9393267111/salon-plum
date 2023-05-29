@@ -48,20 +48,21 @@ const splitCat =(cat)=>{
 
     return (
         <section
+
         
         ref={ref}
         
-        className="wpo-blog-section section-padding  bg-[rgb(249,234,230)]">
+        className="wpo-blog-section section-padding   bg-[rgb(249,234,230)]">
 
 
             <div
             
  
 
-            className="container">
+            className="container bg-[rgb(249,234,230)]">
                 <div className="row align-items-center justify-content-center">
                     <div
-                    data-aos="fade-up-right"
+                     data-aos="fade-up-right"
                     className="col-lg-6 rounded-s-xl">
                          <SectionTitle 
                         //  MainTitle={'Latest News & Blog'}  
@@ -70,17 +71,17 @@ const splitCat =(cat)=>{
                         />
                     </div>
                 </div>
-                {inView && (
-            <motion.div
-            
-            as={motion.div}
-            initial="hidden"
-            variants={slideFromRight}
-            animate={controls}
-            custom={false}
+                {/* {inView && ( */}
+            <div
+             data-aos='flip-left'
+            // as={motion.div}
+            // initial="hidden"
+            // variants={slideFromRight}
+            // animate={controls}
+            // custom={false}
                 
                 
-                className="wpo-blog-items">
+                className="wpo-blog-items !mb-[200px]">
                     <div className="row">
                         {data && data?.length > 0 &&   data?.slice(0,12).map((blog, bl) => (
                             
@@ -122,8 +123,8 @@ const splitCat =(cat)=>{
                             
                         ))}
                     </div>
-                </motion.div>
-                )}
+                </div>
+                {/* )} */}
 
             </div>
 

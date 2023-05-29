@@ -38,6 +38,8 @@ const HomePage2 = ({data}) => {
 
       
 
+       <div className='bg-[rgb(249,234,230)]'>
+
        
             <BlogSection2
              
@@ -45,7 +47,7 @@ const HomePage2 = ({data}) => {
                 data={data}/>
 
 
-
+</div>
 
 
 

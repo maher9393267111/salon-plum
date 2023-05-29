@@ -85,7 +85,7 @@ const Related = ({related}) => {
 return (
 
 <div
-data-aos="fade-up-right"
+ data-aos="fade-up-right"
 className=' my-[40px]'>
 
 

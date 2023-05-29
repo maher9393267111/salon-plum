@@ -52,7 +52,7 @@ const BlogSingle = ({data , related}) => {
 {/* {inView && ( <> */}
 
                 <div
-                    data-aos='flip-left'
+                     data-aos='flip-left'
                     
                     className="container">
                     <div className="row">
