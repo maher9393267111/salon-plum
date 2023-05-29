@@ -9,6 +9,7 @@ import { useContext, useState } from "react";
 import Loader from "../shared/loader";
 import BlogForm from "./BlogForm";
 import SideMenu from "./SideMenu";
+import { toast } from 'react-toastify';
 
 function AddBlog() {
   const { setAlert, user, pageLoading = true } = useContext(StateContext)
@@ -40,6 +41,17 @@ function AddBlog() {
         image: image,
         date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
       }
+
+// if (category === ''){
+//   toast.error({message:'Please select category'})
+
+// return
+// }
+  
+
+
+
+
       await addDoc(collection(db, 'blog'), data)
       setTitle("")
       setImage("")

@@ -126,7 +126,7 @@ if (image?.name){
                           type="text"
                           name="category"
                         >
-                        {/* <option value="">select Category</option> */}
+                        <option value="no&&لايوجد">select Category</option>
                           <option value="hud&&بشرة">بشرة</option>
                           <option value="laser&&ليزر">ليزر</option>
                           <option value="tänder&&أسنان">أسنان</option>

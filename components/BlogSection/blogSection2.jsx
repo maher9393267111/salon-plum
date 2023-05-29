@@ -87,9 +87,9 @@ const splitCat =(cat)=>{
                             <div className="col col-lg-4 col-md-6 col-12 " key={bl}>
                                 <Link href={`services/${blog?.id}`}>
                                 <div className="wpo-blog-item !h-[310px] hover:shadow-lg transition-all  duration-300">
-                                    <div className="wpo-blog-img !h-[80%] object-cover ">
+                                    <div className="wpo-blog-img !h-[80%]  ">
                                         <img
-                                        className=" !h-full"
+                                        className=" !h-full object-cover"
                                         src={blog?.image?.url} alt="" />
                                     </div>
 

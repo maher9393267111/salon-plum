@@ -13,7 +13,7 @@ const Related = ({related}) => {
     dots: true,
     arrows: false,
     speed: 1000,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     responsive: [
@@ -96,7 +96,7 @@ className=' my-[40px]'>
                                         <div className="testimonials-item-bottom">
                                             <div className="testimonials-item-bottom-author">
                                                 <img
-                                                className=' !w-[100%] object-cover  !h-[100%]'
+                                                className=' !w-[100%] object-cover  !h-[300px]'
                                                 src={tesmnl?.image?.url} alt="" />
                                             </div>
                                             <div className="testimonials-item-bottom-author-text relative">
