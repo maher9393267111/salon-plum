@@ -26,6 +26,7 @@ specifiers:
   moment: ^2.29.4
   next: ^13.0.7
   next-i18next: ^13.2.2
+  next-seo: ^6.0.0
   ngrok: ^4.3.3
   nodemailer: ^6.9.2
   postcss: ^8.4.23
@@ -90,6 +91,7 @@ dependencies:
   moment: 2.29.4
   next: 13.4.3_txdvpvppf2ilsh27xadmwrzlmm
   next-i18next: 13.2.2_eis4igejy7yu2ynkyk3hszyoqu
+  next-seo: 6.0.0_o6dt4yn4syzkhlixdxt4y57rzi
   ngrok: 4.3.3
   nodemailer: 6.9.2
   react: 18.2.0
@@ -3828,6 +3830,18 @@ packages:
       next: 13.4.3_txdvpvppf2ilsh27xadmwrzlmm
       react: 18.2.0
       react-i18next: 12.3.1_dje3x67x7taogjmwoynufb4r2i
+    dev: false
+
+  /next-seo/6.0.0_o6dt4yn4syzkhlixdxt4y57rzi:
+    resolution: {integrity: sha512-jKKt1p1z4otMA28AyeoAONixVjdYmgFCWwpEFtu+DwRHQDllVX3RjtyXbuCQiUZEfQ9rFPBpAI90vDeLZlMBdg==}
+    peerDependencies:
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      next: 13.4.3_txdvpvppf2ilsh27xadmwrzlmm
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /next/13.4.3_txdvpvppf2ilsh27xadmwrzlmm:

@@ -17,6 +17,7 @@ import WhatsappIcon from '../components/scrollbar/whatsapp'
 import { useState,useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import {DefaultSeo} from 'next-seo';
 
 //import { connect } from "react-redux";
 //import { LoadingAction } from "../store/actions/action";
@@ -38,6 +39,27 @@ function MyApp({ Component, pageProps ,props }) {
 
 
   return (
+    <>
+
+<DefaultSeo
+                title="nourabeautycenter"
+                description="Next SEO is a plug in that makes managing your SEO easier in Next.js projects."
+                openGraph={{
+                    type: 'website',
+                    locale: 'sv',
+                    url: 'nourabeautycenter.se',
+                    siteName: 'nourabeautycenter',
+                }}
+                twitter={{
+                    handle: '@handle',
+                    site: '@site',
+                    cardType: 'summary_large_image',
+                }}
+            />
+
+
+
+   
     <Provider store={store}>
 
 
@@ -50,6 +72,10 @@ function MyApp({ Component, pageProps ,props }) {
         </StateContextProvider>
       </PersistGate>
     </Provider>
+
+</>
+
+
 
   )
 }
