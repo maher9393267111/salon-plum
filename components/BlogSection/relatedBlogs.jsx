@@ -7,7 +7,7 @@ const settings = {
     dots: true,
     arrows: false,
     speed: 1000,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     responsive: [
@@ -89,7 +89,7 @@ data-aos="fade-up-right"
 className=' my-[40px]'>
 
 
-{related?.length}
+{/* {related?.length} */}
 
 
 
