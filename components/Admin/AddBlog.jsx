@@ -18,6 +18,7 @@ function AddBlog() {
   const [title, setTitle] = useState("");
   const [titleAr, setTitleAr] =useState('')
   const [image, setImage] = useState({url:'' ,name:''})
+  const [image2, setImage2] = useState({url:'' ,name:''})
   const [loading, setLoading] = useState(false)
   const [visibleHome, setVisibleHome] = useState(false)
   const [category, setCategory] = useState('')
@@ -32,6 +33,7 @@ function AddBlog() {
         description: value,
         descriptionAr:valueAr,
         image: image,
+        image2:image2,
         category: category,
         date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
         index: await getBlogCount() + 1
@@ -39,6 +41,7 @@ function AddBlog() {
         title,
         description: value,
         image: image,
+        image2:image2,
         date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
       }
 
@@ -94,7 +97,7 @@ function AddBlog() {
     <div>
       <SideMenu />
       {loading && <Loader />}
-      <BlogForm {...{ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr , category, setCategory }} />
+      <BlogForm {...{ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr , category, setCategory ,image2, setImage2 }} />
     </div>
   )
 }

@@ -12,9 +12,10 @@ const QuillNoSSRWrapper = dynamic(import('react-quill'), {
     loading: () => <Loader />,
 })
 
-export default function BlogForm({ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr , category, setCategory  }) {
+export default function BlogForm({ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr , category, setCategory ,image2, setImage2  }) {
  
     const [file, setFile] = useState(null)
+    const [file2, setFile2] = useState(null)
     const uploadImage = async () => {
         setLoading(true)
         if (!file) {
@@ -44,6 +45,41 @@ if (image?.name){
         }
         setLoading(false)
     }
+
+
+
+    const uploadImage2 = async () => {
+        setLoading(true)
+        if (!file2) {
+            return setAlert({ isShow: true, duration: 3000, message: "Select image file to upload.", type: "error" })
+        }
+      //  const filePath = crypto.randomUUID() + "-" + file.name
+      // file folder/name
+      const filePath =`blog/${file2?.name}`
+        try {
+
+
+// ---if there image delete old image then update new one---
+
+if (image2?.name){
+   await handleDeleteImage(image2)
+   toast.success('old image deleted')
+
+}
+
+
+
+            const url = await uploadFile(file2, filePath)
+            console.log('IMAGE->' , url)
+            setImage2({  url:url , name:file2.name})
+        } catch (error) {
+            return setAlert({ isShow: true, duration: 3000, message: error.message, type: "error" })
+        }
+        setLoading(false)
+    }
+
+
+
     console.log(visibleHome)
     return (
         <div className="flex flex-col justify-center items-center gap-6 w-full md:px-24 sm:px-12 px-6 h-auto mb-12 ">
@@ -109,6 +145,39 @@ if (image?.name){
                         placeholder="Image url" onChange={e => setImage({...image,url:e.target.value})} value={image?.url} />
                 </div>
             </div>
+
+
+
+
+
+
+{/* -------Image Two ----- */}
+
+<div className='w-full my-4'>
+                <div className="w-full flex">
+                    <input
+                        type="file"
+                        id="file2"
+                        name=""
+                        className='text-black font-medium rounded-md border-teal-400 py-3 px-6 border-2 border-r-0 rounded-r-none'
+                        onChange={(e) => setFile2(e.target.files[0])}
+                    />
+                    <button type='button' className="rounded-l-none  inline-block shrink-0 rounded-md border border-teal-600 bg-teal-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-teal-600 focus:outline-none focus:ring active:text-teal-500 dark:hover:bg-teal-700 dark:hover:text-white" onClick={uploadImage2}>
+                        Upload Image Two
+                    </button>
+                </div>
+
+
+
+
+                <div className='text-xl font-cutiveMono text-center py-2'>or</div>
+                <div className='w-full'>
+                    <input className='w-full border-2 text-black font-medium rounded-md border-teal-400 py-3 px-6'
+                        type="text"
+                        placeholder="Image url" onChange={e => setImage2({...image,url:e.target.value})} value={image2?.url} />
+                </div>
+            </div>
+
 
 
 

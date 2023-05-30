@@ -87,7 +87,7 @@ const splitCat =(cat)=>{
                             
                             <div className="col col-lg-4 col-md-6 col-12 " key={bl}>
                                 <Link href={`services/${blog?.id}`}>
-                                <div className="wpo-blog-item !h-[310px] hover:shadow-lg transition-all  duration-300">
+                                <div className="wpo-blog-item !h-[350px] hover:shadow-lg transition-all  duration-300">
                                     <div className="wpo-blog-img !h-[80%]  ">
                                         <img
                                         className=" !h-full object-cover"
@@ -97,7 +97,7 @@ const splitCat =(cat)=>{
 {/* ---Category btn---- */}
 <div className="relative">
 
-    <p className=" absolute bg-[rgb(251,186,55)] min-w-[75px] hover:bg-[rgb(251,166,55)] transition-all font-semibold  duration-300 text-white rounded-xl p-2 top-[-5rem] left-3  cursor-pointer"> 
+    <p className=" absolute bg-[rgb(251,186,55)] !min-w-[140px]  hover:bg-[rgb(251,166,55)] transition-all font-semibold  duration-300 text-white text-center !text-2xl rounded-xl p-[12px] top-[-5rem] left-[2.75rem]  cursor-pointer"> 
 
 
 

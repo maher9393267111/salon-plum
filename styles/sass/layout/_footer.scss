@@ -2,7 +2,7 @@
 4. wpo-footer
 --------------------------------------------------------------*/
 .wpo-site-footer {
-    background: $dark-gray;
+    background:white; //rgb(249,234,230); //$dark-gray;
     position: relative;
     font-size: 15px;
     overflow: hidden;
@@ -15,7 +15,10 @@
         color: $white;
     }
     li{
-        color: $white;
+        font-weight: 700;
+        font-size: bold;
+        color:#d2b36a !important // $white;
+        
     }
 
     .container {
@@ -70,8 +73,9 @@
 
     .widget-title{
         h3{
-            font-size: 20px;
-            color: $white;
+            font-weight: 900;
+            font-size: 26px;
+            color:#d2b36a !important ; // $white;
             margin: 0;
             text-transform: uppercase;
             position: relative;
@@ -105,23 +109,23 @@
             padding-top: 10px;
 
             li{
-                font-size: 22px;
+                font-size: 42px;
                 float: left;
 
                 a{
-                    color: $white;
+                    color: black ; // $white;
                     width: 36px;
                     height: 36px;
                     line-height: 40px;
-                    background: rgba($color: $white, $alpha: 0.1);
+                    background:  #d2b36a !important ;  //rgba($color: $white, $alpha: 0.1);
                     display: block;
                     text-align: center;
                     @include rounded-border(50%);
                     font-size: 18px;
 
                     &:hover{
-                        color:$dark-gray;
-                        background: $white;
+                        color:  white;//$dark-gray;
+                        background:   black;//$white;
                     }
                 }
             }

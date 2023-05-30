@@ -39,8 +39,9 @@ const Hero2 = () => {
                     <Slider {...settings}>
                         <div className="hero-slide">
                             <div className="slide-inner slide-bg-image" style={{ backgroundImage: `url(${
+                                   '/images/my/slider-1.jpg'
                                 // '/images/slider/slide-2.jpg'
-                            'https://images.pexels.com/photos/260405/pexels-photo-260405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                          //  'https://images.pexels.com/photos/260405/pexels-photo-260405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
                             })
                                 ` }}>
                                 <div className="gradient-overlay"></div>
@@ -74,7 +75,8 @@ const Hero2 = () => {
                         <div className="hero-slide">
                             <div className="slide-inner slide-bg-image" style={{ backgroundImage: `url(${
                                 // '/images/slider/slide-3.jpg'
-                            'https://images.pexels.com/photos/3985331/pexels-photo-3985331.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                                '/images/my/slider-1.jpg'
+                           // 'https://images.pexels.com/photos/3985331/pexels-photo-3985331.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
                             })` 
                                 
                                 }}>

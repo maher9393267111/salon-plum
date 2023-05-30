@@ -3033,19 +3033,23 @@ hero slider
   float: left;
 }
 .wpo-site-footer .about-widget ul li a {
-  color: #fff;
+  color:  white  ; 
+   /* #fff; */
   width: 36px;
   height: 36px;
   line-height: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  background: black; 
+   /* rgba(255, 255, 255, 0.1); */
   display: block;
   text-align: center;
   border-radius: 50%;
   font-size: 18px;
 }
 .wpo-site-footer .about-widget ul li a:hover {
-  color: #253041;
-  background: #fff;
+  color: yellow ;
+   /* #253041; */
+  background:  white;
+   /* #fff; */
 }
 .wpo-site-footer .about-widget ul li + li {
   margin-left: 25px;

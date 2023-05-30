@@ -19,6 +19,7 @@ function UpdateBlog() {
     const [image, setImage] = useState({url:'',name:''});
     const [valueAr, setValueAr] = useState("");
     const [category, setCategory] = useState('')
+    const [image2, setImage2] = useState({url:'' ,name:''})
     
     const [titleAr, setTitleAr] =useState('')
     const [loading, setLoading] = useState(true);
@@ -40,6 +41,7 @@ function UpdateBlog() {
                 setValueAr(data.descriptionAr)
                 setCategory(data?.category)
                 setImage(data.image);
+                setImage2(data?.image2)
                 if (data.index) {
                     setIndex(data.index)
                     setVisibleHome(true)
@@ -70,6 +72,7 @@ function UpdateBlog() {
                     descriptionAr:valueAr,
 
                     image,
+                    image2,
                     index,
                     category
                 }
@@ -80,6 +83,7 @@ function UpdateBlog() {
                     description: value,
                     descriptionAr:valueAr,
                     image,
+                    image2,
                     index: deleteField(),
                     category
                 }
@@ -90,6 +94,7 @@ function UpdateBlog() {
                     description: value,
                     descriptionAr:valueAr,
                     image,
+                    image2,
                     category,
                     index: await getBlogCount() + 1
                 }
@@ -98,6 +103,7 @@ function UpdateBlog() {
                     title,
                     
                     image: image,
+                    image2,
                     titleAr,
                     description: value,
                     descriptionAr:valueAr,
@@ -179,6 +185,7 @@ function UpdateBlog() {
                     valueAr, setValueAr,
                     titleAr, setTitleAr,
                     category, setCategory,
+                    image2 ,setImage2
                 }}
             />
         </div>
