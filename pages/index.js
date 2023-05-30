@@ -15,6 +15,7 @@ import BlogSection2 from '../components/BlogSection/blogSection2';
 import { useInViewAnimation } from "@/utils/animation/useInViewAnimation";
 import { motion } from "framer-motion";
 import { parent, slideFromTop } from "@/utils/animation/animations";
+import AddComment from '@/components/addComment/index';
 
 
 
@@ -49,6 +50,14 @@ const HomePage2 = ({data}) => {
 
 </div>
 
+
+
+{/* -----comments slider ---- */}
+
+<Testimonial/>
+
+
+<AddComment />
 
 
             {/* <Features fClass={'wpo-features-section-s2'}/> */}

@@ -46,7 +46,7 @@ const { locale, locales, asPath } = useRouter();
                   <Link
                     onClick={ClickHandler}
                     href="/"
-                    className="navbar-brand "
+                    className="navbar-brand  font-serif "
                   >
                     <img
                       className=" !h-[88px] !w-[126px] relative top-[5px] !rounded-[50%] object-cover "
@@ -68,7 +68,7 @@ const { locale, locales, asPath } = useRouter();
                   </button>
                   <ul className="nav navbar-nav mb-2 mb-lg-0">
                     <li className="menu-item-has-children">
-                      <Link onClick={ClickHandler} href="/">
+                      <Link  className=" font-serif" onClick={ClickHandler} href="/">
                       {locale === 'sv' ? 'Main' : 'الرئيسية'}
                       </Link>
                       {/* <ul className="sub-menu">
@@ -115,7 +115,7 @@ const { locale, locales, asPath } = useRouter();
                     {/* </li> */}
 
                     <li>
-                      <Link onClick={ClickHandler} href="/contact">
+                      <Link  className=" font-serif" onClick={ClickHandler} href="/contact">
                         {/* Contact */}
                         {locale === 'sv' ? 'kommunikation' : 'تواصل '}
                       </Link>
@@ -132,6 +132,7 @@ const { locale, locales, asPath } = useRouter();
                     <li className="menu-item-has-children ml-4 hidden  sm:flex  md:hidden xl:flex items-center">
                       <div>
                         <Link
+                         className=" font-serif"
                           onClick={ClickHandler}
                           href={user ? `/profile` : `/login`}
                         >
@@ -150,7 +151,9 @@ const { locale, locales, asPath } = useRouter();
                       {user ? (
                         <ul className="sub-menu">
                           <li>
-                            <Link onClick={ClickHandler} href="/profile">
+                            <Link
+                             className=" font-serif"
+                            onClick={ClickHandler} href="/profile">
                               {/* Profile */}
                               {locale === 'sv' ? 'personlig sida' : 'الصفحة الشخصية'}
                             </Link>
@@ -223,7 +226,7 @@ const { locale, locales, asPath } = useRouter();
                               </li>
                               <li>
                                 <Link
-                                  className="font-semibold my-2   text-xl  hover:text-blue-700"
+                                  className="font-semibold my-2   font-serif text-xl  hover:text-blue-700"
                                   href={`/profile/${user?.email}`}
                                 >
                                   {/* Profile */}
@@ -244,14 +247,14 @@ const { locale, locales, asPath } = useRouter();
                           <div>
                             <ul className=" cursor-pointer">
                               <li className="font-semibold my-2 text-xl  hover:text-blue-700">
-                                <Link href={`/login`}>
+                                <Link  className=" font-serif" href={`/login`}>
                                   {/* Login */}
                                   {locale === 'sv' ? 'logga in' : 'تسجيل الدخول'}
                                 </Link>
                               </li>
 
                               <li className="font-semibold my-2 text-xl  hover:text-blue-700">
-                                <Link href={`/register`}>
+                                <Link  className=" font-serif" href={`/register`}>
                                   {/* Register */}
                                   {locale === 'sv' ? 'Skapa ett konto' : 'انشاء حساب'}
                                 </Link>

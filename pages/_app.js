@@ -6,6 +6,7 @@ import "../styles/font-awesome.min.css";
 import "../styles/themify-icons.css";
 import '../styles/sass/style.scss'
 import '../styles/style.css'
+import '../styles/global.css'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { PersistGate } from "redux-persist/integration/react";

@@ -19,6 +19,26 @@ import {
       return { success: false, message: error.message };
     }
   };
+
+
+
+  export const AddNewComment = async (payload) => {
+    try {
+
+       // console.log(payload)
+      await addDoc(collection(firestoreDatabase, "comments"), payload);
+      return { success: true, message: "comment applied successfully" };
+    } catch (error) {
+      return { success: false, message: error.message };
+    }
+  };
+
+
+
+
+
+
+
   
   export const GetDoctorAppointmentsOnDate = async (doctorId, date) => {
     try {

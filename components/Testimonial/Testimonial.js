@@ -1,11 +1,14 @@
 import React from "react";
 import Slider from "react-slick";
 import SectionTitle from "../SectionTitle";
-
+import { useRouter } from "next/router";
+import { db } from "@/utils/firebase";
+import {doc , collection} from 'firebase/firestore'
+import {  useCollection } from "react-firebase-hooks/firestore";
 
 const settings = {
-    dots: false,
-    arrows: false,
+    dots: true,
+    arrows: true,
     speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -77,19 +80,42 @@ const testimonial = [
 ]
 
 const Testimonial = () => {
+
+
+    const { locale, locales, asPath } = useRouter();
+
+
+
+    const [value, loading, error] = useCollection(
+        collection(db, 'comments'),
+        {
+          snapshotListenOptions: { includeMetadataChanges: true },
+        }
+      )
+
+      //console.log('comments--->' ,value.docs[0].data())
+
+
+
+
+
     return (
         <section className="wpo-testimonials-section section-padding">
             <div className="container">
                 <div className="row align-items-center justify-content-center">
                     <div className="col-lg-6">
-                        <SectionTitle MainTitle={'What People’s Say'} />
+                        <SectionTitle MainTitle={locale === 'sv' ? 'Recensioner' : 'آراء الزبائن'}
+                        // {'What People’s Say'} 
+                        
+                        
+                        />
                     </div>
                 </div>
                 <div className="row align-items-center">
                     <div className="col-xl-12 col-lg-12">
                         <div className="testimonials-wrapper owl-carousel">
                             <Slider {...settings}>
-                                {testimonial.map((tesmnl, tsm) => (
+                                {/* {testimonial.map((tesmnl, tsm) => (
                                     <div className="testimonials-item" key={tsm}>
                                         <div className="testimonials-item-top">
                                             <p>{tesmnl.Des}</p>
@@ -104,7 +130,41 @@ const Testimonial = () => {
                                             </div>
                                         </div>
                                     </div>
-                                ))}
+                                ))} */}
+
+
+
+{value?.docs?.map((doc) => (
+              <React.Fragment key={doc.id}>
+                {/* {JSON.stringify(doc.data())},{' '} */}
+
+
+                <div className="testimonials-item" >
+                                        <div className=" bg-black text-white p-4 min-h-[150px]">
+                                            <p className=" text-white">{doc.data()?.message}</p>
+                                        </div>
+                                        <div className="testimonials-item-bottom">
+                                            {/* <div className="testimonials-item-bottom-author">
+                                                <img src={tesmnl.tsImg} alt="" />
+                                            </div> */}
+                                            <div className="testimonials-item-bottom-author-text text-md font-sans">
+                                                 <h3>{doc.data()?.fullName}</h3>
+
+
+
+
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+              </React.Fragment>
+            ))}
+
+
+
+
                             </Slider>
                         </div>
                     </div>

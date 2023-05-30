@@ -5,6 +5,10 @@ import { useInViewAnimation } from "@/utils/animation/useInViewAnimation";
 import { motion } from "framer-motion";
 import { parent, slideFromTop ,slideFromLeft , slideFromRight} from "@/utils/animation/animations";
 import { useRouter } from "next/router";
+import { db } from "@/utils/firebase";
+import {doc , collection} from 'firebase/firestore'
+import { useDocumentData , useCollection } from "react-firebase-hooks/firestore";
+
 const settings = {
     dots: false,
     arrows: true,
@@ -17,6 +21,11 @@ const settings = {
 };
 
 const Hero2 = () => {
+
+  
+
+
+
 
     const { ref, controls, inView } = useInViewAnimation({delay: 100});
 
@@ -38,14 +47,14 @@ const Hero2 = () => {
                                 <div className="container">
                                     <div className="slide-content">
                                         <div className="slide-title">
-                                            <h2>Expert Plumbing Service You Can Trust.</h2>
+                                            <h2 className="!text-yellow-300">Expert Plumbing Service You Can Trust.</h2>
                                         </div>
                                         <div className="slide-text">
                                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
                                         </div>
                                         <div className="clearfix"></div>
                                         <div className="slide-btns">
-                                            <Link href="/appointment" className="theme-btn">Book Online</Link>
+                                            <Link href="/appointment" className="theme-bt theme-bn py-[18px] px-[40px] rounded-lg hover:text-none !text-(rgb(109, 109, 109)) !bg-yellow-300 font-bold shadow-xl">Book Online</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -62,8 +71,11 @@ const Hero2 = () => {
                                 <div className="gradient-overlay"></div>
                                 <div className="container">
                                     <div className="slide-content">
-                                        <div className="slide-title">
-                                            <h2>
+                                        <div className="slide-title  ">
+                                            <h2
+                                            className="  !text-yellow-300"
+                                            
+                                            >
                                             Välkommen till Noura beauty center
                                                 {/* Expert Plumbing Service You Can Trust. */}
 
@@ -87,7 +99,7 @@ const Hero2 = () => {
                                         </div>
                                         <div className="clearfix"></div>
                                         <div className="slide-btns">
-                                            <Link href="/appointment" className="theme-btn">Book Online</Link>
+                                            <Link href="/appointment" className="theme-bt theme-bn py-[18px] px-[40px] rounded-lg hover:text-none !text-(rgb(109, 109, 109)) !bg-yellow-300 font-bold shadow-xl">Book Online</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -110,15 +122,19 @@ const Hero2 = () => {
                                 className="container">
                                     <div className="slide-content">
                                         <div className="slide-title">
-                                            <h2>Expert Plumbing Service You Can Trust.</h2>
+                                            <h2 className="!text-yellow-300">Expert Plumbing Service You Can Trust.</h2>
                                         </div>
                                         <div className="slide-text">
                                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
                                         </div>
                                         <div className="clearfix"></div>
+
+
+
+
                                         {/* <div
                                          className="slide-btns">
-                                            <Link href="/appointment" className="theme-btn">Book Online</Link>
+                                            <Link href="/appointment" className="theme-bt theme-bn py-[18px] px-[40px] rounded-lg hover:text-none !text-(rgb(109, 109, 109)) !bg-yellow-300 font-bold shadow-xl">Book Online</Link>
 
 
 
@@ -138,12 +154,15 @@ const Hero2 = () => {
       <div
 
  data-aos="fade-up-right"
-                                         className="slide-btns">
-                                            <Link href="/appointment" className="theme-btn">Book Onli11111ne</Link>
+                                         className="slide-btns ">
+                                            <Link href="/appointment" className="theme-bn py-[18px] px-[40px] rounded-lg hover:text-none !text-(rgb(109, 109, 109)) !bg-yellow-300 font-bold shadow-xl">Book Online2</Link>
 
 
 
                                         </div>
+
+
+
     </motion.div>
          
 )}
