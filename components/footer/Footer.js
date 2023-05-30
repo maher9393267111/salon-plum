@@ -53,7 +53,9 @@ const Footer = (props) => {
                     </a>
                   </li>
                   <li>
-                    <a onClick={ClickHandler} href="mailto:nourabeuatycenter96r@gmail.com">
+                    <a onClick={ClickHandler} href="mailto:Noura.center.beauty@gmail.com"
+                    // "mailto:nourabeuatycenter96r@gmail.com"
+                    >
                       <i className="ti-google"></i>
                     </a>
                   </li>
@@ -81,7 +83,9 @@ const Footer = (props) => {
                       0700773332 
                     </li>
                     <li>
-                      <i className="fi flaticon-send"></i>nourabeautycenter96@gmail.com
+                      <i className="fi flaticon-send"></i>
+                      {/* nourabeautycenter96@gmail.com */}
+                      Noura.center.beauty@gmail.com
                     </li>
                   </ul>
                 </div>
@@ -177,7 +181,10 @@ const Footer = (props) => {
             <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
               <div className="widget instagram">
                 <div className="widget-title">
-                  <h3>Bilder</h3>
+                  <h3>
+                    {/* Bilder */}
+                    {locale === 'sv' ? 'Bilder' : 'الصور'}
+                  </h3>
                 </div>
                 <ul className="d-flex">
                   {Projects.slice(0, 6).map((project, srv) => (

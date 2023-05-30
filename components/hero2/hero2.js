@@ -155,7 +155,7 @@ const Hero2 = () => {
 
  data-aos="fade-up-right"
                                          className="slide-btns ">
-                                            <Link href="/appointment" className="theme-bn py-[18px] px-[40px] rounded-lg hover:text-none !text-(rgb(109, 109, 109)) !bg-yellow-300 font-bold shadow-xl">Book Online2</Link>
+                                            <Link href="/appointment" className="theme-bn py-[18px] px-[40px] rounded-lg hover:text-none !text-(rgb(109, 109, 109)) !bg-yellow-300 font-bold shadow-xl">Book Online</Link>
 
 
 
