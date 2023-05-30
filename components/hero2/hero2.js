@@ -65,7 +65,14 @@ const Hero2 = () => {
                                         </div>
                                         <div className="clearfix"></div>
                                         <div className="slide-btns">
-                                            <Link href="/appointment" className="theme-bt theme-bn py-[18px] px-[40px] rounded-lg hover:text-none !text-(rgb(109, 109, 109)) !bg-yellow-300 font-bold shadow-xl">Book Online</Link>
+                                            <Link href="/appointment" className="theme-bt theme-bn py-[18px] px-[40px] rounded-lg hover:text-none !text-(rgb(109, 109, 109)) !bg-yellow-300 font-bold shadow-xl">
+                                                Book Online
+
+                                                
+
+
+                                                
+                                                </Link>
                                         </div>
                                     </div>
                                 </div>
