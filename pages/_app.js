@@ -44,13 +44,13 @@ function MyApp({ Component, pageProps ,props }) {
 
 <DefaultSeo
                 title="nourabeautycenter96"
-                description="Next SEO is a plug in that makes managing your SEO easier in Next.js projects."
+                description="Nourabeauty center Välkommen till Noura beauty centers"
                 openGraph={{
                     type: 'website',
                     locale: 'sv',
-                    url: 'nourabeautycenter96.se',
-                    siteName: 'nourabeautycenter96',
-                    tags: ['clinic', 'bueauty', 'nourabeautycenter96' ,'salon' , 'malmo' ],
+                    url: 'nourabeautycenter.se',
+                    siteName: 'nourabeautycenter',
+                    tags: ['clinic', 'bueauty', 'nourabeautycenter' ,'salon' , 'malmo' ,'tato slill' ,'teeth' ],
                 }}
                 twitter={{
                     handle: '@handle',
