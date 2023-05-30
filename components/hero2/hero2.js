@@ -47,8 +47,8 @@ const Hero2 = () => {
                                 <div className="container">
                                     <div className="slide-content">
                                         <div className="slide-title">
-                                            <h2 className="!text-yellow-300">
-                                            Välkommen till Noura beauty center
+                                            <h2 className="">
+                                            Välkommen till Noura beauty centers
                                                 {/* Expert Plumbing Service You Can Trust. */}
                                                 </h2>
                                         </div>
@@ -83,7 +83,7 @@ const Hero2 = () => {
                                     <div className="slide-content">
                                         <div className="slide-title  ">
                                             <h2
-                                            className="  !text-yellow-300"
+                                            className="  "
                                             
                                             >
                                             Välkommen till Noura beauty center
@@ -132,7 +132,7 @@ const Hero2 = () => {
                                 className="container">
                                     <div className="slide-content">
                                         <div className="slide-title">
-                                            <h2 className="!text-yellow-300">
+                                            <h2 className="">
                                                 {/* Expert Plumbing Service You Can Trust. */}
                                                 Välkommen till Noura beauty center  
                                                 </h2>

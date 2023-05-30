@@ -25,7 +25,8 @@ const Contactpage = () => {
                         {/* Address */}
                       </h2>
                       <p>
-                      Drottninggatan, 212 11 Malmö, Sverige
+                      Drottninggatan 1D, 21211 Malmö
+                      {/* Drottninggatan, 212 11 Malmö, Sverige */}
                         {/* 7 Green Lake Street Crawfordsville, IN 47933 */}
                         </p>
                     </div>

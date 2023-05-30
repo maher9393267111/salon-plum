@@ -76,7 +76,9 @@ const Footer = (props) => {
                       <i className="fi flaticon-location"></i>
                       {/* 7 Green Lake
                       Street Crawfordsville, IN 47933 ,Swedeen */}
-                      Drottninggatan, 212 11 Malmö, Sverige
+                      {/* Drottninggatan, 212 11 Malmö, Sverige */}
+
+                      Drottninggatan 1D, 21211 Malmö
                     </li>
                     <li>
                       <i className="fi flaticon-phone-call"></i>
