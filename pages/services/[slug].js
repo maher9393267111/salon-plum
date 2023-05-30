@@ -60,7 +60,7 @@ const BlogSingle = ({data , related}) => {
                             <div className="wpo-blog-content">
                                 <div className="post format-standard-image container ">
                                     <div className="entry-media flex   !justify-center ">
-                                        <img src={data?.image2.url ? data?.image2?.url : data?.image?.url}
+                                        <img src={data?.image2?.url ? data?.image2?.url : data?.image?.url}
                                         className=' md:!w-[50%] !w-[75%] !h-[300px] md:!h-[300px] object-cover'
                                     
                                         //    {BlogDetails?.blogSingleImg}

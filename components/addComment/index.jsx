@@ -161,7 +161,17 @@ rows={4}
                   <div className="submit-area  my-4">
                     <button
                       type="submit"
-                      className=" text-white   hover:bg-blue-400  transition-all   duration-500  bg-blue-600 text-xl p-3  min-w-[200px] rounded-lg"
+                      className=" text-white  
+                      
+                      hover:bg-blue-400 
+
+                      
+                       transition-all   duration-500 
+                      
+                      
+                      
+                      bg-blue-600
+                       text-xl p-3  min-w-[200px] rounded-lg"
                     >
                       {/* GET AN APPOINMENT */}
 

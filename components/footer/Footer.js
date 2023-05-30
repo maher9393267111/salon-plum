@@ -24,7 +24,7 @@ const Footer = (props) => {
               <div className="widget about-widget">
                 <div className="logo widget-title">
                   <img
-                  className=" w-[117px] h-[89px] object-cover rounded-[50%] "
+                  className=" w-[160px] h-[100px] object-cover rounded-[50%] "
                     src=
                     // "/images/my/3.jpg"
                      '/images/my/log-white.jpg'
@@ -64,13 +64,13 @@ const Footer = (props) => {
             </div>
             <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
               <div className="widget wpo-service-link-widget">
-                <div className="widget-title text-center">
+                <div className="widget-title text-cente">
                   <h3>
                   {locale === 'sv' ? 'Info' : 'التواصل'}
                     {/* Contact */}
                      </h3>
                 </div>
-                <div className="contact-ft">
+                <div className="contact-ft  ">
                   <ul>
                     <li>
                       <i className="fi flaticon-location"></i>
@@ -95,13 +95,13 @@ const Footer = (props) => {
             </div>
             <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
               <div className="widget link-widget">
-                <div className="widget-title text-center">
+                <div className="widget-title text-cente">
                   <h3>
                   {locale === 'sv' ? 'Tjänster' : 'الخدمات'}
                     {/* Services */}
                      </h3>
                 </div>
-                <ul dir="lft" className=" text-center ">
+                <ul dir="lft" className=" text-cente ">
                    {/* {Services.slice(0, 5).map((service, srv) => (
                     <li className=" cursor-pointer" key={srv}>
                        <Link

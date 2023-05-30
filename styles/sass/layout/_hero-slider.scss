@@ -475,6 +475,20 @@ hero slider
 		}
 	}
 
+	// -----------------
+
+	.slide-btns a{
+
+		background-color: #d2b36a !important;
+
+		&:hover {
+			background-color: black !important;
+		}
+
+	}
+
+
+
 
 	.slide-btns .hero-video-btn {
 		margin-left: 40px;
