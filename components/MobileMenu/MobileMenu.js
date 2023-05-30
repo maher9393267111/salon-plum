@@ -216,7 +216,7 @@ const MobileMenu = () => {
                                                            
                                                              >
                                                                 <Link className=' block text-xl  cursor-pointer font-bold text-center ' onClick={ClickHandler}
-                                                                    href='/home2'>
+                                                                    href='/'>
                                                                     
                                                                     
                                                                     {/* Home */}

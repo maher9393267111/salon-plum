@@ -13,7 +13,7 @@ const PageTitle = (props) => {
                         <div className="wpo-breadcumb-wrap">
                             <h2>{props.pageTitle}</h2>
                             <ol className="wpo-breadcumb-wrap">
-                                <li><Link href="/home">
+                                <li><Link href="/">
                                 {locale === 'sv' ? 'Main' : 'الرئيسية'}
                                     {/* Home */}
                                 </Link></li>
