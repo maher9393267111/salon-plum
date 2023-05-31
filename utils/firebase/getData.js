@@ -95,7 +95,7 @@ export const handleDelete = async(blog) => {
   // Delete Old image when Update 
 
 
-  export const handleDeleteImage = async (img) => {
+  export const handleDeleteImage = async (img ,from=null) => {
     try {
       //setLoading(true);
 
@@ -106,7 +106,7 @@ export const handleDelete = async(blog) => {
     
         console.log("image is Name:🔷️🔶️🔷️🔶️ " + img);
 
-        const desertRef = ref(storage, `blog/${img?.name}`);
+        const desertRef = ref(storage, `${from ? from : 'blog'}/${img?.name}`);
         await deleteObject(desertRef);
   
 

@@ -33,7 +33,7 @@ export default function HeroForm({image,setImage ,image2,setImage2 , handleClick
 // ---if there image delete old image then update new one---
 
 if (image?.name){
-   await handleDeleteImage(image)
+   await handleDeleteImage(image ,'hero')
    toast.success(' hero old image deleted')
 
 }
@@ -65,7 +65,7 @@ if (image?.name){
 // ---if there image delete old image then update new one---
 
 if (image2?.name){
-   await handleDeleteImage(image2)
+   await handleDeleteImage(image2,'hero')
    toast.success('hero old image2 deleted')
 
 }

@@ -8,15 +8,13 @@ import Loader from '../shared/loader'
 import SideMenu from './SideMenu'
 import {  deleteDocument} from '@/utils/firebase/getData';
 
-const BlogList = ({ posts }) => {
-    const title = (data) => {
-        return data.length >= 60 ? data.slice(0, 60) + "..." : data
-    }
+const HerosList = ({ posts }) => {
+   
 
 
     const deleteCard = async (e, id) => {
         e.stopPropagation();
-        await deleteDocument('blog', id);
+        await deleteDocument('hero', id);
       
     };
 
@@ -27,23 +25,20 @@ const BlogList = ({ posts }) => {
 
     return (
         <div className="flex gap-8 flex-wrap p-10">
-            {posts.map(post => (
+            {posts?.map(post => (
                 <div key={post.id} className='overflow-hidden z-10 bg-white rounded-lg shadow-md w-full  max-w-sm'>
                     <div className="relative h-40">
                         <img
                             className="absolute h-full w-full object-cover"
                             src={post.image?.url}
-                            alt={title(post.title)} />
+                           
+                            
+                            />
                     </div>
                     <div className="p-4">
-                        <Link 
-                        // href={`/blogs/${post.id}`}
-                    href={`/services/${post?.id}`}
-                        className="text-lg mb-2 text-gray-900 font-cutiveMono tracking-tighter font-semibold hover:text-teal-900 transition-colors cursor-pointer min-h-[3.5rem] block">
-                            {title(post.title)}
-                        </Link>
+                     
                         <div className="flex justify-between items-center text-gray">
-                            <Link href={`/admin/edit/${post.id}`} passHref>
+                            <Link href={`/admin/heroedit/${post?.id}`} passHref>
                                 <span className="text-sm font-medium text-teal-600 hover:text-teal-700 inline-flex items-center">
                                     <svg
                                         className="w-4 h-4 mr-1"
@@ -81,7 +76,7 @@ const BlogList = ({ posts }) => {
                                     </svg>
                                     Delete
                                 </span> */}
-                            <p className="text-sm text-gray-500">{post.date}</p>
+                            {/* <p className="text-sm text-gray-500">{post.date}</p> */}
                         </div>
                     </div>
                 </div>
@@ -90,7 +85,7 @@ const BlogList = ({ posts }) => {
     )
 }
 
-function AllBlogs() {
+function AllHeros() {
     const [loading, setLoading] = useState(true)
     const [data, setData] = useState([])
 
@@ -100,7 +95,7 @@ function AllBlogs() {
         const getData = async () => {
             try {
                 const data = []
-                const querySnapshot = await getDocs(collection(db, 'blog'));
+                const querySnapshot = await getDocs(collection(db, 'hero'));
 
                 querySnapshot.forEach((doc) => {
                     data.push({
@@ -154,13 +149,13 @@ function AllBlogs() {
             <h1 className='text-4xl font-cutiveMono text-center flex   '>
                
                 <p className='bg-blue-600  text-white rounded-xl m-auto capitalize p-3 font-semibold'>
-                All Blogs
+                All Heros
                 </p>
                 
                 </h1>
-            <BlogList posts={data} />
+            <HerosList posts={data} />
         </div>
     )
 }
 
-export default AllBlogs
+export default AllHeros;
