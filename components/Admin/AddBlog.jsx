@@ -10,7 +10,8 @@ import Loader from "../shared/loader";
 import BlogForm from "./BlogForm";
 import SideMenu from "./SideMenu";
 import { toast } from 'react-toastify';
-
+import SliderImagesForm from './sliderImagesForm';
+import uploadFile from '@/utils/firebase/addImage';
 function AddBlog() {
   const { setAlert, user, pageLoading = true } = useContext(StateContext)
   const [value, setValue] = useState("");
@@ -18,6 +19,7 @@ function AddBlog() {
   const [title, setTitle] = useState("");
   const [titleAr, setTitleAr] =useState('')
   const [image, setImage] = useState({url:'' ,name:''})
+  const [images ,setImages]  = useState([])
   const [image2, setImage2] = useState({url:'' ,name:''})
   const [loading, setLoading] = useState(false)
   const [visibleHome, setVisibleHome] = useState(false)
@@ -25,6 +27,26 @@ function AddBlog() {
   const { replace } = useRouter()
   const handleClick = async () => {
     setLoading(true)
+
+
+    console.log('images length: ' + images.length ,images)
+
+    const firebaseImages = [];
+    await Promise.all(
+      images?.map(async (image) => {
+        // const fbStorageRef = storageRef(storage, `images/${image.name}`);
+        // const uploadTask = await uploadBytes(fbStorageRef, image);
+        // const downloadURL = await getDownloadURL(uploadTask.ref);
+        const filePath = `/slider/${image?.name}`
+        const downloadURL = await uploadFile(image, filePath)
+        firebaseImages.push({url:downloadURL , name:image.name});
+        toast.success(`Images successfully`)
+      })
+    );
+
+
+
+
     try {
       // if (visibleHome) const count = 
       const data = visibleHome ? {
@@ -34,6 +56,7 @@ function AddBlog() {
         descriptionAr:valueAr,
         image: image,
         image2:image2,
+        slider:firebaseImages,
         category: category,
         date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
         index: await getBlogCount() + 1
@@ -42,6 +65,7 @@ function AddBlog() {
         description: value,
         image: image,
         image2:image2,
+        slider:firebaseImages,
         date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
       }
 
@@ -97,6 +121,9 @@ function AddBlog() {
     <div>
       <SideMenu />
       {loading && <Loader />}
+
+<SliderImagesForm images={images} setImages={setImages} />
+
       <BlogForm {...{ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr , category, setCategory ,image2, setImage2 }} />
     </div>
   )

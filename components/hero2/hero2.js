@@ -51,7 +51,7 @@ const Hero2 = () => {
                                             <h2 className="">
                                             Välkommen till Noura beauty centers
                                                 {/* Expert Plumbing Service You Can Trust. */}
-                                                </h2>
+                                            </h2>
                                         </div>
                                         <div className="slide-text">
                                             <p>

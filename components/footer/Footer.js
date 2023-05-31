@@ -90,6 +90,16 @@ const Footer = (props) => {
                       Noura.center.beauty@gmail.com
                     </li>
                   </ul>
+
+<div>
+<div>
+  <a href="https://www.google.com/maps/place/Noura+Beauty+Center+-+%D9%86%D9%88%D8%B1%D8%A7+%D8%A8%D9%8A%D9%88%D8%AA%D9%8A+%D8%B3%D9%86%D8%AA%D8%B1%E2%80%AD/@55.6077785,13.0208034,18z/data=!4m6!3m5!1s0x4653a3295b57fe01:0xb0c98bbfb072086f!8m2!3d55.6072997!4d13.0204552!16s%2Fg%2F11nxhkdwfr?entry=ttu">
+  <img src="https://axelsonsspa.se/media2/public_html/2021/03/Axelsons-SPA-Malmo%CC%88-karta-300x157.png" alt="" />
+  </a>
+</div>
+</div>
+
+
                 </div>
               </div>
             </div>
@@ -211,11 +221,11 @@ const Footer = (props) => {
 
 {/* <h1>Malomo Loacation</h1> */}
 
-<div>
+{/* <div>
   <a href="https://www.google.com/maps/place/Noura+Beauty+Center+-+%D9%86%D9%88%D8%B1%D8%A7+%D8%A8%D9%8A%D9%88%D8%AA%D9%8A+%D8%B3%D9%86%D8%AA%D8%B1%E2%80%AD/@55.6077785,13.0208034,18z/data=!4m6!3m5!1s0x4653a3295b57fe01:0xb0c98bbfb072086f!8m2!3d55.6072997!4d13.0204552!16s%2Fg%2F11nxhkdwfr?entry=ttu">
   <img src="https://axelsonsspa.se/media2/public_html/2021/03/Axelsons-SPA-Malmo%CC%88-karta-300x157.png" alt="" />
   </a>
-</div>
+</div> */}
 
 </div>
 

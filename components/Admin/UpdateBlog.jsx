@@ -11,6 +11,7 @@ import Loader from "../shared/loader";
 import BlogForm from "./BlogForm";
 import SideMenu from "./SideMenu";
 import { toast } from 'react-toastify';
+import SliderImagesForm from './sliderImagesForm';
 
 function UpdateBlog() {
     const { setAlert, user, pageLoading = true } = useContext(StateContext);
@@ -20,6 +21,7 @@ function UpdateBlog() {
     const [valueAr, setValueAr] = useState("");
     const [category, setCategory] = useState('')
     const [image2, setImage2] = useState({url:'' ,name:''})
+    const [images ,setImages]  = useState([])
     
     const [titleAr, setTitleAr] =useState('')
     const [loading, setLoading] = useState(true);
@@ -42,6 +44,7 @@ function UpdateBlog() {
                 setCategory(data?.category)
                 setImage(data.image);
                 setImage2(data?.image2)
+                setImages(data?.slider)
                 if (data.index) {
                     setIndex(data.index)
                     setVisibleHome(true)
@@ -169,6 +172,10 @@ function UpdateBlog() {
         <div>
             <SideMenu />
             {loading && <Loader />}
+
+
+            <SliderImagesForm images={images} setImages={setImages} update={true} />
+
             <BlogForm
                 {...{
                     setTitle,

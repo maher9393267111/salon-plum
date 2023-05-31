@@ -2,8 +2,14 @@ import React, { useState } from 'react'
 import SimpleReactValidator from 'simple-react-validator';
 import {toast} from 'react-toastify'
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const ContactForm = () => {
+
+
+
+
+    const { locale, locales, asPath } = useRouter();
 
     const [forms, setForms] = useState({
         name: '',
@@ -99,7 +105,7 @@ const ContactForm = () => {
                 </div>
                 <div className="col col-lg-6 col-12">
                     <div className="form-field">
-                        <select
+                        {/* <select
                             onBlur={(e) => changeHandler(e)}
                             onChange={(e) => changeHandler(e)}
                             value={forms.subject}
@@ -110,7 +116,61 @@ const ContactForm = () => {
                             <option>Water Line Repair</option>
                             <option>Bathroom Plumbing</option>
                             <option>Basement Plumbing</option>
+                        </select> */}
+
+<select
+                          
+                          onBlur={(e) => changeHandler(e)}
+                          onChange={(e) => changeHandler(e)}
+                          value={forms.subject}
+                          type="text"
+                          name="subject"
+                        >
+                          <option>
+                            {/* Choose a Service */}
+                            {locale === 'sv' ? 'Serviceval' : 'اختيار الخدمة'}
+                          </option>
+                          <option value="Hydrafacial">
+                            {locale === "sv"
+                              ? "Hydrafacial"
+                              : "هايدروفيشال تنظيف بشرة عميق"}
+                          </option>
+                          <option value='Bb glow'>
+                            {locale === "sv" ? "Bb glow" : "توحيد لون البشره"}
+                          </option>
+                          <option value='Vitamen boost'>
+                            {locale === "sv"
+                              ? "Vitamen boost"
+                              : "تنظيف بشره مع ابر فيتامين للبشره"}
+                          </option>
+                       
+                          <option value='Laser carbon peeling'>
+                          {locale === 'sv' ? 'Laser carbon peeling' : 'تقشير ليزري بالكربون '}
+
+                          </option>
+
+
+<option value="Tandblekning" >{locale === 'sv' ? 'Tandblekning' : 'تبييض الاسنان بالليزر ' }</option>
+
+
+<option value="Microneedling" >{locale === 'sv' ? 'Microneedling' : 'مايكرونيدلينغ '}</option>
+<option value="Fettbränning" > {locale === 'sv' ? 'Fettbränning' : 'تكسيير الدهون'}</option>
+
+
+ <option value="Lash lift" > {locale === 'sv' ? 'Lash lift' : 'قلب رموش'}</option>
+ <option value="Microblading" > {locale === 'sv' ? 'Microblading' : 'تاتو حواجب شعره'}</option>
+ <option value="Brow lift" > {locale === 'sv' ? 'Brow lift' : ' رفع حواجب'}</option>
+ <option value="Tatueringsborttagning" > {locale === 'sv' ? 'Tatueringsborttagning' : 'ازالة تاتو'}</option>
+ <option value="Naglar, Spa manikyr" > {locale === 'sv' ? 'Naglar, Spa manikyr' : 'اضافر واعتناء باليدين'}</option>
+
+
+
                         </select>
+
+
+
+
+
                         {validator.message('subject', forms.subject, 'required')}
                     </div>
                 </div>
@@ -127,7 +187,11 @@ const ContactForm = () => {
                 </div>
             </div>
             <div className="submit-area">
-                <button type="submit" className=" bg-blue-700 font-bold text-white p-4 rounded-2xl">Submit Now</button>
+                <button type="submit" className=" bg-blue-700 font-bold text-white p-4 rounded-2xl">
+                {locale === 'sv' ? 'skicka' : 'إرسال'}
+                    
+                    
+                    </button>
             </div>
         </form >
     )

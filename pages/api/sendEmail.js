@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
 		
   //  pass:'ufjfumzgyzfbtbkr'
 
-user:'nourabeautycenter9696@gmail.com',
+user:'nourabeautycenter96@gmail.com',
 
 
 
