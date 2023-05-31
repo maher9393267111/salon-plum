@@ -113,7 +113,7 @@ className=' my-[40px]'>
 
 
 
-                                                {category !=='' &&   
+                                                {tesmnl?.category !=='' &&   
                                                 <span className=' font-semibold my-2 ml-6 bg-[rgb(251,186,55)] min-w-[75px] hover:bg-[rgb(251,166,55)] transition-all absolute text-center text-xl  duration-300 text-white rounded-xl p-2 top-[-5rem] left-3  cursor-pointer  '>
                                                     
                                                 
