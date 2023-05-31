@@ -52,14 +52,14 @@ const splitCat =(cat)=>{
         
         ref={ref}
         
-        className="wpo-blog-section section-padding   bg-[rgb(249,234,230)]">
+        className="wpo-blog-section section-padding  lg:mt-[100px] xl:mt-[150px]  bg-[rgb(249,234,230)]">
 
 
             <div
             
  
 
-            className="container bg-[rgb(249,234,230)]">
+            className=" container bg-[rgb(249,234,230)]  mt-[40px] sm:mt-0">
                 <div className="row align-items-center justify-content-center">
                     <div
                      data-aos="fade-up-right"

@@ -42,9 +42,12 @@ const [language, setLanguage] = useState(currentLocale);
             <div className="container">
                 <div className="row">
                     <div className="col col-lg-7 col-md-5 col-sm-12 col-12">
-                        <div className="contact-intro">
-                            <ul>
-                                <li><i><img src='/images/icon/1.png' alt=""/></i>{locale === 'sv' ? 'måndag' : 'الاثنين' }  - {locale === 'sv' ?  'lördag' : 'السبت' } ||   10:00 - 18:00</li>
+                        <div className="contact-intro h-full">
+                            <ul className='flex h-full justify-center md:justify-start'>
+                                <li className='block px-4 py-3 mx-2 rounded-md text-sm md:text:lg text-gray font-medium capitalize transition-colors duration-300 transform hover:bg-cyan'>
+                                    {/* <i><img src='/images/icon/1.png' alt=""/></i> */}
+                                
+                                {locale === 'sv' ? 'måndag' : 'الاثنين' }  - {locale === 'sv' ?  'lördag' : 'السبت' } ||   10:00 - 18:00</li>
                              {/* {locale} */}
 
 
@@ -55,7 +58,8 @@ const [language, setLanguage] = useState(currentLocale);
                         <div className="contact-info">
                             <ul>
                             
-                                <li><a legacyBehavior href="tel:+6494461709"><i><img src='/images/icon/2.png' alt=""/></i> 
+                                <li className='md:mt-3 block px-4 py-3 mx-2 rounded-md text-sm md:text:lg text-gray font-medium capitalize transition-colors duration-300 transform hover:bg-cyan'><a legacyBehavior href="tel:+6494461709">
+                                    {/* <i><img src='/images/icon/2.png' alt=""/></i>  */}
                                 0700773332
                                 
                                 </a></li>

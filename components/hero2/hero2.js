@@ -44,7 +44,7 @@ const Hero2 = () => {
 
 
     return (
-        <section className="wpo-hero-slider bg-[rgb(249,234,230)]">
+        <section className="wpo-hero-slider bg-[rgb(249,234,230)] !h-[388px] md:!max-h-[700px]">
             <div className="hero-container">
                 <div className="hero-wrapper">
                     <Slider {...settings}>
@@ -58,7 +58,7 @@ const Hero2 = () => {
                         <div 
                         data-aos="fade-up-right"
                         
-                        className="hero-slide !h-[600px]">
+                        className="hero-slide !h-[377px] md:!h-[600px]">
                             <div className="slide-inner slide-bg-image" style={{ backgroundImage: `url(${
                                  doc?.data().image?.url
                                 //  '/images/my/slider-1.jpg'
@@ -68,7 +68,7 @@ const Hero2 = () => {
                                 ` }}>
                                 <div className="gradient-overlay"></div>
                                 <div className="container">
-                                    <div className="slide-content">
+                                    <div className="slide-content ">
                                         <div className="slide-title w-1/2 md:w-[85%]">
                                             <h2 className=" ">
                                             Välkommen till Noura beauty centers
