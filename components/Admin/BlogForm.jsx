@@ -12,7 +12,8 @@ const QuillNoSSRWrapper = dynamic(import('react-quill'), {
     loading: () => <Loader />,
 })
 
-export default function BlogForm({ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr , category, setCategory ,image2, setImage2  }) {
+export default function BlogForm({ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading,
+     image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr , category, setCategory ,image2, setImage2  }) {
  
     const [file, setFile] = useState(null)
     const [file2, setFile2] = useState(null)

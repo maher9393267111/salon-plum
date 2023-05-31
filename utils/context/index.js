@@ -36,6 +36,7 @@ export const StateContextProvider = ({ children }) => {
             setAlert,
             user,
             pageLoading,
+            setPageLoading,
             signInUser,
             logout
         }}>
