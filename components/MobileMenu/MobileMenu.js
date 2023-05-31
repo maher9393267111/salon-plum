@@ -244,7 +244,7 @@ const MobileMenu = () => {
                                                            
                                                            >
                                                               <Link className=' text-xl block  cursor-pointer font-bold text-center ' onClick={ClickHandler}
-                                                                  href='/Appointment'>
+                                                                  href='/appointment'>
                                                                   
                                                                   {locale === 'sv' ? 'Tidsbokning' : 'حجز موعد'}
                                                                   {/* Apointment */}

@@ -114,9 +114,9 @@ else if (user && !validator.allValid())
 
 
   return (
-    <div className=" sm:ml-12 my-12">
+    <div className=" sm:ml-12 my-12 container">
 
-<div className="  font-bold my-4 ml-12 !text-[39px] font-sans ">
+<div className="  font-bold my-4 sm:ml-12 !text-[39px] font-sans ">
     {/* add comment */}
     {locale === 'sv' ? 'Lägg till en kommentar' : 'إضافة تعليق'}
 </div>
@@ -135,7 +135,7 @@ else if (user && !validator.allValid())
                   
 
                     <div
-                      className="col col-lg-6 col-12"
+                      className="col col-lg-6 col-11 p-2"
                       // "col fullwidth col-lg-12 "
                     >
                       <div className="form-group">
