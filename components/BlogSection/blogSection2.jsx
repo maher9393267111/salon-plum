@@ -97,14 +97,21 @@ const splitCat =(cat)=>{
 {/* ---Category btn---- */}
 <div className="relative">
 
+
+{blog?.category !=='' &&   
     <p className=" absolute bg-[#d2b36a] hover:bg-[#d2b35a] !min-w-[140px]  transition-all font-semibold  duration-300 text-white text-center !text-2xl rounded-xl p-[12px] top-[-5rem] left-[2.75rem]  cursor-pointer"> 
 
 
 
-    {/* {blog?.category} */}
+    
    { splitCat(blog?.category)} 
     
     </p>
+
+                        }
+
+
+
 </div>
 
 
