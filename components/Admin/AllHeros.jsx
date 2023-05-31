@@ -12,9 +12,9 @@ const HerosList = ({ posts }) => {
    
 
 
-    const deleteCard = async (e, id) => {
-        e.stopPropagation();
-        await deleteDocument('hero', id);
+    const deleteCard =  (e, id) => {
+       // e.stopPropagation();
+         deleteDocument('hero', id);
       
     };
 
@@ -55,7 +55,7 @@ const HerosList = ({ posts }) => {
 
                                
                             </Link>
-                            {/* <span 
+                            <span 
                                 
                                 onClick={(e) =>
                                     deleteCard(
@@ -75,7 +75,7 @@ const HerosList = ({ posts }) => {
                                             fill="currentColor" />
                                     </svg>
                                     Delete
-                                </span> */}
+                                </span>
                             {/* <p className="text-sm text-gray-500">{post.date}</p> */}
                         </div>
                     </div>

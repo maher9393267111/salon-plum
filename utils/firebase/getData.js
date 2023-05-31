@@ -69,15 +69,17 @@ export const handleDelete = async(blog) => {
   export const deleteDocument = async(document, id)=> {
       let result = null;
       let error = null;
-      '8R0uXK4adS7UyruStjoH'
+     
   console.log(document ,id)
       try {
           //const docRef = doc(db, document, id);
           //const response = await deleteDoc(docRef);
-        const response = await  deleteDoc(doc(db, document, id))
+      //  const response = await  deleteDoc(doc(db, 'hero', id))
+
+      await deleteDoc(doc(db, "hero", id));
           
-        const desertRef = ref(storage, `blog/${document.img?.name}`);
-        await deleteObject(desertRef);
+       // const desertRef = ref(storage, `hero/${document.img?.name}`);
+        //await deleteObject(desertRef);
           result = response;
       } catch (e) {
           error = e;
