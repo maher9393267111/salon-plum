@@ -1,4 +1,4 @@
-import React from "react";
+import React ,  {useEffect ,useState}from "react";
 import Slider from "react-slick";
 import Link from 'next/link'
 import { useInViewAnimation } from "@/utils/animation/useInViewAnimation";
@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { db } from "@/utils/firebase";
 import { collection} from 'firebase/firestore'
 import {  useCollection } from "react-firebase-hooks/firestore";
+
 
 const settings = {
     dots: false,
@@ -22,7 +23,7 @@ const settings = {
 
 const Hero2 = () => {
 
-  
+
 
 
     const [value, loading, error] = useCollection(
@@ -43,6 +44,9 @@ const Hero2 = () => {
 
 
 
+
+
+
     return (
         <section className="wpo-hero-slider bg-[rgb(249,234,230)] !h-[388px] md:!max-h-[700px]">
             <div className="hero-container">
@@ -56,7 +60,7 @@ const Hero2 = () => {
 
 
                         <div 
-                        data-aos="fade-up-right"
+                       
                         
                         className="hero-slide !h-[377px] md:!h-[600px]">
                             <div className="slide-inner slide-bg-image" style={{ backgroundImage: `url(${
@@ -67,7 +71,10 @@ const Hero2 = () => {
                             })
                                 ` }}>
                                 <div className="gradient-overlay"></div>
-                                <div className="container">
+                                <div 
+                                 data-aos="fade-up-right"
+                                
+                                className="container">
                                     <div className="slide-content ">
                                         <div className="slide-title w-1/2 md:w-[85%]">
                                             <h2 className=" ">
@@ -86,8 +93,8 @@ const Hero2 = () => {
                                                 </p>
                                         </div>
                                         <div className="clearfix"></div>
-                                        <div className="slide-btns">
-                                            <Link href="/appointment" className="theme-bt theme-bn py-[10px] px-[24px] md:py-[18px] md:px-[40px] rounded-lg hover:text-none !text-(rgb(109, 109, 109)) !bg-yellow-300 font-bold shadow-xl">
+                                        <div className="slide-btns relative mb-6">
+                                            <Link href="/appointment" className="theme-bt theme-bn py-[10px] px-[24px] md:py-[18px] md:px-[40px] rounded-lg hover:text-none !text-(rgb(109, 109, 109)) !bg-yellow-300 font-bold shadow-xl ">
                                                 Book Online
 
                                                 
@@ -104,9 +111,9 @@ const Hero2 = () => {
 <div 
 // data-aos="fade-up-right"
 
-className=" absolute  left-[57%] top-[3%]">
+className=" absolute  left-[57%] top-[3%] h-full">
 <img
-className=" "
+className="h-full object-cover "
 
 src={ doc?.data().image2?.url} alt="" />
 

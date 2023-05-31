@@ -140,7 +140,7 @@ const Testimonial = () => {
 
 
                 <div className="testimonials-item" >
-                                        <div className=" bg-black text-white p-4 min-h-[150px]">
+                                        <div className=" bg-black rounded-3xl text-white p-4 min-h-[150px]">
                                             <p className=" text-white">{doc.data()?.message}</p>
                                         </div>
                                         <div className="testimonials-item-bottom">
