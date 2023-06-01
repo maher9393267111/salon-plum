@@ -139,14 +139,12 @@ const Testimonial = () => {
                 {/* {JSON.stringify(doc.data())},{' '} */}
 
 
-                <div className="testimonials-item" >
+                {/* <div className="testimonials-item" >
                                         <div className=" bg-black rounded-3xl text-white p-4 min-h-[150px]">
                                             <p className=" text-white">{doc.data()?.message}</p>
                                         </div>
                                         <div className="testimonials-item-bottom">
-                                            {/* <div className="testimonials-item-bottom-author">
-                                                <img src={tesmnl.tsImg} alt="" />
-                                            </div> */}
+                                          
                                             <div className="testimonials-item-bottom-author-text text-md font-sans">
                                                  <h3>{doc.data()?.fullName}</h3>
 
@@ -156,7 +154,27 @@ const Testimonial = () => {
                                                 
                                             </div>
                                         </div>
+                                    </div> */}
+
+
+
+<div className="testimonials-item" key={doc.id}>
+                                        <div className="testimonials-item-top">
+                                            <p className=" font-semibold">{doc.data()?.message}</p>
+                                        </div>
+                                        <div className="testimonials-item-bottom">
+                                            <div className="testimonials-item-bottom-author">
+                                                <img src='https://cdn-icons-png.flaticon.com/128/149/149071.png' alt="" />
+                                            </div>
+                                            <div className="testimonials-item-bottom-author-text">
+                                                <h3>{doc.data()?.fullName}</h3>
+                                                {/* <span>{tesmnl.Sub}</span> */}
+                                            </div>
+                                        </div>
                                     </div>
+
+
+
 
 
               </React.Fragment>
