@@ -425,8 +425,15 @@ hero slider
 			color: #d2b36a !important;   //$white;
 
 			@include media-query(1199px) {
-				font-size: 50px;
+				font-size: 40px;
+				
+
 			}
+
+
+
+
+
 
 			@include media-query(991px) {
 				font-size: 40px;
