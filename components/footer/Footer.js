@@ -111,7 +111,7 @@ const Footer = (props) => {
                     {/* Services */}
                      </h3>
                 </div>
-                <ul dir="lft" className=" text-cente ">
+                <ul dir="lft" className=" text-cente !list-disc ">
                    {/* {Services.slice(0, 5).map((service, srv) => (
                     <li className=" cursor-pointer" key={srv}>
                        <Link
@@ -124,7 +124,7 @@ const Footer = (props) => {
                     </li>
                   ))}  */}
 
-<li className="cursor-pointer   text-[19px]" >
+<li className="cursor-pointer   text-[16px]" >
 {locale === 'sv' ? 'Hydrafacial'  : 'هايدروفيشال تنظيف بشرة عميق'}
 
 
@@ -134,54 +134,187 @@ const Footer = (props) => {
 
 
 
-<li className="cursor-pointer   text-[19px]" >
+<li className="cursor-pointer   text-[16px]" >
 
 {locale === 'sv' ? 'Bb glow' : 'توحيد لون البشره'}
 </li>
 
 
-<li className="cursor-pointer   text-[19px]" >
+<li className="cursor-pointer   text-[16px]" >
 {locale === 'sv' ? 'Vitamen boost' : 'تنظيف بشره مع ابر فيتامين للبشره'}
 </li>
 
 
 
-<li className="cursor-pointer   text-[19px]" >
+<li className="cursor-pointer   text-[16px]" >
 
 {locale === 'sv' ? 'Laser carbon peeling' : 'تقشير ليزري بالكربون '}
 </li>
 
 
-<li className="cursor-pointer   text-[19px]" >
+<li className="cursor-pointer   text-[16px]" >
 
 {locale === 'sv' ? 'Tandblekning' : 'تبييض الاسنان بالليزر ' }
 </li>
 
-<li className="cursor-pointer   text-[19px]" >
+<li className="cursor-pointer   text-[16px]" >
 
 {locale === 'sv' ? 'Microneedling' : 'مايكرونيدلينغ '}
 </li>
 
 
-<li className="cursor-pointer   text-[19px]" >
+<li className="cursor-pointer   text-[16px]" >
 
 {locale === 'sv' ? 'Lash lift' : 'قلب رموش'}
 </li>
 
-<li className="cursor-pointer   text-[19px]" >
+<li className="cursor-pointer   text-[16px]" >
 {locale === 'sv' ? 'Brow lift' : ' رفع حواجب'}
 
 </li>
 
-<li className="cursor-pointer   text-[19px]" >
+<li className="cursor-pointer   text-[16px]" >
 
 {locale === 'sv' ? 'Microblading' : 'تاتو حواجب شعره '}
 </li>
 
-<li className="cursor-pointer   text-[19px]" >
+<li className="cursor-pointer   text-[16px]" >
 {locale === 'sv' ? 'Naglar, Spa manikyr' : 'اضافر واعتناء باليدين'}
 
 </li>
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Kemisk peeling' : 'تقشير الكيماوي '}
+
+</li>
+
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Dermapen' : 'ديرمابين للبشره'}
+
+</li>
+
+
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Makeupartist' : 'مكياج '}
+
+</li>
+
+
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'kritsall peeling' : ' تقشير الكريستالي للبشرة'}
+
+</li>
+
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Tatueringsborttagning' : 'ازالة التاتو بالليزر'}
+
+</li>
+
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Malesma,pigmentfläckar behandling' : 'ازالة التصبغات والنمش '}
+
+</li>
+
+
+
+
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Fett frysning' : 'تجميد الدهون'}
+
+</li>
+
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Hifu till ansikte ' : 'هايفو للوجه'}
+
+</li>
+
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Insculp / Himet' : 'جهاز شد الجسم '}
+
+</li>
+
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'MS' : 'جلسة تكسير الدهون ونحت الجسم'}
+
+</li>
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Klippning' : 'قص للشعر '}
+
+</li>
+
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Hårfärg' : 'صبغات للشعر'}
+
+</li>
+
+
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Hårbehandling ' : 'معالجة الشعر '}
+
+</li>
+
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Olaplix behandling' : 'معالج الشعر بالاولابلكس '}
+
+</li>
+
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Protien hår behandling' : 'علاج فرد الشعر بالبروتين'}
+
+</li>
+
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Botox hår behandling' : 'علاج الشعر بالبوتوكس '}
+
+</li>
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Kristall hår behandling' : 'علاج الشعر بالكريستال'}
+
+</li>
+
+
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Collagen hår behandling ' : 'علاج الشعر بالكولاجين'}
+
+</li>
+
+
+
+
+
+
 
 
 

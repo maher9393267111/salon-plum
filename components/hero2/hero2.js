@@ -95,12 +95,24 @@ src={ doc?.data().image2?.url} alt="" />
 
                                     <div className="slide-content ">
                                         <div className="slide-title w-1/2 md:w-[85%]">
-                                            <h2 className=" ">
+                                            <h2 className="">
                                             {locale === 'sv' ? 'Välkommen till Noura beauty center' : 
                                             'مركز نورا بيوتي سنتر للتجميل والليزر'}
                                            
                                                 {/* Expert Plumbing Service You Can Trust. */}
                                             </h2>
+
+
+{/* ----stars---- */}
+<div className="flex flex-wrap my-6">
+    <img className=" md:w-[55px] w-[35px] h-[35px] md:h-[55px]" src="https://cdn-icons-png.flaticon.com/128/9554/9554194.png" alt="" />
+    <img className=" md:w-[55px] w-[35px] h-[35px] md:h-[55px]" src="https://cdn-icons-png.flaticon.com/128/9554/9554194.png" alt="" />
+    <img className="md:w-[55px] w-[35px] h-[35px] md:h-[55px]" src="https://cdn-icons-png.flaticon.com/128/9554/9554194.png" alt="" />
+    <img className="md:w-[55px] w-[35px] h-[35px] md:h-[55px]" src="https://cdn-icons-png.flaticon.com/128/9554/9554194.png" alt="" />
+    <img className=" md:w-[55px] w-[35px] h-[35px] md:h-[55px]" src="https://cdn-icons-png.flaticon.com/128/9554/9554194.png" alt="" />
+</div>
+
+
                                         </div>
                                         <div className="slide-text">
                                             <p className=" w-2/3 text-sm md:w-[80%] md:block">
