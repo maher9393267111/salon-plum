@@ -74,7 +74,25 @@ const Hero2 = () => {
                                 <div 
                                  data-aos="fade-up-right"
                                 
-                                className="container">
+                                className="container" dir="">
+
+{/* <div 
+// data-aos="fade-up-right"
+
+className=" absolute  left-[12%] top-[3%] h-full">
+<img
+className="h-full object-cover "
+
+src={ doc?.data().image2?.url} alt="" />
+
+</div> */}
+
+
+
+
+
+
+
                                     <div className="slide-content ">
                                         <div className="slide-title w-1/2 md:w-[85%]">
                                             <h2 className=" ">
@@ -108,6 +126,7 @@ const Hero2 = () => {
 
 {/* -------image2---- */}
 
+
 <div 
 // data-aos="fade-up-right"
 
@@ -120,7 +139,15 @@ src={ doc?.data().image2?.url} alt="" />
 </div>
 
 
+
+
+
+
+
                                 </div>
+                                
+                                
+                                
                             </div>
                         </div>
 

@@ -10,7 +10,27 @@ import { toast } from 'react-toastify'
 const QuillNoSSRWrapper = dynamic(import('react-quill'), {
     ssr: false,
     loading: () => <Loader />,
+  
 })
+
+
+const   modules = {
+    toolbar: [
+      [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
+      [{size: []}],
+      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+      [{'list': 'ordered'}, {'list': 'bullet'}, 
+       {'indent': '-1'}, {'indent': '+1'}],
+      ['link', 'image', 'video'],
+      ['clean']
+    ]
+  }
+
+
+
+
+
+
 
 export default function BlogForm({ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading,
      image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr , category, setCategory ,image2, setImage2  }) {
@@ -109,7 +129,10 @@ if (image2?.name){
 
 
             <div className="w-full h-64">
-                <QuillNoSSRWrapper theme="snow" className='h-full pb-[2.5rem] border-[2.5px] text-black font-medium rounded-md border-teal-400 hover:border-blue-600' value={value} onChange={setValue} />
+                <QuillNoSSRWrapper
+                   modules={modules}
+                
+                theme="snow" className='h-full pb-[2.5rem] border-[2.5px] text-black font-medium rounded-md border-teal-400 hover:border-blue-600' value={value} onChange={setValue} />
             </div>
 
 
@@ -118,7 +141,10 @@ if (image2?.name){
 
 <div className="w-full h-64">
     <p className=''>Arabic Description</p>
-                <QuillNoSSRWrapper theme="snow" className='h-full pb-[2.5rem] border-[2.5px] text-black font-medium rounded-md border-teal-400 hover:border-blue-600' value={valueAr} onChange={setValueAr} />
+                <QuillNoSSRWrapper
+                 modules={modules}
+                
+                theme="snow" className='h-full pb-[2.5rem] border-[2.5px] text-black font-medium rounded-md border-teal-400 hover:border-blue-600' value={valueAr} onChange={setValueAr} />
             </div>
 
 
