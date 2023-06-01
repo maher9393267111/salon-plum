@@ -40,7 +40,7 @@ export default function SliderImagesForm({images,setImages , update =false}) {
   <ul className="mb-0 flex flew-wrap ml-12">
     {
     // propertySelectedImgs.length > 0
-    images.length > 0 
+    images?.length > 0 
       ? images?.map((item, index) => (
           <li key={index} className="w-[189px] h-[190px]  rounded-lg p-2  list-inline-item">
             <div className="portfolio_item w-full h-full">
