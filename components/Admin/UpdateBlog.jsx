@@ -39,16 +39,16 @@ function UpdateBlog() {
                 };
                 setTitle(data?.title);
                 setTitleAr(data?.titleAr)
-                setValue(data.description);
-                setValueAr(data.descriptionAr)
+                setValue(data?.description);
+                setValueAr(data?.descriptionAr)
                 setCategory(data?.category)
                 setImage(data?.image);
                 setImage2(data?.image2)
                 setImages(data?.slider)
-                if (data?.index) {
-                    setIndex(data?.index)
-                    setVisibleHome(true)
-                }
+                // if (data?.index) {
+                //     setIndex(data?.index)
+                //     setVisibleHome(true)
+                // }
             } catch (error) {
                 console.log(error);
                 setAlert({

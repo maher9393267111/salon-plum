@@ -14,7 +14,7 @@ const PageTitle = (props) => {
                             <h2>{props.pageTitle}</h2>
                             <ol className="wpo-breadcumb-wrap">
                                 <li><Link href="/">
-                                {locale === 'sv' ? 'Main' : 'الرئيسية'}
+                                {locale === 'sv' ? 'Start sida' : 'الرئيسية'}
                                     {/* Home */}
                                 </Link></li>
                                 <li><span>{props.pagesub}</span></li>

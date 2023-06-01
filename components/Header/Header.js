@@ -69,7 +69,7 @@ const { locale, locales, asPath } = useRouter();
                   <ul className="nav navbar-nav mb-2 mb-lg-0">
                     <li className="menu-item-has-children">
                       <Link  className=" font-serif" onClick={ClickHandler} href="/">
-                      {locale === 'sv' ? 'Main' : 'الرئيسية'}
+                      {locale === 'sv' ? 'Start sida' : 'الرئيسية'}
                       </Link>
                       {/* <ul className="sub-menu">
                                                 <li><Link onClick={ClickHandler} href="/home">Home style 1</Link></li>
