@@ -126,7 +126,7 @@ src={ doc?.data().image2?.url} alt="" />
                                         </div>
                                         <div className="clearfix"></div>
                                         <div className="slide-btns relative mb-6">
-                                            <Link href="/appointment" className="theme-bt hidden md:block theme-bn py-[10px] px-[24px] md:py-[18px] md:px-[40px] rounded-lg hover:text-none !text-(rgb(109, 109, 109)) !bg-yellow-300 font-bold shadow-xl ">
+                                            <Link href="/appointment" className="theme-bt hidden md:inline-block theme-bn py-[10px] px-[24px] md:py-[18px] md:px-[40px] rounded-lg hover:text-none !text-(rgb(109, 109, 109)) !bg-yellow-300 font-bold shadow-xl ">
                                                 Book Online
 
                                                 
