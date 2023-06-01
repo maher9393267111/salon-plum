@@ -96,7 +96,9 @@ src={ doc?.data().image2?.url} alt="" />
                                     <div className="slide-content ">
                                         <div className="slide-title w-1/2 md:w-[85%]">
                                             <h2 className=" ">
-                                            Välkommen till Noura beauty centers
+                                            {locale === 'sv' ? 'Välkommen till Noura beauty center' : 
+                                            'مركز نورا بيوتي سنتر للتجميل والليزر'}
+                                           
                                                 {/* Expert Plumbing Service You Can Trust. */}
                                             </h2>
                                         </div>
@@ -104,7 +106,7 @@ src={ doc?.data().image2?.url} alt="" />
                                             <p className=" w-2/3 text-sm md:w-[80%] md:block">
                                                 
                                             {locale === 'sv' ? 'Noura beauty center erbjuder skönhetsvård med hög kvalité där kvinnan står i fokus.Vår målsättning är att du som är intresserad av hudvård, ditt utseende och skönhet ska få alla dina behov tillgodosedda.' : 
-                                            'يقدم مركز نورا للتجميل رعاية تجميل عالية الجودة حيث تكون المرأة هي التركيز.هدفنا هو أن يكون لكل من يهتم بالعناية بالبشرة ومظهرك وجمالك كل احتياجاتك'}
+                                            'كل ماتحتاجين لجمالك بمكان واحد  يقدم مركز نورا للتجميل والليزر  أفضل الخدمات للعناية بجمالك.  لدينا احدث التقنيات وافضل النتائج شعارنا أسعادكم وأرضائكم  أبداعنا لا حدود له… نتقن فنبدع …. فنتألق..'}
 
                                                 {/* There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form. */}
                                                 
