@@ -275,7 +275,7 @@ const AppointmentS2 = () => {
                       <div className="form-group">
                         <label>
                           {/* Select Day */}
-                          {locale === 'sv' ? 'Valde idag' : 'اختار اليوم'}
+                          {locale === 'sv' ? 'Välj dag' : 'اختار اليوم'}
                         </label>
                         <select
                           className="form-control"
@@ -309,7 +309,7 @@ const AppointmentS2 = () => {
                             {locale === "sv" ? "fredag" : "الجمعة"}
                           </option>
                           <option value={locale === "sv" ? "ördag" : "السبت"}>
-                            {locale === "sv" ? "ördag" : "السبت"}
+                            {locale === "sv" ? "Lördag" : "السبت"}
                           </option>
                         </select>
                         {validator.message(
@@ -349,7 +349,7 @@ const AppointmentS2 = () => {
                     >
                       {/* GET AN APPOINMENT */}
 
-                      {locale === "sv" ? "bokning" : "الحجز"}
+                      {locale === "sv" ? " Boka nu" : "الحجز"}
                     </button>
                   </div>
                 </form>

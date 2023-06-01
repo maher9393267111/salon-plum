@@ -144,7 +144,7 @@ src={ doc?.data().image2?.url} alt="" />
 <div 
 // data-aos="fade-up-right"
 
-className=" absolute  left-[57%] top-[3%] h-full">
+className=" absolute  left-[63%] top-[3%] h-full">
 <img
 className="h-full object-cover "
 

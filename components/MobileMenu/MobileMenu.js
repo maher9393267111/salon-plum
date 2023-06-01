@@ -220,7 +220,7 @@ const MobileMenu = () => {
                                                                     
                                                                     
                                                                     {/* Home */}
-                                                                    {locale === 'sv' ? 'personlig sida' : 'الصفحة الشخصية'}
+                                                                    {locale === 'sv' ? 'Start sidan' : 'الصفحة الرئيسية'}
                                                                     
                                                                     </Link>
                                                             </ListItem>
@@ -234,7 +234,7 @@ const MobileMenu = () => {
                                                               <Link className=' text-xl block  cursor-pointer font-bold text-center ' onClick={ClickHandler}
                                                                   href='/contact'>
                                                                   
-                                                                  {locale === 'sv' ? 'kommunikation' : 'تواصل '}
+                                                                  {locale === 'sv' ? 'Kontakta oss' : 'تواصل '}
                                                                   {/* Contact */}
                                                                   </Link>
                                                           </ListItem>

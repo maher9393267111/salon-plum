@@ -25,7 +25,10 @@ const BlogSection2 = ({data}) => {
 
 const splitCat =(cat)=>{
 
-    const parts = cat.split("&&");
+
+    if (cat){
+
+    const parts = cat?.split("&&");
     const swedishText = parts[0]; // "cat_one"
     const arabicText = parts[1]; // "arabicCat_one"
 
@@ -34,6 +37,10 @@ const splitCat =(cat)=>{
       } else {
        return arabicText;
       }
+
+    }
+
+
 
 
 }
@@ -98,17 +105,17 @@ const splitCat =(cat)=>{
 <div className="relative">
 
 
-{blog?.category !=='' &&   
+{/* {blog?.category !=='' &&    */}
     <p className=" absolute bg-[#d2b36a] hover:bg-[#d2b35a] !min-w-[140px]  transition-all font-semibold  duration-300 text-white text-center !text-2xl rounded-xl p-[12px] top-[-5rem] left-[2.75rem]  cursor-pointer"> 
 
 
-
+{blog?.title}
     
-   { splitCat(blog?.category)} 
+   {/* { splitCat(blog?.category)}  */}
     
     </p>
 
-                        }
+                         {/* } */}
 
 
 

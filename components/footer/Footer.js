@@ -20,22 +20,19 @@ const Footer = (props) => {
       <div className="wpo-upper-footer       font-sans    font-A">
         <div className="container">
           <div className="row">
-            <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
+            {/* <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
               <div className="widget about-widget">
                 <div className="logo widget-title">
                   <img
                   className=" w-[160px] h-[100px] object-cover rounded-[50%] "
                     src=
-                    // "/images/my/3.jpg"
+                    
                      '/images/my/log-white.jpg'
 
                     alt="blog"
                   />
                 </div>
-                {/* <p>
-                  Management Plumbing includes a broad range of activities, and
-                  the many firms and their members often define these practices.
-                </p> */}
+         
                 <ul>
                   <li>
                     <a onClick={ClickHandler} href="https://www.facebook.com/Noura-beauty-center-%D9%85%D8%B1%D9%83%D8%B2-%D9%86%D9%88%D8%B1%D8%A7-%D9%84%D9%84%D8%AA%D8%AC%D9%85%D9%8A%D9%84-%D9%88%D8%A7%D9%84%D9%84%D9%8A%D8%B2%D8%B1-121459684279489/">
@@ -54,14 +51,18 @@ const Footer = (props) => {
                   </li>
                   <li>
                     <a onClick={ClickHandler} href="mailto:Noura.center.beauty@gmail.com"
-                    // "mailto:nourabeuatycenter96r@gmail.com"
+                   
                     >
                       <i className="ti-google"></i>
                     </a>
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> */}
+
+
+
+
             <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
               <div className="widget wpo-service-link-widget">
                 <div className="widget-title text-cente">
@@ -101,6 +102,52 @@ const Footer = (props) => {
 
 
                 </div>
+
+
+  {/* <div className="col col-lg-3 col-md-6 col-sm-12 col-12"> */}
+              <div className="widget about-widget mt-6">
+                <div className="logo widget-title mmt-6 ">
+                  <img
+                  className=" w-[160px] h-[100px] object-cover rounded-[50%] "
+                    src=
+                    
+                     '/images/my/log-white.jpg'
+
+                    alt="blog"
+                  />
+                </div>
+         
+                <ul>
+                  <li>
+                    <a onClick={ClickHandler} href="https://www.facebook.com/Noura-beauty-center-%D9%85%D8%B1%D9%83%D8%B2-%D9%86%D9%88%D8%B1%D8%A7-%D9%84%D9%84%D8%AA%D8%AC%D9%85%D9%8A%D9%84-%D9%88%D8%A7%D9%84%D9%84%D9%8A%D8%B2%D8%B1-121459684279489/">
+                      <i className="ti-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <Link onClick={ClickHandler} href="/">
+                      <i className="ti-twitter-alt"></i>
+                    </Link>
+                  </li>
+                  <li>
+                    <a onClick={ClickHandler} href="https://www.instagram.com/noura_beauty_center">
+                      <i className="ti-instagram"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a onClick={ClickHandler} href="mailto:Noura.center.beauty@gmail.com"
+                   
+                    >
+                      <i className="ti-google"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            {/* </div> */}
+
+
+
+
+
               </div>
             </div>
             <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
@@ -192,6 +239,13 @@ const Footer = (props) => {
 
 
 <li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Kemisk peeling' : 'تقشير الكيماوي '}
+
+</li>
+
+
+
+<li className="cursor-pointer   text-[16px]" >
 {locale === 'sv' ? 'Dermapen' : 'ديرمابين للبشره'}
 
 </li>
@@ -203,6 +257,52 @@ const Footer = (props) => {
 {locale === 'sv' ? 'Makeupartist' : 'مكياج '}
 
 </li>
+
+
+
+
+
+
+
+                </ul>
+              </div>
+            </div>
+
+
+
+            <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
+              <div className="widget link-widget">
+                <div className="widget-title text-cente">
+                  <h3>
+                  {locale === 'sv' ? 'Tjänster' : 'الخدمات'}
+                    {/* Services */}
+                     </h3>
+                </div>
+                <ul dir="lft" className=" text-cente !list-disc ">
+                   {/* {Services.slice(0, 5).map((service, srv) => (
+                    <li className=" cursor-pointer" key={srv}>
+                       <Link
+                        onClick={ClickHandler}
+                        href="/service/[slug]"
+                        as={`/service/${service.slug}`}
+                      > 
+                        {service.sTitle}
+                     </Link> 
+                    </li>
+                  ))}  */}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -322,6 +422,12 @@ const Footer = (props) => {
                 </ul>
               </div>
             </div>
+
+
+
+
+
+
 
             <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
               <div className="widget instagram">

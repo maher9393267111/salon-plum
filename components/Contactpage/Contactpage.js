@@ -21,7 +21,7 @@ const Contactpage = () => {
                     </div>
                     <div className="office-info-text">
                       <h2>
-                        {locale === "sv" ? "Vårt läge" : "موقعنا"}
+                        {locale === "sv" ? "Adress" : "موقعنا"}
                         {/* Address */}
                       </h2>
                       <p>
@@ -61,7 +61,7 @@ const Contactpage = () => {
                     </div>
                     <div className="office-info-text">
                       <h2>
-                        {locale === "sv" ? "ring oss" : "اتصل بنا"}
+                        {locale === "sv" ? " Ring oss" : "اتصل بنا"}
                         {/* Call Now */}
                       </h2>
                       <p>
