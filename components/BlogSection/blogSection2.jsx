@@ -73,7 +73,7 @@ const splitCat =(cat)=>{
                     className="col-lg-6 rounded-s-xl">
                          <SectionTitle 
                         //  MainTitle={'Latest News & Blog'}  
-                       MainTitle= {locale === 'sv' ? 'Tjänster som tillhandahålls' : 'الخدمات المقدمة'}
+                       MainTitle= {locale === 'sv' ? 'Våra tjänster' : 'الخدمات المقدمة'}
                         
                         />
                     </div>
