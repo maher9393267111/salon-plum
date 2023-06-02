@@ -16,7 +16,7 @@ const settings = {
     speed: 1200,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2500,
     fade: true
 };
@@ -117,7 +117,7 @@ src={ doc?.data().image2?.url} alt="" />
 
                                         </div>
                                         <div className="slide-text">
-                                            <p className=" w-2/3 text-sm md:w-[80%] md:block font-">
+                                            <p className="w-[51%]  sm:w-[59%]  text-[12px] sm:text-sm md:w-[80%] md:block font-">
                                                 
                                             {locale === 'sv' ? 'Noura beauty center  erbjuder  skönhetsvård  med hög  kvalité där kvinnan står i fokus    .Vår målsättning är att du som är intresserad av hudvård, ditt utseende och skönhet ska få alla dina behov tillgodosedda.' : 
                                             'كل ماتحتاجين لجمالك بمكان واحد  يقدم مركز نورا للتجميل والليزر  أفضل الخدمات للعناية بجمالك.  لدينا احدث التقنيات وافضل النتائج شعارنا أسعادكم وأرضائكم  أبداعنا لا حدود له… نتقن فنبدع …. فنتألق..'}
@@ -144,11 +144,11 @@ src={ doc?.data().image2?.url} alt="" />
 
 
 <div 
-// data-aos="fade-up-right"
+// data-aos="fade-up-right     sm:h-full sm:w-full w-[290px] h-[290px] "
 
-className=" absolute  left-[66%] top-[7%] h-full">
+className=" absolute  left-[54%] sm:left-[66%] top-[9%] h-full">
 <img
-className="h-full object-cover "
+className="!h-full sm:w-full w-[290px]  object-contain "
 
 src={ doc?.data().image2?.url} alt="" />
 
