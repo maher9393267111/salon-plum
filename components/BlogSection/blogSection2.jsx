@@ -90,7 +90,7 @@ const splitCat =(cat)=>{
                 
                 className="wpo-blog-items !mb-[200px]">
                     <div className="row">
-                        {data && data?.length > 0 &&   data?.slice(0,15)?.map((blog, bl) => (
+                        {data && data?.length > 0 &&   data?.map((blog, bl) => (
                             
                             <div className="col col-lg-4 col-md-6 col-12 " key={bl}>
                                 <Link href={`services/${blog?.id}`}>

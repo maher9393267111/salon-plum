@@ -69,7 +69,9 @@ const Hero2 = () => {
                                 // '/images/slider/slide-2.jpg'
                           //  'https://images.pexels.com/photos/260405/pexels-photo-260405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
                             })
-                                ` }}>
+                                ` }}
+                                
+                                >
                                 <div className="gradient-overlay"></div>
                                 <div 
                                  data-aos="fade-up-right"

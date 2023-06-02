@@ -6,13 +6,20 @@ const PageTitle = (props) => {
     const { locale, locales, asPath } = useRouter();
 
     return(
-        <section className="wpo-page-title">
+        <section className="wpo-page-title"
+        
+        style={{ backgroundImage: `url(${
+           props?.background?.url
+       })
+       ` }}
+        
+        >
             <div className="container">
                 <div className="row">
                     <div className="col col-xs-12">
                         <div className="wpo-breadcumb-wrap">
                             <h2>{props.pageTitle}</h2>
-                            <ol className="wpo-breadcumb-wrap">
+                            <ol className="wpo-breadcumb-wrap ">
                                 <li><Link href="/">
                                 {locale === 'sv' ? 'Start sida' : 'الرئيسية'}
                                     {/* Home */}

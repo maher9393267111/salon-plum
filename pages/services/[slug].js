@@ -39,6 +39,7 @@ const BlogSingle = ({data , related}) => {
         <Fragment>
             <Navbar />
             <PageTitle pageTitle={data?.title}
+            background ={data?.image}
             // {BlogDetails?.title} 
             pagesub={locale === 'sv' ? 'tjänsten' : 'الخدمة'}
             // "blog"
