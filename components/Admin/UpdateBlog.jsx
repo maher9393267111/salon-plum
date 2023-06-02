@@ -22,6 +22,7 @@ function UpdateBlog() {
     const [category, setCategory] = useState('')
     const [image2, setImage2] = useState({url:'' ,name:''})
     const [images ,setImages]  = useState([])
+    const [price,setPrice] =useState([])
     
     const [titleAr, setTitleAr] =useState('')
     const [loading, setLoading] = useState(true);
@@ -45,6 +46,7 @@ function UpdateBlog() {
                 setImage(data?.image);
                 setImage2(data?.image2)
                 setImages(data?.slider)
+                setPrice(data?.price)
                 // if (data?.index) {
                 //     setIndex(data?.index)
                 //     setVisibleHome(true)
@@ -77,7 +79,8 @@ function UpdateBlog() {
                     image,
                     image2,
                     index,
-                    category
+                    category ,
+                    price
                 }
             } else if (!visibleHome && index) {
                 data = {
@@ -88,7 +91,8 @@ function UpdateBlog() {
                     image,
                     image2,
                     index: deleteField(),
-                    category
+                    category ,
+                    price
                 }
             } else if (visibleHome && !index) {
                 data = {
@@ -99,7 +103,8 @@ function UpdateBlog() {
                     image,
                     image2,
                     category,
-                    index: await getBlogCount() + 1
+                    index: await getBlogCount() + 1,
+                    price
                 }
             } else {
                 data = {
@@ -110,7 +115,8 @@ function UpdateBlog() {
                     titleAr,
                     description: value,
                     descriptionAr:valueAr,
-                    category
+                    category,
+                    price,
                 }
             }
             await updateDoc(doc(db, "blog", id), data);
@@ -192,7 +198,8 @@ function UpdateBlog() {
                     valueAr, setValueAr,
                     titleAr, setTitleAr,
                     category, setCategory,
-                    image2 ,setImage2
+                    image2 ,setImage2,
+                    price,setPrice
                 }}
             />
         </div>

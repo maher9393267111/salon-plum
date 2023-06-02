@@ -33,7 +33,7 @@ const   modules = {
 
 
 export default function BlogForm({ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading,
-     image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr , category, setCategory ,image2, setImage2  }) {
+     image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr , category, setCategory ,image2, setImage2  , price,setPrice  }) {
  
     const [file, setFile] = useState(null)
     const [file2, setFile2] = useState(null)
@@ -123,6 +123,21 @@ if (image2?.name){
                     placeholder="Arabic Title"
                     value={titleAr}
                     onChange={(e) => setTitleAr(e.target.value)}
+                />
+            </div>
+
+
+
+            <div className="w-full">
+
+<label className='my-2' >Price</label>
+
+                <input
+                    className='w-full border-2 text-black font-medium rounded-md border-teal-400 py-3 px-6'
+                    type="number"
+                    placeholder="Price"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
                 />
             </div>
 

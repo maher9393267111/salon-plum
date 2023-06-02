@@ -115,9 +115,9 @@ src={ doc?.data().image2?.url} alt="" />
 
                                         </div>
                                         <div className="slide-text">
-                                            <p className=" w-2/3 text-sm md:w-[80%] md:block">
+                                            <p className=" w-2/3 text-sm md:w-[80%] md:block font-">
                                                 
-                                            {locale === 'sv' ? 'Noura beauty center erbjuder skönhetsvård med hög kvalité där kvinnan står i fokus.Vår målsättning är att du som är intresserad av hudvård, ditt utseende och skönhet ska få alla dina behov tillgodosedda.' : 
+                                            {locale === 'sv' ? 'Noura beauty center  erbjuder  skönhetsvård  med hög  kvalité där kvinnan står i fokus    .Vår målsättning är att du som är intresserad av hudvård, ditt utseende och skönhet ska få alla dina behov tillgodosedda.' : 
                                             'كل ماتحتاجين لجمالك بمكان واحد  يقدم مركز نورا للتجميل والليزر  أفضل الخدمات للعناية بجمالك.  لدينا احدث التقنيات وافضل النتائج شعارنا أسعادكم وأرضائكم  أبداعنا لا حدود له… نتقن فنبدع …. فنتألق..'}
 
                                                 {/* There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form. */}
@@ -144,7 +144,7 @@ src={ doc?.data().image2?.url} alt="" />
 <div 
 // data-aos="fade-up-right"
 
-className=" absolute  left-[63%] top-[3%] h-full">
+className=" absolute  left-[66%] top-[3%] h-full">
 <img
 className="h-full object-cover "
 

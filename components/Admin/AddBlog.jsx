@@ -17,6 +17,7 @@ function AddBlog() {
   const [value, setValue] = useState("");
   const [valueAr, setValueAr] = useState("");
   const [title, setTitle] = useState("");
+  const [price ,setPrice] = useState(0)
   const [titleAr, setTitleAr] =useState('')
   const [image, setImage] = useState({url:'' ,name:''})
   const [images ,setImages]  = useState([])
@@ -24,6 +25,7 @@ function AddBlog() {
   const [loading, setLoading] = useState(false)
   const [visibleHome, setVisibleHome] = useState(false)
   const [category, setCategory] = useState('')
+  
   const { replace } = useRouter()
   const handleClick = async () => {
     setLoading(true)
@@ -58,6 +60,7 @@ function AddBlog() {
         image2:image2,
         slider:firebaseImages,
         category: category,
+        price: price,
         date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
         index: await getBlogCount() + 1
       } : {
@@ -66,6 +69,7 @@ function AddBlog() {
         image: image,
         image2:image2,
         slider:firebaseImages,
+        price: price,
         date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
       }
 
@@ -124,7 +128,7 @@ function AddBlog() {
 
 <SliderImagesForm images={images} setImages={setImages} />
 
-      <BlogForm {...{ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr , category, setCategory ,image2, setImage2 }} />
+      <BlogForm {...{ setTitle, title, value, setValue, handleClick, setImage, setAlert, setLoading, image, visibleHome, setVisibleHome ,titleAr, setTitleAr ,valueAr, setValueAr , category, setCategory ,image2, setImage2 ,price,setPrice }} />
     </div>
   )
 }

@@ -259,6 +259,11 @@ const Footer = (props) => {
 </li>
 
 
+<li className="cursor-pointer   text-[16px]" >
+{locale === 'sv' ? 'Kroppvård' : 'عناية بالجسم'}
+
+</li>
+
 
 
 

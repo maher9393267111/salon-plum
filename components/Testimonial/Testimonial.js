@@ -113,49 +113,16 @@ const Testimonial = () => {
                 </div>
                 <div className="row align-items-center">
                     <div className="col-xl-12 col-lg-12">
-                        <div className="testimonials-wrapper owl-carousel">
-                            <Slider {...settings}>
-                                {/* {testimonial.map((tesmnl, tsm) => (
-                                    <div className="testimonials-item" key={tsm}>
-                                        <div className="testimonials-item-top">
-                                            <p>{tesmnl.Des}</p>
-                                        </div>
-                                        <div className="testimonials-item-bottom">
-                                            <div className="testimonials-item-bottom-author">
-                                                <img src={tesmnl.tsImg} alt="" />
-                                            </div>
-                                            <div className="testimonials-item-bottom-author-text">
-                                                <h3>{tesmnl.Title}</h3>
-                                                <span>{tesmnl.Sub}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))} */}
 
 
+
+{value?.docs?.length <3 ?
+
+<div className=" flex justify-center gap-12 testimonials-wrapper owl-carousel">
 
 {value?.docs?.map((doc) => (
               <React.Fragment key={doc.id}>
-                {/* {JSON.stringify(doc.data())},{' '} */}
-
-
-                {/* <div className="testimonials-item" >
-                                        <div className=" bg-black rounded-3xl text-white p-4 min-h-[150px]">
-                                            <p className=" text-white">{doc.data()?.message}</p>
-                                        </div>
-                                        <div className="testimonials-item-bottom">
-                                          
-                                            <div className="testimonials-item-bottom-author-text text-md font-sans">
-                                                 <h3>{doc.data()?.fullName}</h3>
-
-
-
-
-                                                
-                                            </div>
-                                        </div>
-                                    </div> */}
-
+        
 
 
 <div className="testimonials-item" key={doc.id}>
@@ -168,7 +135,47 @@ const Testimonial = () => {
                                             </div>
                                             <div className="testimonials-item-bottom-author-text">
                                                 <h3>{doc.data()?.fullName}</h3>
-                                                {/* <span>{tesmnl.Sub}</span> */}
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+              </React.Fragment>
+            ))}
+
+
+</div>
+
+:
+
+
+
+                        <div className="testimonials-wrapper owl-carousel">
+                            <Slider {...settings}>
+                            
+
+
+
+{value?.docs?.map((doc) => (
+              <React.Fragment key={doc.id}>
+        
+
+
+<div className="testimonials-item" key={doc.id}>
+                                        <div className="testimonials-item-top">
+                                            <p className=" font-semibold">{doc.data()?.message}</p>
+                                        </div>
+                                        <div className="testimonials-item-bottom">
+                                            <div className="testimonials-item-bottom-author">
+                                                <img src='https://cdn-icons-png.flaticon.com/128/149/149071.png' alt="" />
+                                            </div>
+                                            <div className="testimonials-item-bottom-author-text">
+                                                <h3>{doc.data()?.fullName}</h3>
+                                            
                                             </div>
                                         </div>
                                     </div>
@@ -185,6 +192,11 @@ const Testimonial = () => {
 
                             </Slider>
                         </div>
+
+
+}
+
+
                     </div>
                 </div>
             </div>

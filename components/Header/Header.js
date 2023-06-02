@@ -117,7 +117,7 @@ const { locale, locales, asPath } = useRouter();
                     <li>
                       <Link  className=" font-serif" onClick={ClickHandler} href="/contact">
                         {/* Contact */}
-                        {locale === 'sv' ? 'kommunikation' : 'تواصل '}
+                        {locale === 'sv' ? 'Kontakta oss' : 'تواصل '}
                       </Link>
                     </li>
 

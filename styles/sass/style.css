@@ -2742,10 +2742,10 @@ hero slider
   left: 0;
   top: 0;
   z-index: 10;
-  opacity: 0.75;
-  background: -ms-linear-gradient(left, #253041 45%, transparent 65%);
+  opacity:  0.75;
+  /* background: -ms-linear-gradient(left, #253041 45%, transparent 65%);
   background: -webkit-gradient(linear, left top, right top, color-stop(45%, #253041), color-stop(65%, transparent));
-  background: left, #253041 45%, transparent 65%;
+  background: left, #253041 45%, transparent 65%; */
 }
 .wpo-hero-slider .gradient-overlay + .container {
   position: relative;

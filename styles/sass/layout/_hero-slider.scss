@@ -297,12 +297,12 @@ hero slider
 		top: 0;
 		z-index: 10;
 		opacity: .75;
-		background: -webkit-linear-gradient(left, $dark-gray 45%, transparent 65%);
-		background: -moz-linear-gradient(left, $dark-gray 45%, transparent 65%);
-		background: -o-linear-gradient(left, $dark-gray 45%, transparent 65%);
-		background: -ms-linear-gradient(left, $dark-gray 45%, transparent 65%);
-		background: -webkit-gradient(linear, left top, right top, color-stop(45%, $dark-gray), color-stop(65%, transparent));
-		background: (left, $dark-gray 45%, transparent 65%);
+		// background: -webkit-linear-gradient(left, $dark-gray 45%, transparent 65%);
+		// background: -moz-linear-gradient(left, $dark-gray 45%, transparent 65%);
+		// background: -o-linear-gradient(left, $dark-gray 45%, transparent 65%);
+		// background: -ms-linear-gradient(left, $dark-gray 45%, transparent 65%);
+		// background: -webkit-gradient(linear, left top, right top, color-stop(45%, $dark-gray), color-stop(65%, transparent));
+		// background: (left, $dark-gray 45%, transparent 65%);
 	}
 
 	.gradient-overlay+.container {
@@ -461,6 +461,7 @@ hero slider
 
 		p {
 			font-size: 25px;
+			font-weight: 700;
 			color: $text-light-color;
 			font-family: $heading-font;
 			line-height: 35px;
@@ -468,7 +469,7 @@ hero slider
 			padding-left: 20px;
 			border-left: 2px solid #e2e2e2;
 			margin-bottom: 60px;
-			color: #e2e2e2;
+			color:  black;//#e2e2e2;
 
 			@include media-query(991px) {
 				font-size: 18px;

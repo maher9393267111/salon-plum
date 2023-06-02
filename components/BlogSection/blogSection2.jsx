@@ -90,12 +90,12 @@ const splitCat =(cat)=>{
                 
                 className="wpo-blog-items !mb-[200px]">
                     <div className="row">
-                        {data && data?.length > 0 &&   data?.slice(0,12).map((blog, bl) => (
+                        {data && data?.length > 0 &&   data?.slice(0,15)?.map((blog, bl) => (
                             
                             <div className="col col-lg-4 col-md-6 col-12 " key={bl}>
                                 <Link href={`services/${blog?.id}`}>
                                 <div className="wpo-blog-item !h-[350px] hover:shadow-lg transition-all  duration-300">
-                                    <div className="wpo-blog-img !h-[80%]  ">
+                                    <div className="wpo-blog-img !h-[100%]  ">
                                         <img
                                         className=" !h-full object-cover"
                                         src={blog?.image?.url} alt="" />
@@ -115,8 +115,24 @@ const splitCat =(cat)=>{
     
     </p>
 
+
                          {/* } */}
 
+
+{/* ----price--- */}
+
+
+ {blog?.price  &&  
+<p className=" absolute bg-[#d2b36a] hover:bg-[#d2b35a] !min-w-[100px]  transition-all font-semibold  duration-300 text-white text-center !text-xl rounded-xl p-[12px] top-[-5rem] right-[1.7rem]  cursor-pointer"> 
+
+
+{ blog?.price }
+    
+  
+    
+    </p>
+
+                        }
 
 
 </div>
@@ -124,10 +140,10 @@ const splitCat =(cat)=>{
 
 {/* ---content--- */}
 
-<div className=" ml-4 mt-2">
+{/* <div className=" ml-4 mt-2">
 <p className=" font-semibold font-serif">{locale==="sv" ? blog?.title : blog?.titleAr }</p>
 
-</div>
+</div> */}
 
 
                                    
