@@ -288,25 +288,25 @@ const AppointmentS2 = () => {
                           <option
                             value={locale === "sv" ? "måndag" : "الاثنين"}
                           >
-                            {locale === "sv" ? "måndag" : "الاثنين"}
+                            {locale === "sv" ? "Måndag" : "الاثنين"}
                           </option>
                           <option
                             value={locale === "sv" ? "tisdag" : "الثلاثاء "}
                           >
-                            {locale === "sv" ? "tisdag" : "الثلاثاء "}
+                            {locale === "sv" ? "Tisdag" : "الثلاثاء "}
                           </option>
                           <option
                             value={locale === "sv" ? "onsdag" : "الأربعاء"}
                           >
-                            {locale === "sv" ? "onsdag" : "الأربعاء"}
+                            {locale === "sv" ? "Onsdag" : "الأربعاء"}
                           </option>
                           <option
                             value={locale === "sv" ? "torsdag" : "الخميس "}
                           >
-                            {locale === "sv" ? "torsdag" : "الخميس "}
+                            {locale === "sv" ? "Torsdag" : "الخميس "}
                           </option>
                           <option value={locale === "sv" ? "fredag" : "الجمعة"}>
-                            {locale === "sv" ? "fredag" : "الجمعة"}
+                            {locale === "sv" ? "Fredag" : "الجمعة"}
                           </option>
                           <option value={locale === "sv" ? "ördag" : "السبت"}>
                             {locale === "sv" ? "Lördag" : "السبت"}

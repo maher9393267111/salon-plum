@@ -3,6 +3,10 @@ import Link from "next/link";
 import Services from "../../api/service";
 import Projects from "../../api/project";
 import { useRouter } from "next/router";
+
+
+// -icons site svg----
+// https://themify.me/themify-icons
 const ClickHandler = () => {
   window.scrollTo(10, 0);
 };
@@ -138,8 +142,28 @@ const Footer = (props) => {
                    
                     >
                       <i className="ti-google"></i>
+                      
                     </a>
                   </li>
+
+
+{/* -----https://cdn-icons-png.flaticon.com/128/1946/1946538.png */}
+
+
+<li>
+                    <a  href="https://www.tiktok.com/@nouradawod1?_t=8coXFwp5lgh&_r=1"
+                   
+                    >
+                      {/* <i className="ti-google"></i> */}
+                      
+                      <img
+                      className="m-auto w-[30px] h-[30px] object-cover"
+                      src="https://cdn-icons-png.flaticon.com/128/1946/1946538.png" alt="" />
+                    </a>
+                  </li>
+
+
+
                 </ul>
               </div>
             {/* </div> */}
@@ -444,13 +468,13 @@ const Footer = (props) => {
                 </div>
                 <ul className="d-flex">
                   {Projects.slice(0, 6).map((project, srv) => (
-                    <li key={srv}>
+                    <li className="w-1/2" key={srv}>
                       {/* <Link
                         onClick={ClickHandler}
                         href="/project/[slug]"
                         as={`/project/${project.slug}`}
                       > */}
-                        <img className=" w-[100px] h-[100px] object-cover lg:w-[77px] lg:h-[77px]" src={project.pImg} alt="" />
+                        <img className=" w-[125px] h-[125px] object-cover lg:w-[99px] lg:h-[98px]" src={project.pImg} alt="" />
                       {/* </Link> */}
                     </li>
                   ))}
