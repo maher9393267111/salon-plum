@@ -97,7 +97,7 @@ src={ doc?.data().image2?.url} alt="" />
 
                                     <div className="slide-content ">
                                         <div className="slide-title w-1/2 md:w-[85%]">
-                                            <h2 className="">
+                                            <h2 className=" hidden sm:block">
                                             {locale === 'sv' ? 'Välkommen till Noura beauty center' : 
                                             'مركز نورا بيوتي سنتر للتجميل والليزر'}
                                            
