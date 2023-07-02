@@ -19,6 +19,7 @@ import { useState,useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {DefaultSeo} from 'next-seo';
+import Head from "next/head";
 
 //import { connect } from "react-redux";
 //import { LoadingAction } from "../store/actions/action";
