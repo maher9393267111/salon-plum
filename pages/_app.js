@@ -74,20 +74,20 @@ function MyApp({ Component, pageProps ,props }) {
         />
         <meta
           name="keywords"
-          content="nourabeautycenter,"
+          content="nourabeautycenter,clinic"
         />
         <meta name="robots" content="index, follow" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
-        <meta name="author" content="nourabeautycenter" />
+        <meta name="author" content="nourabeautycenter clinic" />
         <meta property="og:locale" content="en-US" />
 
         {/* <!-- Primary Meta Tags --> */}
         <title>nourabeautycenter clinic </title>
-        <meta name="title" content="nourabeautycenter" />
+        <meta name="title" content="nourabeautycenter clinic" />
         <meta
           name="description"
-          content="nourabeauty center "
+          content="nourabeautycenter clinic "
         />
 
         {/* <!-- Open Graph / Facebook --> */}
